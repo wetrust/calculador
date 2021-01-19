@@ -21,7 +21,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand" href="#">Calculador Ecográfico</a>
+                <a class="navbar-brand" href="/"><img src="images/android-chrome-512x512.png" alt="" width="32" height="32">Calculador ecográfico</a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
@@ -34,7 +34,7 @@
                 </div>
             </div>
         </nav>
-        <section class="container">
+        <section class="container d-none" id="inicio">
             <div class="card shadow">
                 <div class="card-header">
                     Fecha
@@ -42,7 +42,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-6 mt-2">
-                            <label for="fur" class="form-label">Fecha Última Regla</label>
+                            <label for="fur" class="form-label">Fecha Última Menstruación</label>
                             <input type="date" class="form-control" id="fur">
                         </div>
                         <div class="col-6 mt-2">
@@ -63,9 +63,60 @@
                       </div>
                 </div>
             </div>
-            <button class="btn mx-auto d-block mt-3">
+            <button class="btn mx-auto d-block mt-3" id="goPrelude">
                 <svg class="my-3" xmlns="http://www.w3.org/2000/svg" width="4em" height="4em" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/></svg><br>
-                Exámen Ecográfico</button>
+                Exámen Ecográfico
+            </button>
+        </section>
+        <section class="container" id="prelude">
+            <div class="row">
+                <div class="col-3">
+                    <div class="d-flex align-items-center h-100">
+                        <div class="d-flex justify-content-center w-100">
+                            <button class="btn" id="back"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="currentColor" class="bi bi-arrow-left-square" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm11.5 5.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/></svg></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-9">
+                    <div class="alert alert-dark shadow mb-0" role="alert">
+                        <div class="row">
+                            <div class="col-7">Fecha última menstruación:</div>
+                            <div class="col-5">27-11-2021</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-7">Edad gestacional:</div>
+                            <div class="col-5">27 semanas</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-7">Fecha problable parto:</div>
+                            <div class="col-5">27-11-2021</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container" id="examenes">
+            <div class="card shadow mt-3">
+                <div class="card-header">
+                    Ecografía Obstétrica 1º Trimestre
+                </div>
+                <div class="card-body">
+                </div>
+            </div>
+            <div class="card shadow mt-3">
+                <div class="card-header">
+                    Ecografía Obstétrica 2º - 3º Trimestre
+                </div>
+                <div class="card-body">
+                </div>
+            </div>
+            <div class="card shadow mt-3">
+                <div class="card-header">
+                    Ecografía Dopper Materno Fetal
+                </div>
+                <div class="card-body">
+                </div>
+            </div>
         </section>
         <script src="js/bootstrap.bundle.min.js"></script>
         <script type="module" src="js/app.js"></script>
