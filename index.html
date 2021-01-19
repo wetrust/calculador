@@ -25,7 +25,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                            <a class="nav-link" href="/">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Acerca de</a>
@@ -34,7 +34,7 @@
                 </div>
             </div>
         </nav>
-        <section class="container d-none" id="inicio">
+        <section class="container" id="inicio">
             <div class="card shadow">
                 <div class="card-header">
                     Fecha
@@ -48,13 +48,13 @@
                         <div class="col-6 mt-2">
                             <label for="eg" class="form-label">Edad Gestacional</label>
                             <select class="form-select" id="eg">
-                                <option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20" selected>20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option>
+                                <option value="0">0 sem</option><option value="1">1 sem</option><option value="2">2 sem</option><option value="3">3 sem</option><option value="4">4 sem</option><option value="5">5 sem</option><option value="6">6 sem</option><option value="7">7 sem</option><option value="8">8 sem</option><option value="9">9 sem</option><option value="10">10 sem</option><option value="11">11 sem</option><option value="12">12 sem</option><option value="13">13 sem</option><option value="14">14 sem</option><option value="15">15 sem</option><option value="16">16 sem</option><option value="17">17 sem</option><option value="18">18 sem</option><option value="19">19 sem</option><option value="20" selected>20 sem</option><option value="21">21 sem</option><option value="22">22 sem</option><option value="23">23 sem</option><option value="24">24 sem</option><option value="25">25 sem</option><option value="26">26 sem</option><option value="27">27 sem</option><option value="28">28 sem</option><option value="29">29 sem</option><option value="30">30 sem</option><option value="31">31 sem</option><option value="32">32 sem</option><option value="33">33 sem</option><option value="34">34 sem</option><option value="35">35 sem</option><option value="36">36 sem</option><option value="37">37 sem</option><option value="38">38 sem</option><option value="39">39 sem</option><option value="40">40 sem</option><option value="41">41 sem</option><option value="42">42 sem</option>
                             </select>
                         </div>
                         <div class="col-6 mt-5">
                             <label for="fpp" class="form-label text-secondary">Probable Parto</label>
-                            <input type="date" class="form-control" id="fpp" readonly>
-                            <span class="text-muted mt-3">Probable: +282 días</span>
+                            <input type="date" class="form-control-plaintext" id="fpp" readonly>
+                            <span class="text-muted mt-3"><small>+282 días</small></span>
                         </div>
                         <div class="col-6 mt-5">
                             <label for="fexamen" class="form-label text-secondary">Fecha Exámen</label>
@@ -68,7 +68,7 @@
                 Exámen Ecográfico
             </button>
         </section>
-        <section class="container" id="prelude">
+        <section class="container d-none" id="prelude">
             <div class="row">
                 <div class="col-3">
                     <div class="d-flex align-items-center h-100">
@@ -95,7 +95,7 @@
                 </div>
             </div>
         </section>
-        <section class="container" id="examenes">
+        <section class="container d-none" id="examenes">
             <div class="card shadow mt-3">
                 <div class="card-header">
                     Ecografía Obstétrica 1º Trimestre
@@ -106,7 +106,7 @@
                         <div class="col-5 px-0">
                             <div class="d-flex align-items-center h-100">
                                 <div class="d-flex justify-content-center w-100">
-                                    <button class="btn py-2" id="back"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/></svg></button>
+                                    <button class="btn py-2" id="goPrimero"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/></svg></button>
                                 </div>
                             </div>
                         </div>
@@ -141,6 +141,37 @@
                             <div class="d-flex align-items-center h-100">
                                 <div class="d-flex justify-content-center w-100">
                                     <button class="btn py-2" id="back"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/></svg></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container d-none" id="primero">
+            <div class="card shadow mt-3">
+                <div class="card-header">
+                    Medida de embrión (LCN)
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-5">
+                            <label for="lcn" class="form-label">LCN</label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" id="lcn">
+                                <span class="input-group-text" id="basic-addon2">mm</span>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <label for="lcneg" class="form-label">EG x LCN</label>
+                            <input type="text" class="form-control-plaintext" id="lcneg" value="0 semana" readonly>
+                        </div>
+                        <div class="col-2 px-0">
+                            <div class="d-flex align-items-center h-100">
+                                <div class="d-flex justify-content-center w-100">
+                                    <button class="btn py-2" id="back">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5z"/></svg>
+                                    </button>
                                 </div>
                             </div>
                         </div>

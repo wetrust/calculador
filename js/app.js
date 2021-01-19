@@ -1,8 +1,8 @@
 import {make, the, inputDate} from './wetrust.js'
 import {fechas} from './functiones.js'
 
-var activo = "examenes"
-var paginas = ["inicio", "examenes"]
+var activo = "inicio"
+var paginas = ["inicio", "examenes", "primero"]
 
 
 let _fecha = new Date()
@@ -55,6 +55,14 @@ the("goPrelude").onclick = function(){
     the("examenes").classList.remove("d-none");
     activo = "examenes"
 }
+
+the("goPrimero").onclick = function(){
+    the("examenes").classList.add("d-none");
+    the("primero").classList.remove("d-none");
+    activo = "primero"
+}
+
+
 
 the("back").onclick = function(){
     the(activo).classList.add("d-none");
