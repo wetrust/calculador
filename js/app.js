@@ -20,12 +20,16 @@ the("txtFPP").innerText = humanDate(_fpp)
 //cambiar la fur
 the("fur").onchange = function(){
     //convertir a fecha
-    let _fecha = fechas.toDate(this.value)
+    let _fur = fechas.toDate(this.value)
     //clonar a prelude
-    the("txtFUM").innerText = humanDate(_fecha)
+    the("txtFUM").innerText = humanDate(_fur)
+
+    //calcular la eg
+    let _fexamen = fechas.toDate(the("fexamen").value)
+    the("eg").value = fechas.eg(_fur, _fexamen)
 
     //calcular fpp
-    let _fpp = fechas.fpp(_fecha)
+    let _fpp = fechas.fpp(_fur)
 
     //set en input y prelude
     the("fpp").value = inputDate(_fpp)
@@ -41,24 +45,11 @@ the("eg").onchange = function(){
 }
 
 the("fexamen").onchange = function(){
-    let _fexamen = new Date()
-    _fexamen.setTime(Date.parse(this.value))
-    _fexamen = _fexamen.getTime();
+    //convertir a fecha
+    let _fexamen = fechas.toDate(this.value)
+    let _fur = fechas.toDate(the("fur").value)
 
-    let _fur = new Date()
-    _fur.setTime(Date.parse(the("fur").value))
-    _fur = _fur.getTime();
-
-    let diff = _fexamen - _fur;
-
-    if (diff > 0){
-        let dias = diff/(1000*60*60*24);
-        let semanas = Math.trunc(dias / 7);
-        the("eg").value = semanas;
-    }
-    else{
-        the("eg").value = 0;
-    }
+    the("eg").value = fechas.eg(_fur, _fexamen)
 }
 
 the("goPrelude").onclick = function(){

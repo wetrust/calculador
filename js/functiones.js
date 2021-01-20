@@ -1,18 +1,27 @@
 export class fechas{
     static fur(eg, fexamen){
-        if (typeof fexamen === typeof undefined){
-            fexamen = new Date();
-        }
+        fexamen = (typeof fexamen === typeof undefined) ? new Date() : fexamen
 
-        fexamen.setDate(fexamen.getUTCDate() - (eg*7));
+        fexamen.setDate(fexamen.getDate() - (eg*7));
 
         return fexamen;
     }
 
+    static eg(fur, fexamen){
+        fur = (typeof fur === typeof undefined) ? new Date() : fur
+        fexamen = (typeof fexamen === typeof undefined) ? new Date() : fexamen
+
+        let _fur = 1000 *60* fur.getTimezoneOffset();
+        let _fexamen = 1000 *60* fexamen.getTimezoneOffset();
+
+        let diff = (fexamen.getTime()) - (fur.getTime());
+
+        return (diff > 0) ? Math.trunc((diff/(1000*60*60*24)) /7) : 0
+
+    }
+
     static fpp(date){
-        if (typeof date === typeof undefined){
-            date = new Date();
-        }
+        date = (typeof date === typeof undefined) ? new Date() : date
 
         date.setDate(date.getDate() + 280);
 
