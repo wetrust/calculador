@@ -1,4 +1,4 @@
-import {make, the, inputDate} from './wetrust.js'
+import {make, the, inputDate, humanDate} from './wetrust.js'
 import {fechas} from './functiones.js'
 
 var activo = "inicio"
@@ -11,13 +11,25 @@ the("fexamen").value = inputDate(_fecha)
 
 let _fur = fechas.fur(20, _fecha)
 the("fur").value = inputDate(_fur)
-the("fpp").value = inputDate(fechas.fpp(_fur))
+the("txtFUM").innerText = humanDate(_fur)
 
+let _fpp = fechas.fpp(_fur)
+the("fpp").value = inputDate(_fpp)
+the("txtFPP").innerText = humanDate(_fpp)
+
+//cambiar la fur
 the("fur").onchange = function(){
-    let _fecha = new Date()
-    _fecha.setTime(Date.parse(this.value))
+    //convertir a fecha
+    let _fecha = fechas.toDate(this.value)
+    //clonar a prelude
+    the("txtFUM").innerText = humanDate(_fecha)
 
-    the("fpp").value = inputDate(fechas.fpp(_fecha))
+    //calcular fpp
+    let _fpp = fechas.fpp(_fecha)
+
+    //set en input y prelude
+    the("fpp").value = inputDate(_fpp)
+    the("txtFPP").innerText = humanDate(_fpp)
 }
 
 the("eg").onchange = function(){

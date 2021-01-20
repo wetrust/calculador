@@ -24,10 +24,16 @@
                 <a class="navbar-brand" href="/"><img src="images/android-chrome-512x512.png" alt="" width="32" height="32">Calculador ecográfico</a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
+                        <hr>
+                        <li class="nav-item text-center">
                             <a class="nav-link" href="/">Inicio</a>
                         </li>
-                        <li class="nav-item">
+                        <hr>
+                        <li class="nav-item text-center">
+                            <a class="nav-link" href="/">Opciones</a>
+                        </li>
+                        <hr>
+                        <li class="nav-item text-center">
                             <a class="nav-link" href="#">Acerca de</a>
                         </li>
                     </ul>
@@ -42,19 +48,21 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-6 mt-2">
-                            <label for="fur" class="form-label">Última Menstruación</label>
+                            <label for="fur" class="form-label">FUM</label>
                             <input type="date" class="form-control" id="fur">
+                            <span class="text-muted mt-3"><small>Última Menstruación</small></span>
                         </div>
                         <div class="col-6 mt-2">
-                            <label for="eg" class="form-label">Edad Gestacional</label>
+                            <label for="eg" class="form-label">EG</label>
                             <select class="form-select" id="eg">
                                 <option value="0">0 sem</option><option value="1">1 sem</option><option value="2">2 sem</option><option value="3">3 sem</option><option value="4">4 sem</option><option value="5">5 sem</option><option value="6">6 sem</option><option value="7">7 sem</option><option value="8">8 sem</option><option value="9">9 sem</option><option value="10">10 sem</option><option value="11">11 sem</option><option value="12">12 sem</option><option value="13">13 sem</option><option value="14">14 sem</option><option value="15">15 sem</option><option value="16">16 sem</option><option value="17">17 sem</option><option value="18">18 sem</option><option value="19">19 sem</option><option value="20" selected>20 sem</option><option value="21">21 sem</option><option value="22">22 sem</option><option value="23">23 sem</option><option value="24">24 sem</option><option value="25">25 sem</option><option value="26">26 sem</option><option value="27">27 sem</option><option value="28">28 sem</option><option value="29">29 sem</option><option value="30">30 sem</option><option value="31">31 sem</option><option value="32">32 sem</option><option value="33">33 sem</option><option value="34">34 sem</option><option value="35">35 sem</option><option value="36">36 sem</option><option value="37">37 sem</option><option value="38">38 sem</option><option value="39">39 sem</option><option value="40">40 sem</option><option value="41">41 sem</option><option value="42">42 sem</option>
                             </select>
+                            <span class="text-muted mt-3"><small>Edad Gestacional</small></span>
                         </div>
                         <div class="col-6 mt-5">
                             <label for="fpp" class="form-label text-secondary">Probable Parto</label>
                             <input type="date" class="form-control-plaintext" id="fpp" readonly>
-                            <span class="text-muted mt-3"><small>+282 días</small></span>
+                            <span class="text-muted mt-3"><small>FUM +282 días</small></span>
                         </div>
                         <div class="col-6 mt-5">
                             <label for="fexamen" class="form-label text-secondary">Fecha Exámen</label>
@@ -81,15 +89,15 @@
                     <div class="alert alert-dark shadow mb-0 p-2" role="alert">
                         <div class="row">
                             <div class="col-7">FUM</div>
-                            <div class="col-5 px-0">27-11-2021</div>
+                            <div class="col-5 px-0" id="txtFUM">27-11-2021</div>
                         </div>
                         <div class="row">
                             <div class="col-7">EG</div>
-                            <div class="col-5 px-0">27 sem</div>
+                            <div class="col-5 px-0" id="txtEG">20 sem</div>
                         </div>
                         <div class="row">
                             <div class="col-7">FPP</div>
-                            <div class="col-5 px-0">27-11-2021</div>
+                            <div class="col-5 px-0" id="txtFPP">27-11-2021</div>
                         </div>
                     </div>
                 </div>
@@ -158,7 +166,7 @@
                         <div class="col-5">
                             <label for="lcn" class="form-label">LCN</label>
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" id="lcn">
+                                <input type="number" class="form-control" id="lcn">
                                 <span class="input-group-text" id="basic-addon2">mm</span>
                             </div>
                         </div>

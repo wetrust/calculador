@@ -110,7 +110,7 @@ footer a:hover{
     .wetrust > nav{
         background-color: #1e2227 !important;
     }
-    .wetrust > nav .nav-link{
+    .wetrust > nav .nav-link, .wetrust > nav .navbar-brand{
         color: var(--light) !important;
     }
     .wetrust .dropdown-menu{

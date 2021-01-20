@@ -106,8 +106,8 @@ export function humanDate(date) {
     if (typeof date === typeof undefined){
         date = new Date();
     }
-    var dd = date.getUTCDate();
-    var mm = date.getUTCMonth()+1; //January is 0!
+    var dd = date.getDate();
+    var mm = date.getMonth()+1; //January is 0!
     var yyyy = date.getFullYear();
   
     if(dd<10) {
