@@ -1,9 +1,11 @@
 import {make, the, inputDate, humanDate} from './wetrust.js'
 import {fechas} from './functiones.js'
+import {lcn} from './lcn.js'
+import {saco} from './saco.js'
 
 var activo = "inicio"
-var paginas = ["inicio", "examenes", "primero"]
-
+var paginas = ["inicio", "examenes"]
+var examenes = ["primero", "segundo"]
 
 let _fecha = new Date()
 
@@ -65,13 +67,30 @@ the("goPrimero").onclick = function(){
     activo = "primero"
 }
 
+the("goSegundo").onclick = function(){
+    the("examenes").classList.add("d-none");
+    the("segundo").classList.remove("d-none");
+    activo = "segundo"
+}
+
 
 
 the("back").onclick = function(){
     the(activo).classList.add("d-none");
     
-    let id = paginas.indexOf(activo)
-    activo = paginas[id-1]
+    let examen = examenes.indexOf(activo)
+
+    if (examen != -1){
+    
+        activo = "examenes"
+    
+    }else{
+    
+        let id = paginas.indexOf(activo)
+        activo = paginas[id-1]
+    
+    }
+
 
     the(activo).classList.remove("d-none");
     
@@ -79,3 +98,30 @@ the("back").onclick = function(){
         the("prelude").classList.add("d-none");
     }
 }
+
+
+
+//primer trimestre
+the("lcn").onchange = function(){
+    let _lcn = lcn.calcular(this.value)
+
+    the("lcneg").value = _lcn + " semanas"
+
+    if (this.value > 52) {
+        the("dbpPrimero").classList.remove("d-none");
+    }
+    else{
+        the("dbpPrimero").classList.add("d-none");
+    }
+}
+
+the("saco").onchange = function(){
+    let _saco = saco.calcular(this.value)
+
+    the("sacoeg").value = _saco + " semanas"
+
+}
+
+
+
+//Segundo Tercer trimestre
