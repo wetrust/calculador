@@ -148,7 +148,7 @@
                         <div class="col-5 px-0">
                             <div class="d-flex align-items-center h-100">
                                 <div class="d-flex justify-content-center w-100">
-                                    <button class="btn py-2" ><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/></svg></button>
+                                    <button class="btn py-2" id="goDoppler"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/></svg></button>
                                 </div>
                             </div>
                         </div>
@@ -285,6 +285,7 @@
             <div class="card shadow mt-3">
                 <div class="card-header">
                     Biometría Fetal
+                    <br><small>Hadlock FP. y col. Radiology 152: 497 - 501; 1984.</small><br><small>* Hill LM. y col. Obstet Gynecol. 1990; 75(6) : 981-5</small>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -294,15 +295,13 @@
                                 <input type="number" class="form-control" id="dbp">
                                 <span class="input-group-text">mm</span>
                             </div>
-                            <span class="text-muted mt-3"><small> &lt; 90 mm</small></span>
                         </div>
-                        <div class="col-5">
+                        <div class="col-7">
                             <div class="d-flex align-items-center h-100">
                                 <div class="d-flex justify-content-center w-100">
-                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="dbpDE">
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="dbpG">
                                         <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
-                                    <small>Pct 0</small>
                                 </div>
                             </div>
                         </div>
@@ -314,54 +313,56 @@
                                 <input type="number" class="form-control" id="cc">
                                 <span class="input-group-text">mm</span>
                             </div>
-                            <span class="text-muted mt-3"><small> &lt; 90 mm</small></span>
                         </div>
-                        <div class="col-5">
+                        <div class="col-7">
                             <div class="d-flex align-items-center h-100">
                                 <div class="d-flex justify-content-center w-100">
-                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="dbpDE">
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="ccG">
                                         <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row mt-2">
                         <div class="col-5">
                             <label for="ca" class="form-label">CA</label>
                             <div class="input-group">
                                 <input type="number" class="form-control" id="ca">
                                 <span class="input-group-text">mm</span>
                             </div>
-                            <span class="text-muted mt-3"><small> &lt; 90 mm</small></span>
                         </div>
-                        <div class="col-5">
+                        <div class="col-7">
                             <div class="d-flex align-items-center h-100">
                                 <div class="d-flex justify-content-center w-100">
-                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="dbpDE">
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="caG">
                                         <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row mt-2">
                         <div class="col-5">
                             <label for="lf" class="form-label">LF</label>
                             <div class="input-group">
                                 <input type="number" class="form-control" id="lf">
                                 <span class="input-group-text">mm</span>
                             </div>
-                            <span class="text-muted mt-3"><small> &lt; 90 mm</small></span>
                         </div>
-                        <div class="col-5">
+                        <div class="col-7">
                             <div class="d-flex align-items-center h-100">
                                 <div class="d-flex justify-content-center w-100">
-                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="dbpDE">
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="lfG">
                                         <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-12">
+                            <p class="text-center mb-0"><small>Para cálculo de Eg debe incluir LH y Cerebelo</small></p>
                         </div>
                     </div>
                     <div class="row">
@@ -371,31 +372,196 @@
                                 <input type="number" class="form-control" id="lh">
                                 <span class="input-group-text">mm</span>
                             </div>
-                            <span class="text-muted mt-3"><small> &lt; 90 mm</small></span>
                         </div>
-                        <div class="col-5">
+                        <div class="col-7">
                             <div class="d-flex align-items-center h-100">
                                 <div class="d-flex justify-content-center w-100">
-                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="dbpDE">
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="lhG">
                                         <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row mt-2">
                         <div class="col-5">
-                            <label for="cb" class="form-label">Cerebelo*</label>
+                            <label for="cb" class="form-label">Cerebelo *</label>
                             <div class="input-group">
                                 <input type="number" class="form-control" id="cb">
                                 <span class="input-group-text">mm</span>
                             </div>
-                            <span class="text-muted mt-3"><small> &lt; 90 mm</small></span>
                         </div>
-                        <div class="col-5">
+                        <div class="col-7">
                             <div class="d-flex align-items-center h-100">
                                 <div class="d-flex justify-content-center w-100">
-                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="dbpDE">
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="cbG">
+                                        <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card shadow mt-3">
+                <div class="card-header">
+                    Líquido Amniótico
+                    <br><small>* Magann EF y col. Am J O & G 1982: 1581, 2000</small><br><small>** Moore y col. Am J. O &amp; G. 1990; 162 : 1168 - 1173</small>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <label for="liquido" class="form-label">Evaluación de líquido amniótico</label>
+                            <select class="form-select" id="liquido">
+                                <option value="normal" selected>Normal</option>
+                                <option value="disminuido">Disminuido</option>
+                                <option value="aumentado">Aumentado</option>
+                              </select>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-5">
+                            <label for="bvm" class="form-label">BVM *</label>
+                            <div class="input-group">
+                                <input type="number" class="form-control" id="bvm">
+                                <span class="input-group-text">mm</span>
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="d-flex align-items-center h-100">
+                                <div class="d-flex justify-content-center w-100">
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="bvmG">
+                                        <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-5">
+                            <label for="ila" class="form-label">ILA *</label>
+                            <div class="input-group">
+                                <input type="number" class="form-control" id="ila">
+                                <span class="input-group-text">mm</span>
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="d-flex align-items-center h-100">
+                                <div class="d-flex justify-content-center w-100">
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="ilaG">
+                                        <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card shadow mt-3">
+                <div class="card-header">
+                    Crecimiento Intrauterino
+                    <br><small>Hadlock FP. y col. Radiology 181: 129 - 133; 1991</small>
+                </div>
+                <div class="card-body">
+                    <div class="row mt-2">
+                        <div class="col-6">
+                            <label for="fpp" class="form-label">Peso Fetal Estimado</label>
+                            <input type="date" class="form-control-plaintext" id="pfe" disabled>
+                        </div>
+                        <div class="col-6">
+                            <label for="fpp" class="form-label">Percentil de peso</label>
+                            <input type="date" class="form-control-plaintext" id="pfeP" disabled>
+                        </div>
+                        <div class="col-6">
+                            <label for="fpp" class="form-label">Talla Fetal Estimada</label>
+                            <input type="date" class="form-control-plaintext" id="tf" disabled>
+                        </div>
+                        <div class="col-6">
+                            <label for="fpp" class="form-label">Percentil de talla</label>
+                            <input type="date" class="form-control-plaintext" id="tfP" disabled>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card shadow my-3">
+                <div class="card-header">
+                    ¿Determinar Edad Gestacional Ecográfica?
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-5">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input h3" type="radio" name="edadPrimero" id="edadPrimeroNo" value="option1" checked>
+                                <label class="form-check-label h5 mt-2" for="edadPrimeroNo">No</label>
+                              </div>  
+                        </div>
+                        <div class="col-5">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input h3" type="radio" name="edadPrimero" id="edadPrimeroSi" value="option2">
+                                <label class="form-check-label h5 mt-2" for="edadPrimeroSi">Si</label>
+                              </div>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container d-none" id="doppler">
+            <div class="card shadow mt-3">
+                <div class="card-header">
+                    Biometría Fetal
+                    <br><small>Hadlock FP. y col. Radiology 152: 497 - 501; 1984.</small><br><small>* Hill LM. y col. Obstet Gynecol. 1990; 75(6) : 981-5</small>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-5">
+                            <label for="dbp" class="form-label">Arteria Uterina Derecha IP</label>
+                            <div class="input-group">
+                                <input type="number" class="form-control" id="aud">
+                                <span class="input-group-text">mm</span>
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="d-flex align-items-center h-100">
+                                <div class="d-flex justify-content-center w-100">
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="audG">
+                                        <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-5">
+                            <label for="cc" class="form-label">Arteria Uterina Izquierda IP</label>
+                            <div class="input-group">
+                                <input type="number" class="form-control" id="aui">
+                                <span class="input-group-text">mm</span>
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="d-flex align-items-center h-100">
+                                <div class="d-flex justify-content-center w-100">
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="auiG">
+                                        <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-5">
+                            <label for="ca" class="form-label">Arteria Uterina Promedio IP</label>
+                            <div class="input-group">
+                                <input type="number" class="form-control" id="aup">
+                                <span class="input-group-text">mm</span>
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="d-flex align-items-center h-100">
+                                <div class="d-flex justify-content-center w-100">
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="aupG">
                                         <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
