@@ -187,20 +187,11 @@
                         <div class="col">
                             <small>FUR:</small><br><small id="furlcn">20-12-2021</small>
                         </div>
-                        <div class="col-2 px-0">
+                        <div class="col px-0">
                             <small>EG:</small><br><small id="eglcn">22 sem</small>
                         </div>
                         <div class="col">
                             <small>FPP:</small><br><small id="fpplcn">22-22-2021</small>
-                        </div>
-                        <div class="col-2 px-0">
-                            <div class="d-flex align-items-center h-100">
-                                <div class="d-flex justify-content-center w-100">
-                                    <button class="btn py-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-check" viewBox="0 0 16 16"><path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/></svg>
-                                    </button>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -251,20 +242,11 @@
                         <div class="col">
                             <small>FUR:</small><br><small id="fursaco">20-12-2021</small>
                         </div>
-                        <div class="col-2 px-0">
+                        <div class="col px-0">
                             <small>EG:</small><br><small id="egsaco">22 sem</small>
                         </div>
                         <div class="col">
                             <small>FPP:</small><br><small id="fppsaco">22-22-2021</small>
-                        </div>
-                        <div class="col-2 px-0">
-                            <div class="d-flex align-items-center h-100">
-                                <div class="d-flex justify-content-center w-100">
-                                    <button class="btn py-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-check" viewBox="0 0 16 16"><path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/></svg>
-                                    </button>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -275,9 +257,7 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-1">
-
-                        </div>
+                        <div class="col-1"></div>
                         <div class="col-5">
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input h3" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked>
@@ -290,9 +270,13 @@
                                 <label class="form-check-label h5 mt-2" for="inlineRadio2">Si</label>
                               </div>
                         </div>
-                        <div class="col-1">
-                            
-                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                    <div class="row" id="edadLCN">
+
+                    </div>
+                    <div class="row" id="edadFUR">
+
                     </div>
                 </div>
             </div>
@@ -312,9 +296,14 @@
                             </div>
                             <span class="text-muted mt-3"><small> &lt; 90 mm</small></span>
                         </div>
-                        <div class="col-3">
-                            <label for="dbppct" class="form-label">Percentil</label>
-                            <input type="text" class="form-control-plaintext" id="dbppct" value="0 semana" disabled>
+                        <div class="col-5">
+                            <div class="d-flex align-items-center h-100">
+                                <div class="d-flex justify-content-center w-100">
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="dbpDE">
+                                        <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="row mt-2">
@@ -326,9 +315,14 @@
                             </div>
                             <span class="text-muted mt-3"><small> &lt; 90 mm</small></span>
                         </div>
-                        <div class="col-3">
-                            <label for="ccpct" class="form-label">Percentil</label>
-                            <input type="text" class="form-control-plaintext" id="ccpct" value="0 semana" disabled>
+                        <div class="col-5">
+                            <div class="d-flex align-items-center h-100">
+                                <div class="d-flex justify-content-center w-100">
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="dbpDE">
+                                        <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
@@ -341,8 +335,13 @@
                             <span class="text-muted mt-3"><small> &lt; 90 mm</small></span>
                         </div>
                         <div class="col-5">
-                            <label for="capct" class="form-label">Percentil</label>
-                            <input type="text" class="form-control-plaintext" id="capct" value="0 semana" disabled>
+                            <div class="d-flex align-items-center h-100">
+                                <div class="d-flex justify-content-center w-100">
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="dbpDE">
+                                        <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
@@ -355,8 +354,13 @@
                             <span class="text-muted mt-3"><small> &lt; 90 mm</small></span>
                         </div>
                         <div class="col-5">
-                            <label for="lfpct" class="form-label">Percentil</label>
-                            <input type="text" class="form-control-plaintext" id="lfpct" value="0 semana" disabled>
+                            <div class="d-flex align-items-center h-100">
+                                <div class="d-flex justify-content-center w-100">
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="dbpDE">
+                                        <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
@@ -369,8 +373,13 @@
                             <span class="text-muted mt-3"><small> &lt; 90 mm</small></span>
                         </div>
                         <div class="col-5">
-                            <label for="lhpct" class="form-label">Percentil</label>
-                            <input type="text" class="form-control-plaintext" id="lhpct" value="0 semana" disabled>
+                            <div class="d-flex align-items-center h-100">
+                                <div class="d-flex justify-content-center w-100">
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="dbpDE">
+                                        <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
@@ -383,8 +392,13 @@
                             <span class="text-muted mt-3"><small> &lt; 90 mm</small></span>
                         </div>
                         <div class="col-5">
-                            <label for="cbpct" class="form-label">Percentil</label>
-                            <input type="text" class="form-control-plaintext" id="cbpct" value="0 semana" disabled>
+                            <div class="d-flex align-items-center h-100">
+                                <div class="d-flex justify-content-center w-100">
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="dbpDE">
+                                        <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
