@@ -39,8 +39,7 @@ the("fur").onchange = function(){
 }
 
 the("eg").onchange = function(){
-    let _fecha = new Date()
-    _fecha.setTime(Date.parse(the("fexamen").value))
+    let _fecha = fechas.toDate(the("fexamen").value)
 
     the("fur").value = inputDate(fechas.fur(+this.value, _fecha));
     the("fur").onchange()
@@ -107,6 +106,25 @@ the("lcn").onchange = function(){
 
     the("lcneg").value = _lcn + " semanas"
 
+    if (_lcn > 0){
+        //calcular Fur según LCN
+        let _fecha = new Date()
+        _fecha.setTime(Date.parse(the("fexamen").value))
+        //let _fecha = fechas.toDate(the("fexamen").value)
+
+        //calcular la fut con la parte entera del lcn, despues agregar los días
+        let _ilcn = Math.trunc(_lcn)
+        let _fur = fechas.fur(+_lcn, _fecha);
+        _fur.setDate(_fur.getDate() - (_ilcn - _lcn));
+
+        the("furlcn").innerText = humanDate(_fur)
+        the("eglcn").innerText = _lcn + " sem"
+        the("fpplcn").innerText = humanDate(fechas.fpp(_fur))
+        the("lcnf").classList.remove("d-none")
+    }else{
+        the("lcnf").classList.add("d-none")
+    }
+
     if (this.value > 52) {
         the("dbpPrimero").classList.remove("d-none");
     }
@@ -120,6 +138,24 @@ the("saco").onchange = function(){
 
     the("sacoeg").value = _saco + " semanas"
 
+    if (_saco > 0){
+        //calcular Fur según LCN
+        let _fecha = new Date()
+        _fecha.setTime(Date.parse(the("fexamen").value))
+        //let _fecha = fechas.toDate(the("fexamen").value)
+
+        //calcular la fut con la parte entera del lcn, despues agregar los días
+        let _isaco = Math.trunc(_saco)
+        let _fur = fechas.fur(+_saco, _fecha);
+        _fur.setDate(_fur.getDate() - (_isaco - _saco));
+
+        the("fursaco").innerText = humanDate(_fur)
+        the("egsaco").innerText = _saco + " sem"
+        the("fppsaco").innerText = humanDate(fechas.fpp(_fur))
+        the("sacof").classList.remove("d-none")
+    }else{
+        the("sacof").classList.add("d-none")
+    }
 }
 
 

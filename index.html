@@ -62,7 +62,7 @@
                         <div class="col-6 mt-5">
                             <label for="fpp" class="form-label text-secondary">Probable Parto</label>
                             <input type="date" class="form-control-plaintext" id="fpp" disabled>
-                            <span class="text-muted mt-3"><small>FUM +282 días</small></span>
+                            <span class="text-muted mt-3"><small>FUM +280 días</small></span>
                         </div>
                         <div class="col-6 mt-5">
                             <label for="fexamen" class="form-label text-secondary">Fecha Exámen</label>
@@ -171,7 +171,7 @@
                             <span class="text-muted mt-3"><small> &lt; 90 mm</small></span>
                         </div>
                         <div class="col-5">
-                            <input type="text" class="form-control-plaintext" id="lcneg" value="0 semana" disabled>
+                            <input type="text" class="form-control-plaintext" id="lcneg" value="0 semanas" disabled>
                         </div>
                         <div class="col-2 px-0">
                             <div class="d-flex justify-content-center w-100">
@@ -182,16 +182,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-footer" id="lcnf">
+                <div class="card-footer d-none" id="lcnf">
                     <div class="row">
                         <div class="col">
-                            <small>FUR:</small><br><small>20-12-2021</small>
+                            <small>FUR:</small><br><small id="furlcn">20-12-2021</small>
                         </div>
                         <div class="col-2 px-0">
-                            <small>EG:</small><br><small>22 sem</small>
+                            <small>EG:</small><br><small id="eglcn">22 sem</small>
                         </div>
                         <div class="col">
-                            <small>FPP:</small><br><small>22-22-2021</small>
+                            <small>FPP:</small><br><small id="fpplcn">22-22-2021</small>
                         </div>
                         <div class="col-2 px-0">
                             <div class="d-flex align-items-center h-100">
@@ -235,7 +235,7 @@
                             <span class="text-muted mt-3"><small>&lt; 62 mm &gt; 4 mm</small></span>
                         </div>
                         <div class="col-5">
-                            <input type="text" class="form-control-plaintext" id="sacoeg" value="0 semana" disabled>
+                            <input type="text" class="form-control-plaintext" id="sacoeg" value="0 semanas" disabled>
                         </div>
                         <div class="col-2 px-0">
                             <div class="d-flex justify-content-center w-100">
@@ -246,16 +246,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-footer" id="sacof">
+                <div class="card-footer d-none" id="sacof">
                     <div class="row">
                         <div class="col">
-                            <small>FUR:</small><br><small>20-12-2021</small>
+                            <small>FUR:</small><br><small id="fursaco">20-12-2021</small>
                         </div>
                         <div class="col-2 px-0">
-                            <small>EG:</small><br><small>22 sem</small>
+                            <small>EG:</small><br><small id="egsaco">22 sem</small>
                         </div>
                         <div class="col">
-                            <small>FPP:</small><br><small>22-22-2021</small>
+                            <small>FPP:</small><br><small id="fppsaco">22-22-2021</small>
                         </div>
                         <div class="col-2 px-0">
                             <div class="d-flex align-items-center h-100">
@@ -265,6 +265,33 @@
                                     </button>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card shadow my-3">
+                <div class="card-header">
+                    ¿Determinar Edad Gestacional?
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-1">
+
+                        </div>
+                        <div class="col-5">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input h3" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked>
+                                <label class="form-check-label h5 mt-2" for="inlineRadio1">No</label>
+                              </div>  
+                        </div>
+                        <div class="col-5">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input h3" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                <label class="form-check-label h5 mt-2" for="inlineRadio2">Si</label>
+                              </div>
+                        </div>
+                        <div class="col-1">
+                            
                         </div>
                     </div>
                 </div>
