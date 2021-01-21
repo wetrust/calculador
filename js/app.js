@@ -5,7 +5,7 @@ import {saco} from './saco.js'
 
 var activo = "inicio"
 var paginas = ["inicio", "examenes"]
-var examenes = ["primero", "segundo"]
+var examenes = ["primero", "segundo", "doppler"]
 
 let _fecha = new Date()
 
@@ -72,6 +72,11 @@ the("goSegundo").onclick = function(){
     activo = "segundo"
 }
 
+the("goDoppler").onclick = function(){
+    the("examenes").classList.add("d-none");
+    the("doppler").classList.remove("d-none");
+    activo = "doppler"
+}
 
 
 the("back").onclick = function(){
