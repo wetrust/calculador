@@ -1,15 +1,16 @@
-import {make, the, inputDate, humanDate} from './wetrust.js'
-import {fechas} from './functiones.js'
-import {lcn} from './lcn.js'
-import {saco} from './saco.js'
-import {dbp} from './dbp.js'
-import {cc} from './cc.js'
-import {ca} from './ca.js'
-import {lf} from './lf.js'
-import {lh} from './lh.js'
-import {cb} from './cb.js'
-import {bvm} from './bvm.js'
-import {ila} from  './ila.js'
+import { make, the, inputDate, humanDate } from './wetrust.js'
+import { fechas } from './functiones.js'
+import { lcn } from './lcn.js'
+import { saco } from './saco.js'
+import { dbp } from './dbp.js'
+import { cc } from './cc.js'
+import { ca } from './ca.js'
+import { lf } from './lf.js'
+import { lh } from './lh.js'
+import { cb } from './cb.js'
+import { bvm } from './bvm.js'
+import { ila } from  './ila.js'
+import { pfe } from  './pfe.js'
 
 var activo = "inicio"
 var paginas = ["inicio", "examenes"]
@@ -185,6 +186,10 @@ the("cc").onchange = function(){
 
     ajustarProgreso(_cc, "ccG")
 
+    let _pfe = psohdlk(the("cc").value, the("ca").value, the("lf").value) 
+    the("pfe").value = _pfe + " gramos"
+    the("pfeP").value = pfe.calcular(the("eg").value, _pfe)
+
 }
 
 the("ca").onchange = function(){
@@ -192,6 +197,9 @@ the("ca").onchange = function(){
 
     ajustarProgreso(_ca, "caG")
 
+    let _pfe = psohdlk(the("cc").value, the("ca").value, the("lf").value) 
+    the("pfe").value = _pfe + " gramos"
+    the("pfeP").value = pfe.calcular(the("eg").value, _pfe)
 }
 
 the("lf").onchange = function(){
@@ -199,6 +207,9 @@ the("lf").onchange = function(){
 
     ajustarProgreso(_lf, "lfG")
 
+    let _pfe = psohdlk(the("cc").value, the("ca").value, the("lf").value) 
+    the("pfe").value = _pfe + " gramos"
+    the("pfeP").value = pfe.calcular(the("eg").value, _pfe)
 }
 
 the("lh").onchange = function(){
@@ -233,4 +244,20 @@ function ajustarProgreso(valor, objeto){
     valor = (isNaN(valor)== true) ? 0 : valor;
     valor = valor + "%";
     the(objeto).children[0].style.width = valor
+}
+
+function psohdlk(_cc, _ca, _lf) {
+
+    if (isNaN(_cc) || isNaN(_ca) || isNaN(_lf)){
+        return 0
+    }
+
+    _cc = _cc / 10;
+    _ca = _ca / 10;
+    _lf = _lf / 10;
+    
+    let psoP = Math.pow(10, (1.326 + 0.0107 * _cc + 0.0438 * _ca + 0.158 * _lf - 0.00326 * _ca * _lf));
+
+    return (isNaN(psoP) == true) ? 0 : Math.trunc(psoP);
+
 }

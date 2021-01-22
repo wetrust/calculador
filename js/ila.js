@@ -28,7 +28,7 @@ export class ila{
             eg = parseInt(eg);
             
             let uno = pct95ILA[eg] - pct5ILA[eg];
-            let dos = ila - pct5ILA[eg];
+            let dos = _ila - pct5ILA[eg];
 
             return parseInt(90 / (uno) * (dos) + 5);
         }else{

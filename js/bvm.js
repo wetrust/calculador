@@ -9,7 +9,7 @@ export class bvm{
             eg = parseInt(eg);
             eg = eg - 16;
             let uno = b[eg] - a[eg];
-            let dos = bvm - a[eg];
+            let dos = _bvm - a[eg];
 
             return parseInt(90 / (uno) * (dos) + 5);
         } else {
