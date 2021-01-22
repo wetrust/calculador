@@ -8,6 +8,8 @@ import {ca} from './ca.js'
 import {lf} from './lf.js'
 import {lh} from './lh.js'
 import {cb} from './cb.js'
+import {bvm} from './bvm.js'
+import {ila} from  './ila.js'
 
 var activo = "inicio"
 var paginas = ["inicio", "examenes"]
@@ -34,7 +36,9 @@ the("fur").onchange = function(){
 
     //calcular la eg
     let _fexamen = fechas.toDate(the("fexamen").value)
-    the("eg").value = fechas.eg(_fur, _fexamen)
+    let eg = fechas.eg(_fur, _fexamen)
+    the("eg").value = eg
+    the("txtEG").innerHTML = eg + "sem"
 
     //calcular fpp
     let _fpp = fechas.fpp(_fur)
@@ -56,7 +60,10 @@ the("fexamen").onchange = function(){
     let _fexamen = fechas.toDate(this.value)
     let _fur = fechas.toDate(the("fur").value)
 
-    the("eg").value = fechas.eg(_fur, _fexamen)
+    let eg = fechas.eg(_fur, _fexamen)
+    the("eg").value = eg
+    the("txtEG").innerHTML = eg + "sem"
+
 }
 
 the("goPrelude").onclick = function(){
@@ -208,6 +215,19 @@ the("cb").onchange = function(){
 
 }
 
+the("bvm").onchange = function(){
+    let _bvm = bvm.calcular(the("eg").value, +this.value)
+
+    ajustarProgreso(_bvm, "bvmG")
+
+}
+
+the("ila").onchange = function(){
+    let _ila = ila.calcular(the("eg").value, +this.value)
+
+    ajustarProgreso(_ila, "ilaG")
+
+}
 function ajustarProgreso(valor, objeto){
     valor = (valor == "&gt; 99") ? 99 : valor; // si es mayor a 99
     valor = (isNaN(valor)== true) ? 0 : valor;
