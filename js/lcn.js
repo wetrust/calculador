@@ -50,7 +50,7 @@ export class lcn{
         LCN[1][60] = 14.4; LCN[1][61] = 14.5; LCN[1][62] = 14.6;
         LCN[1][63] = 15;
 
-        if (_lcn > 90)
+        if (_lcn > 90 || _lcn < 1)
         {
             return 0;
         }

@@ -2,6 +2,12 @@ import {make, the, inputDate, humanDate} from './wetrust.js'
 import {fechas} from './functiones.js'
 import {lcn} from './lcn.js'
 import {saco} from './saco.js'
+import {dbp} from './dbp.js'
+import {cc} from './cc.js'
+import {ca} from './ca.js'
+import {lf} from './lf.js'
+import {lh} from './lh.js'
+import {cb} from './cb.js'
 
 var activo = "inicio"
 var paginas = ["inicio", "examenes"]
@@ -85,16 +91,11 @@ the("back").onclick = function(){
     let examen = examenes.indexOf(activo)
 
     if (examen != -1){
-    
         activo = "examenes"
-    
     }else{
-    
         let id = paginas.indexOf(activo)
         activo = paginas[id-1]
-    
     }
-
 
     the(activo).classList.remove("d-none");
     
@@ -102,7 +103,6 @@ the("back").onclick = function(){
         the("prelude").classList.add("d-none");
     }
 }
-
 
 
 //primer trimestre
@@ -166,3 +166,51 @@ the("saco").onchange = function(){
 
 
 //Segundo Tercer trimestre
+the("dbp").onchange = function(){
+    let _dbp = dbp.calcular(the("eg").value, +this.value)
+
+    ajustarProgreso(_dbp, "dbpG")
+
+}
+
+the("cc").onchange = function(){
+    let _cc = cc.calcular(the("eg").value, +this.value)
+
+    ajustarProgreso(_cc, "ccG")
+
+}
+
+the("ca").onchange = function(){
+    let _ca = ca.calcular(the("eg").value, +this.value)
+
+    ajustarProgreso(_ca, "caG")
+
+}
+
+the("lf").onchange = function(){
+    let _lf = lf.calcular(the("eg").value, +this.value)
+
+    ajustarProgreso(_lf, "lfG")
+
+}
+
+the("lh").onchange = function(){
+    let _lh = lh.calcular(the("eg").value, +this.value)
+
+    ajustarProgreso(_lh, "lhG")
+
+}
+
+the("cb").onchange = function(){
+    let _cb = cb.calcular(the("eg").value, +this.value)
+
+    ajustarProgreso(_cb, "cbG")
+
+}
+
+function ajustarProgreso(valor, objeto){
+    valor = (valor == "&gt; 99") ? 99 : valor; // si es mayor a 99
+    valor = (isNaN(valor)== true) ? 0 : valor;
+    valor = valor + "%";
+    the(objeto).children[0].style.width = valor
+}
