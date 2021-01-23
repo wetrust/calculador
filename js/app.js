@@ -57,9 +57,9 @@ the("fur").onchange = function(){
     the("txtFPP").innerText = humanDate(_fpp)
 
     fum.setTime(fum.getTime() - (1000*60*60*24*282));
-    fum = fum.getTime();
     the("txtFUM").innerText = humanDate(fum)
-    
+    fum = fum.getTime();
+
     let fee = new Date();
     fee.setTime(Date.parse(the("fexamen").value));
     fee = fee.getTime();
