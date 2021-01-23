@@ -29,24 +29,57 @@ the("fpp").value = inputDate(_fpp)
 the("txtFPP").innerText = humanDate(_fpp)
 
 //cambiar la fur
-the("fur").onchange = function(){
+//the("fur").onchange = function(){
     //convertir a fecha
-    let _fur = fechas.toDate(this.value)
+//    let _fur = fechas.toDate(this.value)
     //clonar a prelude
-    the("txtFUM").innerText = humanDate(_fur)
+//    the("txtFUM").innerText = humanDate(_fur)
 
     //calcular la eg
-    let _fexamen = fechas.toDate(the("fexamen").value)
-    let eg = fechas.eg(_fur, _fexamen)
-    the("eg").value = eg
-    the("txtEG").innerHTML = eg + "sem"
+//    let _fexamen = fechas.toDate(the("fexamen").value)
+//    let eg = fechas.eg(_fur, _fexamen)
+//    the("eg").value = eg
+//    the("txtEG").innerHTML = eg + "sem"
 
     //calcular fpp
-    let _fpp = fechas.fpp(_fur)
+//    let _fpp = fechas.fpp(_fur)
 
     //set en input y prelude
-    the("fpp").value = inputDate(_fpp)
+//    the("fpp").value = inputDate(_fpp)
+//    the("txtFPP").innerText = humanDate(_fpp)
+//}
+
+the("fur").onchange = function(){
+    let fum = new Date();
+    fum.setTime(Date.parse(this.value));
+    fum.setTime(fum.getTime() + (1000*60*60*24*282));
+    the("fpp").value = inputDate(fum);
     the("txtFPP").innerText = humanDate(_fpp)
+
+    fum.setTime(fum.getTime() - (1000*60*60*24*282));
+    fum = fum.getTime();
+    the("txtFUM").innerText = humanDate(fum)
+    
+    let fee = new Date();
+    fee.setTime(Date.parse(the("fexamen").value));
+    fee = fee.getTime();
+
+    //la fecha de mestruación si puede ser antes de la fecha de exámen
+    let diff = fee - fum;
+
+    if (diff > 0){
+        let dias = Math.abs(diff/(1000*60*60*24));
+        let semanas = Math.trunc(dias / 7);
+        dias = Math.trunc(dias - (semanas * 7));
+        the("eg").value = semanas;
+        the("txtEG").innerHTML = semanas + "sem"
+        the("dias").value = dias;
+    }
+    else{
+        the("eg").value = 0;
+        the("txtEG").innerHTML = semanas + "sem"
+        the("dias").value = 0;
+    }
 }
 
 //the("eg").onchange = function(){
