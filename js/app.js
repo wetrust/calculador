@@ -57,7 +57,7 @@ the("fur").onchange = function(){
 //}
 
 the("eg").onchange = function(){
-    let semanas = parseInt(the("semanas").value);
+    let semanas = parseInt(this.value);
     let dias = parseInt(the("dias").value);
     semanas = 7 * semanas;
     let fee = new Date(the("fexamen").value);
