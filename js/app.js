@@ -61,7 +61,7 @@ the("eg").onchange = function(){
     let dias = parseInt(the("dias").value);
     semanas = 7 * semanas;
     let fee = new Date(the("fexamen").value);
-    dias = (semanas + dias-1)*(1000*60*60*24);
+    dias = (semanas + dias+1)*(1000*60*60*24);
     fee.setTime(fee.getTime() - dias);
 
     the("fur").value = inputDate(fee);
