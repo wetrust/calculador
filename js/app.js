@@ -285,10 +285,9 @@ the("lf").onchange = function(){
     //para talla fetal
     let tf = tallaFetal.calcular(this.value)
     ajustarProgreso(tallaFetal.percentil(the("eg").value, tf), "tfG")
-    
+
     //convertir talla de milimetros a centimetros
-    tf = tf / 10
-    the("tf").value = tf + " centímetros"
+    the("tf").value = tf + " cmt"
 
 
 }
