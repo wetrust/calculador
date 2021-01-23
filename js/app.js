@@ -49,10 +49,22 @@ the("fur").onchange = function(){
     the("txtFPP").innerText = humanDate(_fpp)
 }
 
-the("eg").onchange = function(){
-    let _fecha = fechas.toDate(the("fexamen").value)
+//the("eg").onchange = function(){
+//    let _fecha = fechas.toDate(the("fexamen").value)
 
-    the("fur").value = inputDate(fechas.fur(+this.value, _fecha));
+//    the("fur").value = inputDate(fechas.fur(+this.value, _fecha));
+//    the("fur").onchange()
+//}
+
+the("eg").onchange = function(){
+    let semanas = parseInt(the("semanas").value);
+    let dias = parseInt(the("dias").value);
+    semanas = 7 * semanas;
+    let fee = new Date(the("fexamen").value);
+    dias = (semanas + dias-1)*(1000*60*60*24);
+    fee.setTime(fee.getTime() - dias);
+
+    the("fur").value = inputDate(fee);
     the("fur").onchange()
 }
 
@@ -83,12 +95,12 @@ the("fexamen").onchange =  function(){
         dias = Math.trunc(dias - (semanas * 7));
         the("eg").value = semanas;
         the("txtEG").innerHTML = semanas + "sem"
-        the("dias").value = dias + " días";
+        the("dias").value = dias;
     }
     else{
         the("eg").value = 0;
         the("txtEG").innerHTML = semanas + "sem"
-        the("dias").value = 0  + " días";
+        the("dias").value = 0;
     }
 }
 
