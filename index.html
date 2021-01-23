@@ -485,21 +485,37 @@
                 </div>
                 <div class="card-body">
                     <div class="row mt-2">
-                        <div class="col-8">
+                        <div class="col-12">
                             <label for="pfe" class="form-label">Peso Fetal Estimado</label>
-                            <input type="text" class="form-control-plaintext" id="pfe" disabled>
                         </div>
-                        <div class="col-4">
-                            <label for="pfeP" class="form-label">Percentil</label>
-                            <input type="text" class="form-control-plaintext" id="pfeP" disabled>
+                        <div class="col-6">
+                            <input type="text" class="form-control bg-white" id="pfe" disabled>
                         </div>
-                        <div class="col-8 mt-2">
+                        <div class="col-6">
+                            <div class="d-flex align-items-center h-100">
+                                <div class="d-flex justify-content-center w-100">
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="pfeG">
+                                        <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-12">
                             <label for="tf" class="form-label">Talla Fetal Estimada</label>
-                            <input type="text" class="form-control-plaintext" id="tf" disabled>
                         </div>
-                        <div class="col-4 mt-2">
-                            <label for="tfP" class="form-label">Percentil</label>
-                            <input type="text" class="form-control-plaintext" id="tfP" disabled>
+                        <div class="col-6 mt-2">
+                            <input type="text" class="form-control bg-white" id="tf" disabled>
+                        </div>
+                        <div class="col-6 mt-2">
+                            <div class="d-flex align-items-center h-100">
+                                <div class="d-flex justify-content-center w-100">
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="tfG">
+                                        <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

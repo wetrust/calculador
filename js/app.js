@@ -258,7 +258,7 @@ the("cc").onchange = function(){
 
     let _pfe = psohdlk(the("cc").value, the("ca").value, the("lf").value) 
     the("pfe").value = _pfe + " gramos"
-    the("pfeP").value = pfe.calcular(the("eg").value, _pfe)
+    ajustarProgreso(pfe.calcular(the("eg").value, _pfe), "pfeG")
 
 }
 
@@ -269,7 +269,7 @@ the("ca").onchange = function(){
 
     let _pfe = psohdlk(the("cc").value, the("ca").value, the("lf").value) 
     the("pfe").value = _pfe + " gramos"
-    the("pfeP").value = pfe.calcular(the("eg").value, _pfe)
+    ajustarProgreso(pfe.calcular(the("eg").value, _pfe), "pfeG")
 }
 
 the("lf").onchange = function(){
@@ -279,7 +279,7 @@ the("lf").onchange = function(){
 
     let _pfe = psohdlk(the("cc").value, the("ca").value, the("lf").value) 
     the("pfe").value = _pfe + " gramos"
-    the("pfeP").value = pfe.calcular(the("eg").value, _pfe)
+    ajustarProgreso(pfe.calcular(the("eg").value, _pfe), "pfeG")
 }
 
 the("lh").onchange = function(){
