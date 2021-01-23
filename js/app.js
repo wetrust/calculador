@@ -11,6 +11,7 @@ import { cb } from './cb.js'
 import { bvm } from './bvm.js'
 import { ila } from  './ila.js'
 import { pfe } from  './pfe.js'
+import { tallaFetal } from  './tallafetal.js'
 
 var activo = "inicio"
 var paginas = ["inicio", "examenes"]
@@ -72,12 +73,12 @@ the("fur").onchange = function(){
         let semanas = Math.trunc(dias / 7);
         dias = Math.trunc(dias - (semanas * 7));
         the("eg").value = semanas;
-        the("txtEG").innerHTML = semanas + "sem"
+        the("txtEG").innerHTML = semanas + " sem"
         the("dias").value = dias;
     }
     else{
         the("eg").value = 0;
-        the("txtEG").innerHTML = semanas + "sem"
+        the("txtEG").innerHTML = semanas + " sem"
         the("dias").value = 0;
     }
 }
@@ -127,12 +128,12 @@ the("fexamen").onchange =  function(){
         let semanas = Math.trunc(dias / 7);
         dias = Math.trunc(dias - (semanas * 7));
         the("eg").value = semanas;
-        the("txtEG").innerHTML = semanas + "sem"
+        the("txtEG").innerHTML = semanas + " sem"
         the("dias").value = dias;
     }
     else{
         the("eg").value = 0;
-        the("txtEG").innerHTML = semanas + "sem"
+        the("txtEG").innerHTML = semanas + " sem"
         the("dias").value = 0;
     }
 }
@@ -280,6 +281,16 @@ the("lf").onchange = function(){
     let _pfe = psohdlk(the("cc").value, the("ca").value, the("lf").value) 
     the("pfe").value = _pfe + " gramos"
     ajustarProgreso(pfe.calcular(the("eg").value, _pfe), "pfeG")
+
+    //para talla fetal
+    let tf = tallaFetal.calcular(this.value)
+    ajustarProgreso(tallaFetal.percentil(the("eg").value, tf), "tfG")
+    
+    //convertir talla de milimetros a centimetros
+    tf = tf / 10
+    the("tf").value = tf + " centímetros"
+
+
 }
 
 the("lh").onchange = function(){
