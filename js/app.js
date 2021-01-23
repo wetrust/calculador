@@ -144,7 +144,7 @@ let losInput = document.getElementsByTagName("input")
 for(let i = 0;i < losInput.length; i++)
 {
     losInput[i].onkeypress = function(e){
-        var key_enter = ["lcn","saco","", "dbp","cc", "ca", "lf", "lh", "cb", "bvm", "ila", "","aud","aui", "au","acm","ccp"];
+        var key_enter = ["lcn","saco","", "dbp","cc", "ca", "lf", "bvm", "ila", "","aud","aui", "au","acm","ccp"];
 
         if ( e.which == 13 ) {
            e.preventDefault()
@@ -182,7 +182,6 @@ the("goDoppler").onclick = function(){
     the("doppler").classList.remove("d-none");
     activo = "doppler"
 }
-
 
 the("back").onclick = function(){
     the(activo).classList.add("d-none");
@@ -263,7 +262,6 @@ the("saco").onchange = function(){
 }
 
 
-
 //Segundo Tercer trimestre
 the("dbp").onchange = function(){
     let _dbp = dbp.calcular(the("eg").value, +this.value)
@@ -309,7 +307,6 @@ the("lf").onchange = function(){
     //convertir talla de milimetros a centimetros
     the("tf").value = tf + " centímetros"
 
-
 }
 
 the("lh").onchange = function(){
@@ -339,6 +336,15 @@ the("ila").onchange = function(){
     ajustarProgreso(_ila, "ilaG")
 
 }
+
+the("edadPrimeroNo").onchange = function(){
+    the("biometriAdicional").classList.add("d-none")
+}
+
+the("edadPrimeroSi").onchange = function(){
+    the("biometriAdicional").classList.remove("d-none")
+}
+
 
 function ajustarProgreso(valor, objeto){
     valor = (valor == "&gt; 99") ? 99 : valor; // si es mayor a 99

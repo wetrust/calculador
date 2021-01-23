@@ -292,7 +292,7 @@
         <section class="container d-none" id="segundo">
             <div class="card shadow mt-3">
                 <div class="card-header">
-                    <p class="mb-0">Biometría Fetal<br><small><small>Hadlock FP. y col. Radiology 152: 497 - 501; 1984.</small></small><br><small><small>* Hill LM. y col. Obstet Gynecol. 1990; 75(6) : 981-5</small></small></p>
+                    <p class="mb-0">Biometría Fetal<br><small><small>Hadlock FP. y col. Radiology 152: 497 - 501; 1984.</small></small></p>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -375,25 +375,24 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="card shadow mt-3">
+                <div class="card-header">
+                    <p class="mb-0">Crecimiento Intrauterino<br><small><small>Hadlock FP. y col. Radiology 181: 129 - 133; 1991</small></small></p>
+                </div>
+                <div class="card-body">
                     <div class="row mt-2">
                         <div class="col-12">
-                            <p class="text-center mb-0"><small>Para cálculo de Eg debe incluir Húmero y Cerebelo</small></p>
+                            <label for="pfe" class="form-label">Peso Fetal Estimado</label>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <label for="lh" class="form-label">Húmero</label>
+                        <div class="col-6">
+                            <input type="text" class="form-control bg-white" id="pfe" disabled>
                         </div>
-                        <div class="col-5">
-                            <div class="input-group">
-                                <input type="number" class="form-control" id="lh">
-                                <span class="input-group-text">mm</span>
-                            </div>
-                        </div>
-                        <div class="col-7">
+                        <div class="col-6">
                             <div class="d-flex align-items-center h-100">
                                 <div class="d-flex justify-content-center w-100">
-                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="lhG">
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="pfeG">
                                         <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
@@ -402,19 +401,91 @@
                     </div>
                     <div class="row mt-2">
                         <div class="col-12">
-                            <label for="cb" class="form-label">Cerebelo *</label>
+                            <label for="tf" class="form-label">Talla Fetal Estimada</label>
                         </div>
-                        <div class="col-5">
-                            <div class="input-group">
-                                <input type="number" class="form-control" id="cb">
-                                <span class="input-group-text">mm</span>
-                            </div>
+                        <div class="col-6 mt-2">
+                            <input type="text" class="form-control bg-white" id="tf" disabled>
                         </div>
-                        <div class="col-7">
+                        <div class="col-6 mt-2">
                             <div class="d-flex align-items-center h-100">
                                 <div class="d-flex justify-content-center w-100">
-                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="cbG">
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="tfG">
                                         <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card shadow my-3">
+                <div class="card-header">
+                    ¿Determinar Edad Gestacional Ecográfica?
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-5">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input h3" type="radio" name="edadPrimero" id="edadPrimeroNo" value="No" checked>
+                                <label class="form-check-label h5 mt-2" for="edadPrimeroNo">No</label>
+                              </div>  
+                        </div>
+                        <div class="col-5">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input h3" type="radio" name="edadPrimero" id="edadPrimeroSi" value="Si">
+                                <label class="form-check-label h5 mt-2" for="edadPrimeroSi">Si</label>
+                              </div>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                    <div class="card shadow mt-3 d-none" id="biometriAdicional">
+                        <div class="card-header">
+                            <p class="mb-0">Biometría Fetal<br><small><small>* Hill LM. y col. Obstet Gynecol. 1990; 75(6) : 981-5</small></small></p>
+                        </div>
+                        <div class="card-body">
+                            <div class="row mt-2">
+                                <div class="col-12">
+                                    <p class="text-center mb-0"><small>Para cálculo de Eg debe incluir Húmero y Cerebelo</small></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <label for="lh" class="form-label">Húmero</label>
+                                </div>
+                                <div class="col-5">
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="lh">
+                                        <span class="input-group-text">mm</span>
+                                    </div>
+                                </div>
+                                <div class="col-7">
+                                    <div class="d-flex align-items-center h-100">
+                                        <div class="d-flex justify-content-center w-100">
+                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="lhG">
+                                                <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-12">
+                                    <label for="cb" class="form-label">Cerebelo *</label>
+                                </div>
+                                <div class="col-5">
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="cb">
+                                        <span class="input-group-text">mm</span>
+                                    </div>
+                                </div>
+                                <div class="col-7">
+                                    <div class="d-flex align-items-center h-100">
+                                        <div class="d-flex justify-content-center w-100">
+                                            <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="cbG">
+                                                <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -476,70 +547,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card shadow mt-3">
-                <div class="card-header">
-                    <p class="mb-0">Crecimiento Intrauterino<br><small><small>Hadlock FP. y col. Radiology 181: 129 - 133; 1991</small></small></p>
-                </div>
-                <div class="card-body">
-                    <div class="row mt-2">
-                        <div class="col-12">
-                            <label for="pfe" class="form-label">Peso Fetal Estimado</label>
-                        </div>
-                        <div class="col-6">
-                            <input type="text" class="form-control bg-white" id="pfe" disabled>
-                        </div>
-                        <div class="col-6">
-                            <div class="d-flex align-items-center h-100">
-                                <div class="d-flex justify-content-center w-100">
-                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="pfeG">
-                                        <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-2">
-                        <div class="col-12">
-                            <label for="tf" class="form-label">Talla Fetal Estimada</label>
-                        </div>
-                        <div class="col-6 mt-2">
-                            <input type="text" class="form-control bg-white" id="tf" disabled>
-                        </div>
-                        <div class="col-6 mt-2">
-                            <div class="d-flex align-items-center h-100">
-                                <div class="d-flex justify-content-center w-100">
-                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="tfG">
-                                        <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card shadow my-3">
-                <div class="card-header">
-                    ¿Determinar Edad Gestacional Ecográfica?
-                </div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-1"></div>
-                        <div class="col-5">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input h3" type="radio" name="edadPrimero" id="edadPrimeroNo" value="option1" checked>
-                                <label class="form-check-label h5 mt-2" for="edadPrimeroNo">No</label>
-                              </div>  
-                        </div>
-                        <div class="col-5">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input h3" type="radio" name="edadPrimero" id="edadPrimeroSi" value="option2">
-                                <label class="form-check-label h5 mt-2" for="edadPrimeroSi">Si</label>
-                              </div>
-                        </div>
-                        <div class="col-1"></div>
                     </div>
                 </div>
             </div>
