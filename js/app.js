@@ -104,7 +104,6 @@ the("fexamen").onchange =  function(){
     }
 }
 
-
 the("goPrelude").onclick = function(){
     the("inicio").classList.add("d-none");
     the("prelude").classList.remove("d-none");
