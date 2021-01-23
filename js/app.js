@@ -11,7 +11,7 @@ import { cb } from './cb.js'
 import { bvm } from './bvm.js'
 import { ila } from  './ila.js'
 import { pfe } from  './pfe.js'
-import { tallaFetal } from  './tallafetal.js'
+import { ccca } from  './ccca.js'
 
 var activo = "inicio"
 var paginas = ["inicio", "examenes"]
@@ -279,6 +279,11 @@ the("cc").onchange = function(){
     the("pfe").value = _pfe + " gramos"
     ajustarProgreso(pfe.calcular(the("eg").value, _pfe), "pfeG")
 
+    let _ccca = ccca.calcular(+this.value, +the("ca").value)
+
+    the("ccca").value = _ccca
+    ajustarProgreso(ccca.percentil(the("eg").value, _ccca), "cccaG")
+
 }
 
 the("ca").onchange = function(){
@@ -289,6 +294,11 @@ the("ca").onchange = function(){
     let _pfe = psohdlk(the("cc").value, the("ca").value, the("lf").value) 
     the("pfe").value = _pfe + " gramos"
     ajustarProgreso(pfe.calcular(the("eg").value, _pfe), "pfeG")
+
+    let _ccca = ccca.calcular(+the("cc").value, +this.value)
+
+    the("ccca").value = _ccca
+    ajustarProgreso(ccca.percentil(the("eg").value, _ccca), "cccaG")
 }
 
 the("lf").onchange = function(){
@@ -299,13 +309,6 @@ the("lf").onchange = function(){
     let _pfe = psohdlk(the("cc").value, the("ca").value, the("lf").value) 
     the("pfe").value = _pfe + " gramos"
     ajustarProgreso(pfe.calcular(the("eg").value, _pfe), "pfeG")
-
-    //para talla fetal
-    let tf = tallaFetal.calcular(this.value)
-    ajustarProgreso(tallaFetal.percentil(the("eg").value, tf), "tfG")
-
-    //convertir talla de milimetros a centimetros
-    the("tf").value = tf + " centímetros"
 
 }
 
