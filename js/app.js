@@ -56,16 +56,42 @@ the("eg").onchange = function(){
     the("fur").onchange()
 }
 
-the("fexamen").onchange = function(){
+//the("fexamen").onchange = function(){
     //convertir a fecha
-    let _fexamen = fechas.toDate(this.value)
-    let _fur = fechas.toDate(the("fur").value)
+//    let _fexamen = fechas.toDate(this.value)
+//    let _fur = fechas.toDate(the("fur").value)
 
-    let eg = fechas.eg(_fur, _fexamen)
-    the("eg").value = eg
-    the("txtEG").innerHTML = eg + "sem"
+//    let eg = fechas.eg(_fur, _fexamen)
+//    the("eg").value = eg
+//    the("txtEG").innerHTML = eg + "sem"
+//}
 
+the("fexamen").onchange =  function(){
+    let fum = new Date(); 
+    fum.setTime(Date.parse(the("fur").value));
+    fum = fum.getTime();
+    let fee = new Date();
+    fee.setTime(Date.parse(this.value));
+    fee = fee.getTime();
+
+    //la fecha de exámen no puede ser anterior a la fecha de última regla
+    let diff = fee - fum;
+
+    if (diff > 0){
+        let dias = diff/(1000*60*60*24);
+        let semanas = Math.trunc(dias / 7);
+        dias = Math.trunc(dias - (semanas * 7));
+        the("eg").value = semanas;
+        the("txtEG").innerHTML = semanas + "sem"
+        the("dias").value = dias + " días";
+    }
+    else{
+        the("eg").value = 0;
+        the("txtEG").innerHTML = semanas + "sem"
+        the("dias").value = 0  + " días";
+    }
 }
+
 
 the("goPrelude").onclick = function(){
     the("inicio").classList.add("d-none");
