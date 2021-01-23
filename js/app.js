@@ -145,15 +145,15 @@ for(let i = 0;i < losInput.length; i++)
 {
     losInput[i].onkeypress = function(e){
         var key_enter = ["lcn","saco","", "dbp","cc", "ca", "lf", "lh", "cb", "bvm", "ila", "","aud","aui", "au","acm","ccp"];
-    
+
         if ( e.which == 13 ) {
-           e.preventDefault();
+           e.preventDefault()
            if (key_enter.includes(this.id)== true){
-                let pos = key_enter.indexOf(this.id);
-                the(key_enter[pos+1]).focus();
+                let pos = key_enter.indexOf(this.id)
+                the(key_enter[pos+1]).focus()
            }
         }
-    } 
+    }
 }
 
 
@@ -307,7 +307,7 @@ the("lf").onchange = function(){
     ajustarProgreso(tallaFetal.percentil(the("eg").value, tf), "tfG")
 
     //convertir talla de milimetros a centimetros
-    the("tf").value = tf + " cmt"
+    the("tf").value = tf + " centímetros"
 
 
 }
@@ -339,6 +339,7 @@ the("ila").onchange = function(){
     ajustarProgreso(_ila, "ilaG")
 
 }
+
 function ajustarProgreso(valor, objeto){
     valor = (valor == "&gt; 99") ? 99 : valor; // si es mayor a 99
     valor = (isNaN(valor)== true) ? 0 : valor;
