@@ -12,6 +12,7 @@ import { bvm } from './bvm.js'
 import { ila } from  './ila.js'
 import { pfe } from  './pfe.js'
 import { ccca } from  './ccca.js'
+import { uterinas } from './uterinas.js'
 
 var activo = "inicio"
 var paginas = ["inicio", "examenes"]
@@ -144,7 +145,7 @@ let losInput = document.getElementsByTagName("input")
 for(let i = 0;i < losInput.length; i++)
 {
     losInput[i].onkeypress = function(e){
-        var key_enter = ["lcn","saco","", "dbp","cc", "ca", "lf", "bvm", "ila", "","aud","aui", "au","acm","ccp"];
+        var key_enter = ["lcn","saco","", "dbp","cc", "ca", "lf", "pfe", "","aud","aui", "au","acm","ccp"];
 
         if ( e.which == 13 ) {
            e.preventDefault()
@@ -348,6 +349,62 @@ the("edadPrimeroSi").onchange = function(){
     the("biometriAdicional").classList.remove("d-none")
 }
 
+
+//Doppler
+
+the("aud").onchange = function(){
+    let _ut = uterinas.calcular(the("eg").value, +this.value)
+
+    ajustarProgreso(_ut.raw, "audG")
+
+    let aud = the("aud").value
+    let aui = the("aui").value
+
+    aud = aud.toString(); 
+    aud = aud.replace(",", ".");
+    aud = parseFloat(aud);
+
+    aui = aui.toString(); 
+    aui = aui.replace(",", ".");
+    aui = parseFloat(aui);
+
+    if (aui > 0 && aud > 0){
+        let utprom = ((aui + aud) / 2);
+        the("aup").value = utprom
+
+        utprom = uterinas.calcular(the("eg").value, +utprom)
+        ajustarProgreso(utprom.raw, "aupG")
+
+    }
+
+}
+
+the("aui").onchange = function(){
+    let _ut = uterinas.calcular(the("eg").value, +this.value)
+
+    ajustarProgreso(_ut.raw, "auiG")
+
+    let aud = the("aud").value
+    let aui = the("aui").value
+
+    aud = aud.toString(); 
+    aud = aud.replace(",", ".");
+    aud = parseFloat(aud);
+
+    aui = aui.toString(); 
+    aui = aui.replace(",", ".");
+    aui = parseFloat(aui);
+
+    if (aui > 0 && aud > 0){
+        let utprom = ((aui + aud) / 2);
+        the("aup").value = utprom
+
+        utprom = uterinas.calcular(the("eg").value, +utprom)
+        ajustarProgreso(utprom.raw, "aupG")
+
+    }
+
+}
 
 function ajustarProgreso(valor, objeto){
     valor = (valor == "&gt; 99") ? 99 : valor; // si es mayor a 99
