@@ -5,7 +5,7 @@ export class ccca{
         if (_cc > 0 && _ca > 0 ) {
             let ccca = _cc / _ca;
 
-            return Math.trunc(ccca)
+            return ccca.toFixed(2)
 
         }else{
 
