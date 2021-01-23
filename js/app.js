@@ -138,6 +138,26 @@ the("fexamen").onchange =  function(){
     }
 }
 
+//controlador de los keypress
+let losInput = document.getElementsByTagName("input")
+
+for(let i = 0;i < losInput.length; i++)
+{
+    losInput[i].onkeypress = function(e){
+        var key_enter = ["lcn","saco","", "dbp","cc", "ca", "lf", "lh", "cb", "bvm", "ila", "","aud","aui", "au","acm","ccp"];
+    
+        if ( e.which == 13 ) {
+           e.preventDefault();
+           if (key_enter.includes(this.id)== true){
+                let pos = key_enter.indexOf(this.id);
+                the(key_enter[pos+1]).focus();
+           }
+        }
+    } 
+}
+
+
+//controlador de botones
 the("goPrelude").onclick = function(){
     the("inicio").classList.add("d-none");
     the("prelude").classList.remove("d-none");
