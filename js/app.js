@@ -13,7 +13,9 @@ import { ila } from  './ila.js'
 import { pfe } from  './pfe.js'
 import { ccca } from  './ccca.js'
 import { uterinas } from './uterinas.js'
-
+import { umbilical } from './umbilical.js'
+import { cerebral } from './cerebral.js'
+import { ccp } from './ccp.js'
 import { ductus } from './ductus.js'
 
 var activo = "inicio"
@@ -353,7 +355,6 @@ the("edadPrimeroSi").onchange = function(){
 
 
 //Doppler
-
 the("aud").onchange = function(){
     let _ut = uterinas.calcular(the("eg").value, +this.value)
 
@@ -405,6 +406,30 @@ the("aui").onchange = function(){
         ajustarProgreso(utprom.raw, "aupG")
 
     }
+}
+
+the("au").onchange = function(){
+    let _au = umbilical.calcular(the("eg").value, +this.value)
+
+    ajustarProgreso(_au, "auG")
+
+    let _ccp = ccp.calcular(the("acm").value, this.value)
+
+    the("ccp").value = _ccp
+    
+    ajustarProgreso(ccp.percentil(the("eg").value, _ccp), "ccpG")
+
+}
+
+the("acm").onchange = function(){
+    let _acm = cerebral.calcular(the("eg").value, +this.value)
+
+    ajustarProgreso(_acm, "acmG")
+
+    let _ccp = ccp.calcular(the("acm").value, the("au").value)
+    the("ccp").value = _ccp
+    ajustarProgreso(ccp.percentil(the("eg").value, _ccp), "ccpG")
+
 }
 
 the("dv").onchange = function(){
