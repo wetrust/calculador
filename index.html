@@ -261,33 +261,111 @@
             </div>
             <div class="card shadow my-3">
                 <div class="card-header">
-                    ¿Determinar Edad Gestacional?
+                    Desea ver determinación de edad gestacional
                 </div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-1"></div>
                         <div class="col-5">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input h3" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked>
-                                <label class="form-check-label h5 mt-2" for="inlineRadio1">No</label>
+                                <input class="form-check-input h3" type="radio" name="edadPrimero" id="edadPrimeroNo" value="No" checked>
+                                <label class="form-check-label h5 mt-2" for="edadPrimeroNo">No</label>
                               </div>  
                         </div>
                         <div class="col-5">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input h3" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                <label class="form-check-label h5 mt-2" for="inlineRadio2">Si</label>
+                                <input class="form-check-input h3" type="radio" name="edadPrimero" id="edadPrimeroSi" value="Si">
+                                <label class="form-check-label h5 mt-2" for="edadPrimeroSi">Si</label>
                               </div>
                         </div>
                         <div class="col-1"></div>
                     </div>
-                    <div class="row" id="edadLCN">
-
+                    <div class="card shadow my-3 d-none" id="determinacionLCN">
+                        <div class="card-header">
+                            <p class="mb-0">EG según LCN</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <p id="determinacionLCNEg">Edad Gestacional</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="row" id="edadFUR">
-
+                    <div class="card shadow my-3 d-none" id="determinacionSaco">
+                        <div class="card-header">
+                            <p class="mb-0">EG según Saco</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <p id="determinacionSacoEg">Edad Gestacional</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="card shadow my-3 d-none" id="ajustePrimero">
+                <div class="card-header">
+                    Desea ajustar la edad gestacional según eco
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-5">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input h3" type="radio" name="edadPrimeroAjustar" id="edadPrimeroAjustarNo" value="No" checked>
+                                <label class="form-check-label h5 mt-2" for="edadPrimeroAjustarNo">No</label>
+                              </div>  
+                        </div>
+                        <div class="col-5">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input h3" type="radio" name="edadPrimeroAjustar" id="edadPrimeroAjustarSi" value="Si">
+                                <label class="form-check-label h5 mt-2" for="edadPrimeroAjustarSi">Si</label>
+                              </div>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                    <div class="card shadow my-3 d-none" id="ajustePrimeroReady">
+                        <div class="card-header">
+                            <p class="mb-0">Para cálculo de Edad gestacional, debe incluir Húmero y Cerebelo</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <label for="lh" class="form-label">LCN</label>
+                                </div>
+                                <div class="col-4">
+
+                                </div>
+                                <div class="col-4">
+
+                                </div>
+                                <div class="col-4">
+
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-12">
+                                    <label for="cb" class="form-label">Saco</label>
+                                </div>
+                                <div class="col-4">
+
+                                </div>
+                                <div class="col-4">
+
+                                </div>
+                                <div class="col-4">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </section>
         <section class="container d-none" id="segundo">
             <div class="card shadow mt-3">
@@ -427,14 +505,14 @@
                         <div class="col-1"></div>
                         <div class="col-5">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input h3" type="radio" name="edadPrimero" id="edadPrimeroNo" value="No" checked>
-                                <label class="form-check-label h5 mt-2" for="edadPrimeroNo">No</label>
+                                <input class="form-check-input h3" type="radio" name="edadSegundo" id="edadSegundoNo" value="No" checked>
+                                <label class="form-check-label h5 mt-2" for="edadSegundoNo">No</label>
                               </div>  
                         </div>
                         <div class="col-5">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input h3" type="radio" name="edadPrimero" id="edadPrimeroSi" value="Si">
-                                <label class="form-check-label h5 mt-2" for="edadPrimeroSi">Si</label>
+                                <input class="form-check-input h3" type="radio" name="edadSegundo" id="edadSegundoSi" value="Si">
+                                <label class="form-check-label h5 mt-2" for="edadSegundoSi">Si</label>
                               </div>
                         </div>
                         <div class="col-1"></div>

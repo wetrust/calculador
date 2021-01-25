@@ -1,3 +1,4 @@
+//<p class="mb-0"><small>* Rango de tolerancia para semanas 7 a 10 = 3 días</small><br><small>Hadlock FP y col. Am. J. O & G. 1987; 156:955</small></p>
 import { make, the, inputDate, humanDate } from './wetrust.js'
 import { fechas } from './functiones.js'
 import { lcn } from './lcn.js'
@@ -227,6 +228,7 @@ the("lcn").onchange = function(){
 
         the("furlcn").innerText = humanDate(_fur)
         the("eglcn").innerText = _lcn + " sem"
+        the("determinacionLCNEg").innerHTML = "Edad gestacional : " + _lcn + " sem"
         the("fpplcn").innerText = humanDate(fechas.fpp(_fur))
         the("lcnf").classList.remove("d-none")
     }else{
@@ -259,6 +261,7 @@ the("saco").onchange = function(){
 
         the("fursaco").innerText = humanDate(_fur)
         the("egsaco").innerText = _saco + " sem"
+        the("determinacionSacoEg").innerHTML = "Edad gestacional : " + _saco + " sem"
         the("fppsaco").innerText = humanDate(fechas.fpp(_fur))
         the("sacof").classList.remove("d-none")
     }else{
@@ -266,6 +269,24 @@ the("saco").onchange = function(){
     }
 }
 
+the("edadPrimeroNo").onchange = function(){
+    the("determinacionLCN").classList.add("d-none")
+    the("determinacionSaco").classList.add("d-none")
+    the("ajustePrimero").classList.add("d-none")
+}
+
+the("edadPrimeroSi").onchange = function(){
+    let _lcn = the("lcn").value
+    let _saco = the("saco").value
+
+    if (_lcn != "" || +_lcn != 0){
+        the("determinacionLCN").classList.remove("d-none")
+        the("ajustePrimero").classList.remove("d-none")
+    }
+    if (_saco != "" || +_saco != 0){
+        the("determinacionSaco").classList.remove("d-none")
+    }
+}
 
 //Segundo Tercer trimestre
 the("dbp").onchange = function(){
@@ -345,11 +366,11 @@ the("ila").onchange = function(){
 
 }
 
-the("edadPrimeroNo").onchange = function(){
+the("edadSegundoNo").onchange = function(){
     the("biometriAdicional").classList.add("d-none")
 }
 
-the("edadPrimeroSi").onchange = function(){
+the("edadSegundoSi").onchange = function(){
     the("biometriAdicional").classList.remove("d-none")
 }
 
