@@ -14,6 +14,8 @@ import { pfe } from  './pfe.js'
 import { ccca } from  './ccca.js'
 import { uterinas } from './uterinas.js'
 
+import { ductus } from './ductus.js'
+
 var activo = "inicio"
 var paginas = ["inicio", "examenes"]
 var examenes = ["primero", "segundo", "doppler"]
@@ -403,6 +405,12 @@ the("aui").onchange = function(){
         ajustarProgreso(utprom.raw, "aupG")
 
     }
+}
+
+the("dv").onchange = function(){
+    let _dv = ductus.calcular(the("eg").value, +this.value)
+
+    ajustarProgreso(_dv, "dvG")
 
 }
 
