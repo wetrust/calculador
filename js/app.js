@@ -210,7 +210,7 @@ the("back").onclick = function(){
 
 
 //primer trimestre
-the("lcn").onchange = function(){
+the("lcn").onkeyup = function(){
     let _lcn = lcn.calcular(this.value)
 
     the("lcneg").value = _lcn + " semanas"
