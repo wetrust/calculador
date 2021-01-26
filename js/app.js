@@ -1,4 +1,3 @@
-//<p class="mb-0"><small>* Rango de tolerancia para semanas 7 a 10 = 3 días</small><br><small>Hadlock FP y col. Am. J. O & G. 1987; 156:955</small></p>
 import { make, the, inputDate, humanDate } from './wetrust.js'
 import { fechas } from './functiones.js'
 import { lcn } from './lcn.js'
@@ -229,6 +228,11 @@ the("lcn").onkeyup = function(){
         the("furlcn").innerText = humanDate(_fur)
         the("eglcn").innerText = _lcn + " sem"
         the("determinacionLCNEg").innerHTML = "Edad gestacional : " + _lcn + " sem"
+
+        //diferencia en días
+        let _dias = the("eg").value - _lcn
+        _dias = (isNaN(_dias) == false) ? Math.trunc(_dias * 7) : 0
+        the("lcnDiferenciaDias").innerHTML = _dias
         the("fpplcn").innerText = humanDate(fechas.fpp(_fur))
         the("lcnf").classList.remove("d-none")
     }else{
