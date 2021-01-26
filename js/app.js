@@ -26,7 +26,7 @@ let _fecha = new Date()
 
 the("fexamen").value = inputDate(_fecha)
 
-let _fur = fechas.fur(20, _fecha)
+let _fur = fechas.fur(10, _fecha)
 the("fur").value = inputDate(_fur)
 the("txtFUM").innerText = humanDate(_fur)
 
