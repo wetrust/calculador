@@ -295,7 +295,7 @@ the("edadPrimeroAjustarSi").onchange = function(){
     _fppOld.setTime(Date.parse(the("fpp").value))
 
     the("furOld").innerHTML = humanDate(_furOld)
-    the("egOld").innerHTML = the("eg").value + ", " + the("dias").value + " semanas"
+    the("egOld").innerHTML = the("eg").value + ", " + the("dias").value
     the("fppOld").innerHTML = humanDate(_fppOld)
 
     let _lcn = lcn.calcular(the("lcn").value)
@@ -313,7 +313,7 @@ the("edadPrimeroAjustarSi").onchange = function(){
     the("fur").value = inputDate(_fur)
 
     the("furNew").innerHTML = humanDate(_fur)
-    the("egNew").innerHTML = _lcn + " semanas"
+    the("egNew").innerHTML = _lcn
     the("fppNew").innerHTML = humanDate(fechas.fpp(_fur))
 
     the("fur").onchange()
