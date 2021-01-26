@@ -285,7 +285,7 @@ the("graphLCN").onclick = function(){
             dashStyle: 'shortdot'
         }, {
             type: "line",
-            name: 'LCC (Hadlock y col. Radiology 182. 501, 1992)',
+            name: 'Hadlock y col. Radiology 182. 501, 1992',
             dashStyle: "Dot",
             marker: { symbol: 'square' },
             lineWidth: 0,
