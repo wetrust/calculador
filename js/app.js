@@ -247,6 +247,98 @@ the("lcn").onkeyup = function(){
     }
 }
 
+the("graphLCN").onclick = function(){
+    Highcharts.chart('gLCN',{
+        title: {text: '',x: -20},
+        xAxis: {
+            categories: ['6', '7', '8', '9', '10',  '11', '12', '13', '14', '15']
+        },
+        yAxis: {
+            title: {
+                text: 'milimetros (mm)'
+            },
+            tickPositions: [2, 11, 22, 33, 44, 55, 66, 77, 88, 99, 110]
+        },
+        credits: {enabled:false},
+        colors: ['#313131', '#313131', '#313131'],
+        plotOptions: {
+            series: {
+                enableMouseTracking: false
+            }
+         },
+        series: [{
+            name: '(-) 2DE',
+            type: "line",
+            marker: { enabled: false },
+            data: [2.6, 7.7, 14, 20.5, 26.2,35.5, 46.8, 58.2, 69.8, 80.2],
+            dashStyle: 'shortdot'
+        }, {
+            name: 'Media',
+            type: "line",
+            marker: { enabled: false },
+            data: [3.8, 8.9, 15.4, 22.5, 29.5,40.5, 52.9, 66.5, 79.0, 90.1]
+        }, {
+            name: '(+) 2DE',
+            type: "line",
+            marker: { enabled: false },
+            data: [5.3, 10.4, 17.1, 24.9, 33.2,46.4, 60.8, 75.7, 89.1, 100.1],
+            dashStyle: 'shortdot'
+        }, {
+            type: "line",
+            name: 'LCC (Hadlock y col. Radiology 182. 501, 1992)',
+            dashStyle: "Dot",
+            marker: { symbol: 'square' },
+            lineWidth: 0,
+            data: (function () {
+                // generate an array of random data
+                var data = [];
+                var egLcn2 = the("eg").value;
+                var lcn = the("lcn").value;
+                lcn = lcn.toString();
+                lcn = lcn.replace(",", ".");
+                lcn = parseFloat(lcn);
+    
+                var lcnegx = [];
+                var flag = false;
+    
+                lcnegx[1] = 6;
+                lcnegx[2] = 7;
+                lcnegx[3] = 8;
+                lcnegx[4] = 9;
+                lcnegx[5] = 10;
+                lcnegx[6] = 11;
+                lcnegx[7] = 12;
+                lcnegx[8] = 13;
+                lcnegx[9] = 14;
+                lcnegx[10] = 14;
+    
+                for (let i = 1; i <= 10; i++) {
+                    if (lcnegx[i] >= egLcn2) {
+                        if (flag == false) {
+                        data.push({
+                            y: lcn,
+                        });
+                        flag = true;
+                        }
+                        else {
+                         data.push({
+                            y:0,
+                         });
+                        }
+                    }
+                    else {
+                        data.push({
+                            y: 0,
+                        });
+                    }
+                }
+                return data;
+            }())
+        }]
+    });
+}
+
+
 the("saco").onchange = function(){
     let _saco = saco.calcular(this.value)
 
