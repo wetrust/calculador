@@ -255,7 +255,7 @@ the("graphLCN").onclick = function(){
         },
         yAxis: {
             title: {
-                text: 'milimetros (mm)'
+                text: 'LCN milimetros (mm)'
             },
             tickPositions: [2, 11, 22, 33, 44, 55, 66, 77, 88, 99, 110]
         },
