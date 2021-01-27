@@ -36,18 +36,18 @@ the("txtFPP").innerText = humanDate(_fpp)
 
 //cambiar la fur
 //the("fur").onchange = function(){
-    //convertir a fecha
+//convertir a fecha
 //    let _fur = fechas.toDate(this.value)
-    //clonar a prelude
+//clonar a prelude
 //    the("txtFUM").innerText = humanDate(_fur)
 
-    //calcular la eg
+//calcular la eg
 //    let _fexamen = fechas.toDate(the("fexamen").value)
 //    let eg = fechas.eg(_fur, _fexamen)
 //    the("eg").value = eg
 //    the("txtEG").innerHTML = eg + "sem"
 
-    //calcular fpp
+//calcular fpp
 //    let _fpp = fechas.fpp(_fur)
 
     //set en input y prelude
@@ -144,7 +144,7 @@ let losInput = document.getElementsByTagName("input")
 for(let i = 0;i < losInput.length; i++)
 {
     losInput[i].onkeypress = function(e){
-        var key_enter = ["lcn","edadPrimeroAjustarNo","", "dbp","cc", "ca", "lf", "edadSegundoNo", "", "bvm", "ila", "","aud","aui", "au","acm","dv"];
+        var key_enter = ["lcn","edadPrimeroAjustarNo","", "dbp","cc", "ca", "lf", "edadSegundoNo", "", "lh","cb", "", "bvm", "ila", "","aud","aui", "au","acm","dv"];
 
         if ( e.which == 13 ) {
            e.preventDefault()
@@ -155,7 +155,6 @@ for(let i = 0;i < losInput.length; i++)
         }
     }
 }
-
 
 //controlador de botones
 the("goPrelude").onclick = function(){
@@ -1047,7 +1046,8 @@ the("edadSegundoSi").onchange = function(){
 }
 
 //Doppler
-the("aud").onkeyup = function(){
+the("aud").onkeyup = function()
+{
     let _ut = uterinas.calcular(the("eg").value, +this.value)
 
     ajustarProgreso(_ut.raw, "audG")
@@ -1074,7 +1074,8 @@ the("aud").onkeyup = function(){
 
 }
 
-the("aui").onkeyup = function(){
+the("aui").onkeyup = function()
+{
     let _ut = uterinas.calcular(the("eg").value, +this.value)
 
     ajustarProgreso(_ut.raw, "auiG")
@@ -1100,7 +1101,8 @@ the("aui").onkeyup = function(){
     }
 }
 
-the("au").onkeyup = function(){
+the("au").onkeyup = function()
+{
     let _au = umbilical.calcular(the("eg").value, +this.value)
 
     ajustarProgreso(_au, "auG")
@@ -1113,7 +1115,8 @@ the("au").onkeyup = function(){
 
 }
 
-the("acm").onkeyup = function(){
+the("acm").onkeyup = function()
+{
     let _acm = cerebral.calcular(the("eg").value, +this.value)
 
     ajustarProgreso(_acm, "acmG")
@@ -1124,21 +1127,24 @@ the("acm").onkeyup = function(){
 
 }
 
-the("dv").onkeyup = function(){
+the("dv").onkeyup = function()
+{
     let _dv = ductus.calcular(the("eg").value, +this.value)
 
     ajustarProgreso(_dv, "dvG")
 
 }
 
-function ajustarProgreso(valor, objeto){
+function ajustarProgreso(valor, objeto)
+{
     valor = (valor == "&gt; 99") ? 99 : valor; // si es mayor a 99
     valor = (isNaN(valor)== true) ? 0 : valor;
     valor = valor + "%";
     the(objeto).children[0].style.width = valor
 }
 
-function psohdlk(_cc, _ca, _lf) {
+function psohdlk(_cc, _ca, _lf)
+{
 
     if (isNaN(_cc) || isNaN(_ca) || isNaN(_lf)){
         return 0
