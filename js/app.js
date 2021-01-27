@@ -98,11 +98,11 @@ the("eg").onchange = function(){
     let semanas = parseInt(this.value);
     let dias = parseInt(the("dias").value);
     semanas = 7 * semanas;
-    let fee = new Date(the("fexamen").value);
-    dias = (semanas + dias+1)*(1000*60*60*24);
-    fee.setTime(fee.getTime() - dias);
 
-    the("fur").value = inputDate(fee);
+    let _fexamen = fechas.toDate(the("fexamen").value)
+    _fexamen.setDate(_fexamen.getDate() - (semanas + dias));
+
+    the("fur").value = inputDate(_fexamen);
     the("fur").onchange()
 }
 
@@ -117,20 +117,17 @@ the("eg").onchange = function(){
 //}
 
 the("fexamen").onchange =  function(){
-    let fum = new Date(); 
-    fum.setTime(Date.parse(the("fur").value));
-    fum = fum.getTime();
-    let fee = new Date();
-    fee.setTime(Date.parse(this.value));
-    fee = fee.getTime();
+    //convertir a fecha
+    let _fur = fechas.toDate(the("fur").value)
 
-    //la fecha de exámen no puede ser anterior a la fecha de última regla
-    let diff = fee - fum;
+    //calcular la eg
+    let _fexamen = fechas.toDate(this.value)
 
-    if (diff > 0){
-        let dias = diff/(1000*60*60*24);
-        let semanas = Math.trunc(dias / 7);
-        dias = Math.trunc(dias - (semanas * 7));
+    let eg = fechas.eg(_fur, _fexamen)
+
+    if (eg > 0){
+        let semanas = Math.trunc(eg / 7);
+        let dias = Math.trunc(eg - (semanas * 7));
         the("eg").value = semanas;
         the("txtEG").innerHTML = semanas + " sem"
         the("dias").value = dias;
