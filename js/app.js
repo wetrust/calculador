@@ -72,14 +72,13 @@ the("fur").onchange = function(){
         the("eg").value = semanas;
         the("txtEG").innerHTML = semanas + " sem"
         the("dias").value = dias;
-    }
-    else{
+    } else {
         the("eg").value = 0;
         the("txtEG").innerHTML = semanas + " sem"
         the("dias").value = 0;
     }
 
-     //calcular fpp
+    //calcular fpp
     let _fpp = fechas.fpp(_fur)
 
     //set en input y prelude
@@ -202,7 +201,6 @@ the("back").onclick = function(){
         the("prelude").classList.add("d-none");
     }
 }
-
 
 //primer trimestre
 the("lcn").onkeyup = function(){
@@ -381,25 +379,20 @@ the("edadPrimeroSi").onchange = function(){
 }
 
 the("edadPrimeroAjustarSi").onchange = function(){
-    let _furOld = new Date()
-    _furOld.setTime(Date.parse(the("fur").value))
-    let _fppOld = new Date()
-    _fppOld.setTime(Date.parse(the("fpp").value))
+    let _furOld = fechas.toDate(the("fur").value)
+    let _fppOld = fechas.toDate(the("fpp").value)
 
     the("furOld").innerHTML = humanDate(_furOld)
     the("egOld").innerHTML = the("eg").value + ", " + the("dias").value
     the("fppOld").innerHTML = humanDate(_fppOld)
 
-    let _lcn = lcn.calcular(the("lcn").value)
-
     //calcular Fur según LCN
-    let _fecha = new Date()
-    _fecha.setTime(Date.parse(the("fexamen").value))
-    //let _fecha = fechas.toDate(the("fexamen").value)
+    let _lcn = lcn.calcular(the("lcn").value)
+    let _fexamen = fechas.toDate(the("fexamen").value)
 
-    //calcular la fut con la parte entera del lcn, despues agregar los días
+    //calcular la fur con la parte entera del lcn, despues agregar los días
     let _ilcn = Math.trunc(_lcn)
-    let _fur = fechas.fur(+_lcn, _fecha);
+    let _fur = fechas.fur(_ilcn, _fexamen);
     _fur.setDate(_fur.getDate() - (_ilcn - _lcn));
 
     the("fur").value = inputDate(_fur)
@@ -497,7 +490,6 @@ the("edadSegundoNo").onchange = function(){
 the("edadSegundoSi").onchange = function(){
     the("biometriAdicional").classList.remove("d-none")
 }
-
 
 //Doppler
 the("aud").onkeyup = function(){
