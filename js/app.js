@@ -404,7 +404,7 @@ the("crecimientoFetalG").onclick = function(){
 
     Highcharts.chart('caV', {
         title: {
-            text: 'CA**',
+            text: 'Perímetro Abdominal **',
             x: -20
         },
         subtitle: {
@@ -549,7 +549,7 @@ the("crecimientoFetalG").onclick = function(){
 
     Highcharts.chart('cccaV',{
         title: {
-            text: 'Cc / Ca *',
+            text: 'Relación Cráneo / Abdómen *',
             x: -20 //center
         },
         subtitle: {
@@ -617,7 +617,7 @@ the("edadGestacionalG").onclick = function(){
 
     Highcharts.chart('caVE', {
         title: {
-            text: 'CA**',
+            text: 'Perímetro Abdominal **',
             x: -20
         },
         subtitle: {
