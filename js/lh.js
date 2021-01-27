@@ -39,6 +39,7 @@ export class lh{
         }
         else {
             eg = parseInt(eg);
+            eg = eg - 13
             let uno = pct95[eg] - pct05[eg];
             let dos = _lh - pct05[eg];
     

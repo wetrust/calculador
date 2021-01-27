@@ -489,11 +489,11 @@
             </div>
             <div class="row my-4">
                 <div class="col-12 text-center mb-3">
-                    <button class="btn">VER GRÁFICAS DE CRECIMIENTO FETAL</button>
+                    <button class="btn" data-bs-toggle="modal" data-bs-target="#exampleCrecimiento" id="crecimientoFetalG">VER GRÁFICAS DE CRECIMIENTO FETAL</button>
                     <p class="mb-0"><small>Hadlock FP. y col. Radiology 181: 129 - 133; 1991</small></p>
                 </div>
                 <div class="col-12 text-center">
-                    <button class="btn">VER GRÁFICAS DE EDAD GESTACIONAL</button>
+                    <button class="btn" data-bs-toggle="modal" data-bs-target="#exampleEdad" id="edadGestacionalG">VER GRÁFICAS DE EDAD GESTACIONAL</button>
                     <p class="mb-0"><small>Hadlock FP., Jeanty P. Hill y col.</small></p>
                 </div>
             </div>
@@ -802,7 +802,42 @@
                 </div>
               </div>
             </div>
-          </div>
+        </div>
+        <div class="modal" tabindex="-1" id="exampleCrecimiento">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Gráfica Crecimiento fetal</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="pesoV"></div>
+                    <div id="caV"></div>
+                    <div id="bvmV"></div>
+                    <div id="ilaV"></div>
+                    <div id="cccaV"></div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="modal" tabindex="-1" id="exampleEdad">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Gráfica Edad Gestacional</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="gLCN">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
+            </div>
+        </div>
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>
         <script type="module" src="js/app.js"></script>
