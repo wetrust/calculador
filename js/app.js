@@ -149,7 +149,7 @@ let losInput = document.getElementsByTagName("input")
 for(let i = 0;i < losInput.length; i++)
 {
     losInput[i].onkeypress = function(e){
-        var key_enter = ["lcn","saco","", "dbp","cc", "ca", "lf", "pfe", "","aud","aui", "au","acm","ccp"];
+        var key_enter = ["lcn","saco","", "dbp","cc", "ca", "lf", "edadSegundoNo", "", "bvm", "ila", "","aud","aui", "au","acm","ccp"];
 
         if ( e.which == 13 ) {
            e.preventDefault()
@@ -339,7 +339,7 @@ the("graphLCN").onclick = function(){
 }
 
 
-the("saco").onchange = function(){
+the("saco").onkeyup = function(){
     let _saco = saco.calcular(this.value)
 
     the("sacoeg").value = _saco + " semanas"
@@ -417,14 +417,14 @@ the("edadPrimeroAjustarSi").onchange = function(){
 }
 
 //Segundo Tercer trimestre
-the("dbp").onchange = function(){
+the("dbp").onkeyup = function(){
     let _dbp = dbp.calcular(the("eg").value, +this.value)
 
     ajustarProgreso(_dbp, "dbpG")
 
 }
 
-the("cc").onchange = function(){
+the("cc").onkeyup = function(){
     let _cc = cc.calcular(the("eg").value, +this.value)
 
     ajustarProgreso(_cc, "ccG")
@@ -440,7 +440,7 @@ the("cc").onchange = function(){
 
 }
 
-the("ca").onchange = function(){
+the("ca").onkeyup = function(){
     let _ca = ca.calcular(the("eg").value, +this.value)
 
     ajustarProgreso(_ca, "caG")
@@ -455,7 +455,7 @@ the("ca").onchange = function(){
     ajustarProgreso(ccca.percentil(the("eg").value, _ccca), "cccaG")
 }
 
-the("lf").onchange = function(){
+the("lf").onkeyup = function(){
     let _lf = lf.calcular(the("eg").value, +this.value)
 
     ajustarProgreso(_lf, "lfG")
@@ -466,28 +466,28 @@ the("lf").onchange = function(){
 
 }
 
-the("lh").onchange = function(){
+the("lh").onkeyup = function(){
     let _lh = lh.calcular(the("eg").value, +this.value)
 
     ajustarProgreso(_lh, "lhG")
 
 }
 
-the("cb").onchange = function(){
+the("cb").onkeyup = function(){
     let _cb = cb.calcular(the("eg").value, +this.value)
 
     ajustarProgreso(_cb, "cbG")
 
 }
 
-the("bvm").onchange = function(){
+the("bvm").onkeyup = function(){
     let _bvm = bvm.calcular(the("eg").value, +this.value)
 
     ajustarProgreso(_bvm, "bvmG")
 
 }
 
-the("ila").onchange = function(){
+the("ila").onkeyup = function(){
     let _ila = ila.calcular(the("eg").value, +this.value)
 
     ajustarProgreso(_ila, "ilaG")
@@ -504,7 +504,7 @@ the("edadSegundoSi").onchange = function(){
 
 
 //Doppler
-the("aud").onchange = function(){
+the("aud").onkeyup = function(){
     let _ut = uterinas.calcular(the("eg").value, +this.value)
 
     ajustarProgreso(_ut.raw, "audG")
@@ -531,7 +531,7 @@ the("aud").onchange = function(){
 
 }
 
-the("aui").onchange = function(){
+the("aui").onkeyup = function(){
     let _ut = uterinas.calcular(the("eg").value, +this.value)
 
     ajustarProgreso(_ut.raw, "auiG")
@@ -557,7 +557,7 @@ the("aui").onchange = function(){
     }
 }
 
-the("au").onchange = function(){
+the("au").onkeyup = function(){
     let _au = umbilical.calcular(the("eg").value, +this.value)
 
     ajustarProgreso(_au, "auG")
@@ -570,7 +570,7 @@ the("au").onchange = function(){
 
 }
 
-the("acm").onchange = function(){
+the("acm").onkeyup = function(){
     let _acm = cerebral.calcular(the("eg").value, +this.value)
 
     ajustarProgreso(_acm, "acmG")
@@ -581,7 +581,7 @@ the("acm").onchange = function(){
 
 }
 
-the("dv").onchange = function(){
+the("dv").onkeyup = function(){
     let _dv = ductus.calcular(the("eg").value, +this.value)
 
     ajustarProgreso(_dv, "dvG")
