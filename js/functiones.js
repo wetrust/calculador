@@ -11,12 +11,14 @@ export class fechas{
         fur = (typeof fur === typeof undefined) ? new Date() : fur
         fexamen = (typeof fexamen === typeof undefined) ? new Date() : fexamen
 
-        let _fur = 1000 *60* fur.getTimezoneOffset();
-        let _fexamen = 1000 *60* fexamen.getTimezoneOffset();
+        const _MS_PER_DAY = 1000 * 60 * 60 * 24;
 
-        let diff = (fexamen.getTime()) - (fur.getTime());
+        const utc1 = Date.UTC(fur.getFullYear(), fur.getMonth(), fur.getDate());
+        const utc2 = Date.UTC(fexamen.getFullYear(), fexamen.getMonth(), fexamen.getDate());
+      
+        let diff = Math.floor((utc2 - utc1) / _MS_PER_DAY);
 
-        return (diff > 0) ? Math.trunc((diff/(1000*60*60*24)) /7) : 0
+        return (diff > 0) ? diff : 0
 
     }
 

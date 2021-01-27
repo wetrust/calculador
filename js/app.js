@@ -56,27 +56,19 @@ the("txtFPP").innerText = humanDate(_fpp)
 //}
 
 the("fur").onchange = function(){
-    let fum = new Date();
-    fum.setTime(Date.parse(this.value));
-    fum.setTime(fum.getTime() + (1000*60*60*24*282));
-    the("fpp").value = inputDate(fum);
-    the("txtFPP").innerText = humanDate(_fpp)
+    //convertir a fecha
+    let _fur = fechas.toDate(this.value)
+    //clonar a prelude
+    the("txtFUM").innerText = humanDate(_fur)
 
-    fum.setTime(fum.getTime() - (1000*60*60*24*282));
-    the("txtFUM").innerText = humanDate(fum)
-    fum = fum.getTime();
+    //calcular la eg
+    let _fexamen = fechas.toDate(the("fexamen").value)
 
-    let fee = new Date();
-    fee.setTime(Date.parse(the("fexamen").value));
-    fee = fee.getTime();
+    let eg = fechas.eg(_fur, _fexamen)
 
-    //la fecha de mestruación si puede ser antes de la fecha de exámen
-    let diff = fee - fum;
-
-    if (diff > 0){
-        let dias = Math.abs(diff/(1000*60*60*24));
-        let semanas = Math.trunc(dias / 7);
-        dias = Math.trunc(dias - (semanas * 7));
+    if (eg > 0){
+        let semanas = Math.trunc(eg / 7);
+        let dias = Math.trunc(eg - (semanas * 7));
         the("eg").value = semanas;
         the("txtEG").innerHTML = semanas + " sem"
         the("dias").value = dias;
@@ -86,6 +78,13 @@ the("fur").onchange = function(){
         the("txtEG").innerHTML = semanas + " sem"
         the("dias").value = 0;
     }
+
+     //calcular fpp
+    let _fpp = fechas.fpp(_fur)
+
+    //set en input y prelude
+    the("fpp").value = inputDate(_fpp)
+    the("txtFPP").innerText = humanDate(_fpp)
 }
 
 //the("eg").onchange = function(){
