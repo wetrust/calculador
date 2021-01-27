@@ -255,7 +255,7 @@ the("graphLCN").onclick = function(){
         },
         yAxis: {
             title: {
-                text: 'LCN milimetros (mm)'
+                text: 'LCN milimetros'
             },
             tickPositions: [2, 11, 22, 33, 44, 55, 66, 77, 88, 99, 110]
         },
@@ -285,7 +285,7 @@ the("graphLCN").onclick = function(){
             dashStyle: 'shortdot'
         }, {
             type: "line",
-            name: 'Hadlock y col. Radiology 182. 501, 1992',
+            name: 'Longitud Céfalo Nalga (LCN)',
             dashStyle: "Dot",
             marker: { symbol: 'square' },
             lineWidth: 0,

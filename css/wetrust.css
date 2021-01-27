@@ -9,7 +9,7 @@ h1, h2,h3,h4,h5,h6{
     font-weight: 300 !important;
 }
 .wetrust > nav{
-    background-color: var(--light);
+    background-color: var(--bs-light);
     box-shadow: 0 3px 5px -1px rgba(0,0,0,.2),0 6px 10px 0 rgba(0,0,0,.14),0 1px 18px 0 rgba(0,0,0,.12);
 }
 .wetrust > nav .nav-link{
@@ -48,11 +48,11 @@ h1, h2,h3,h4,h5,h6{
 }
 .wetrust .btn:hover{
     background-color:  var(--wetrust);
-    color:  var(--light);
-    border-color:  var(--light);
+    color:  var(--bs-light);
+    border-color:  var(--bs-light);
 }
 .wetrust .modal-content{
-    background-color:  var(--light);
+    background-color:  var(--bs-light);
 }
 .completo{
     min-height:89vh;
