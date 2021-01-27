@@ -615,6 +615,275 @@ the("crecimientoFetalG").onclick = function(){
 
 the("edadGestacionalG").onclick = function(){
 
+    Highcharts.chart('caVE', {
+        title: {
+            text: 'CA**',
+            x: -20
+        },
+        subtitle: {
+            text: 'Milimetros (mm)',
+            x: -20
+        },
+        plotOptions: {
+            series: {
+                enableMouseTracking: false
+            }
+        },
+        yAxis: {
+            title: { text: 'Milimetros (mm)' },
+            tickPositions: [20, 60, 100, 140, 180, 220, 260, 300, 340, 400]
+        },
+        colors: ['#313131', '#313131', '#313131'],
+        xAxis: {
+            categories:['12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+        },
+        credits: { enabled: false },
+        series: [{
+            type: "line",
+            name: 'Pct. 3',
+            marker: { enabled: false },
+            data: [40,50,60,72,84,97,107,119,131,141,151,161,171,181,191,200,209,218,227,236,245,253,261,269,277,285,292,299,307]
+        }, {
+            type: "line",
+            name: 'Pct 97',
+            marker: { enabled: false },
+            data: [68,78,88,101,112,127,141,155,168,183,196,209,223,235,248,260,271,284,295,306,318,329,339,349,359,370,380,389,399]
+        }, {
+            type: "line",
+            name: 'CA',
+            dashStyle: "Dot",
+            marker: { symbol: 'square' },
+            lineWidth: 0,
+            data: (function () {
+                var data = [];
+                var edadGest = the("eg").value;
+ 
+                for (let i = 12; i < edadGest; i++) {
+                    data.push({
+                        y: 0,
+                    });
+                }
+ 
+                let ca = the("ca").value;
+                ca = ca.toString();
+                ca = ca.replace(",", ".");
+                ca = parseFloat(ca);
+ 
+                data.push({
+                    y:ca,
+                });
+
+                for (let i = edadGest + 1; i <= 39; i++) {
+                    data.push({
+                        y: 0,
+                    });
+                }
+
+                return data;
+            }())
+        }]
+    })
+
+    Highcharts.chart('cerebeloV', {
+        title: {
+            text: 'Diámetro de Cerebelo',
+            x: -20
+        },
+        subtitle: {
+            text: 'Milimetros (mm)',
+            x: -20
+        },
+        plotOptions: {
+            series: {
+                enableMouseTracking: false
+            }
+        },
+        yAxis: {
+            title: { text: 'Milimetros (mm)' },
+            tickPositions: [5, 10,20,30,40,50,60,70]
+        },
+        colors: ['#313131', '#313131', '#313131'],
+        xAxis: {
+            categories:['15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+        },
+        credits: {enabled: false},
+        series: [{
+            type: "line",
+            name: '-2DE',
+            marker: {enabled: false},
+            data: [12, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 26, 27, 29, 30, 31, 33, 36, 37, 38, 40, 40, 40, 41, 42, 44]
+        }, {
+            type: "line",
+            name: 'media',
+            marker: {enabled: false},
+            data: [15, 16, 17, 18, 20, 20, 22, 23, 24, 26, 28, 30, 31, 33, 34, 37, 39, 41, 43, 46, 47, 49, 51, 51, 52, 52]
+        }, {
+            type: "line",
+            name: '+2DE',
+            marker: {enabled: false},
+            data: [18, 18, 19, 20, 22, 23, 25, 26, 27, 30, 32, 34, 34, 37, 38, 41, 43, 46, 48, 53, 56, 58, 60, 62, 62, 62]
+        }, {
+            type: "line",
+            name: 'Cerebelo',
+            dashStyle: "Dot",
+            marker: { symbol: 'square' },
+            lineWidth: 0,
+            data: (function () {
+                var data = [];
+                var edadGest = the("eg").value;
+
+                for (let i = 15; i < edadGest; i++) {
+                    data.push({
+                        y: 0,
+                    });
+                }
+
+               let cerebelo = the("cb").value;
+               cerebelo = cerebelo.toString();
+               cerebelo = cerebelo.replace(",", ".");
+               cerebelo = parseFloat(cerebelo);
+
+                data.push({
+                    y: cerebelo,
+                });
+                for (let i = edadGest + 1; i <= 39; i++) {
+                    data.push({
+                        y: 0,
+                    });
+                }
+                return data;
+            }())
+        }]
+    })
+
+    Highcharts.chart('lfV', {
+        title: {
+            text: 'Largo Femoral',
+            x: -20
+        },
+        subtitle: {
+            text: 'Milimetros (mm)',
+            x: -20
+        },
+        plotOptions: {
+            series: {
+                enableMouseTracking: false
+            }
+        },
+        yAxis: {
+            title: { text: 'Milimetros (mm)' },
+            tickPositions: [5, 10, 20, 30, 40, 50, 60, 70, 80, 90]
+        },
+        colors: ['#313131', '#313131', '#313131'],
+        xAxis: {
+            categories:['12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+        },
+        credits: { enabled: false },
+        series: [{
+            type: "line",
+            name: 'Pct. 3',
+            marker: { enabled: false },
+            data: [6,9,12,14,17,20,22,25,27,30,32,35,37,40,42,45,47,49,52,54,56,58,59,61,62,64,65,66,67]
+        }, {
+            type: "line",
+            name: 'Pct. 97',
+            marker: { enabled: false },
+            data: [12,15,18,21,24,28,31,34,38,41,44,47,50,53,55,57,60,62,65,67,70,71,73,75,77,79,80,81,82]
+        }, {
+            type: "line",
+            name: 'LF',
+            dashStyle: "Dot",
+            marker: { symbol: 'square' },
+            lineWidth: 0,
+            data: (function () {
+                let data = [];
+                let edadGest = the("eg").value;
+ 
+                for (let i = 12; i < edadGest; i++) {
+                    data.push({ y: 0, });
+                }
+
+                let lf = the("lf").value;
+                lf = lf.toString();
+                lf = lf.replace(",", ".");
+                lf = parseFloat(lf);
+                data.push({
+                    y: lf,
+                });
+                for (let i = edadGest + 1; i <= 39; i++) {
+                    data.push({
+                        y: 0,
+                    });
+                }
+                return data;
+            }())
+        }]
+    })
+
+    Highcharts.chart('lhV', {
+        title: {
+            text: 'Largo Humeral',
+            x: -20
+        },
+        subtitle: {
+            text: 'Milimetros (mm)',
+            x: -20
+        },
+        plotOptions: {
+            series: {
+                enableMouseTracking: false
+            }
+        },
+        yAxis: {
+            title: { text: 'Milimetros (mm)' },
+            tickPositions: [5, 10, 20, 30, 40, 50, 60, 70, 80]
+        },
+        colors: ['#313131', '#313131', '#313131'],
+        xAxis: {
+            categories:['12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+        },
+        credits: { enabled: false },
+        series: [{
+            type: "line",
+            name: 'Pct. 5',
+            marker: { enabled: false },
+            data: [4.8, 7.6, 10.3, 13.1, 15.8, 18.5, 21.2, 23.8, 26.3, 28.8, 31.2, 33.5, 35.7, 37.9, 39.9, 41.9, 43.7, 45.5, 47.2, 48.9, 50.4, 52.1, 53.4, 54.8, 56.2, 57.6, 59.8, 60.4, 61.9]
+        }, {
+            type: "line",
+            name: 'Pct. 95',
+            marker: { enabled: false },
+            data: [12.3, 15.1, 17.9, 20.7, 23.5, 26.3, 29.1, 31.6, 34.2, 36.7, 39.2, 41.6, 43.9, 46.1, 48.1, 50.1, 52.1, 53.9, 55.6, 57.3, 58.9, 60.5, 62.1, 63.5, 64.9, 66.4, 67.8, 69.3, 70.8]
+        }, {
+            type: "line",
+            name: 'Humero',
+            dashStyle: "Dot",
+            marker: { symbol: 'square' },
+            lineWidth: 0,
+            data: (function () {
+                var data = [];
+                var edadGest = the("eg").value;
+
+                for (let i = 12; i < edadGest; i++) {
+                    data.push({ y: 0, });
+                }
+
+                var lh = the("lh").value;
+                lh = lh.toString();
+                lh = lh.replace(",", ".");
+                lh = parseFloat(lh);
+                    
+                data.push({
+                    y: lh,
+                });
+                for (let i = edadGest + 1; i <= 39; i++) {
+                    data.push({
+                        y: 0,
+                    });
+                }
+                return data;
+            }())
+        }]
+    });
 }
 
 the("saco").onkeyup = function(){
