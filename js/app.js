@@ -149,7 +149,7 @@ let losInput = document.getElementsByTagName("input")
 for(let i = 0;i < losInput.length; i++)
 {
     losInput[i].onkeypress = function(e){
-        var key_enter = ["lcn","saco","", "dbp","cc", "ca", "lf", "edadSegundoNo", "", "bvm", "ila", "","aud","aui", "au","acm","dv"];
+        var key_enter = ["lcn","edadPrimeroAjustarNo","", "dbp","cc", "ca", "lf", "edadSegundoNo", "", "bvm", "ila", "","aud","aui", "au","acm","dv"];
 
         if ( e.which == 13 ) {
            e.preventDefault()
