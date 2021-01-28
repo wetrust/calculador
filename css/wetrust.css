@@ -168,3 +168,7 @@ footer a:hover{
         background-color: #2f3237 !important
     }
 }
+
+.text-wetrust{
+    color: var(--wetrust) !important
+}
