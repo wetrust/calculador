@@ -1189,7 +1189,7 @@ the("dopplerMaternoFetalG").onclick = function()
                 var data = [];
                 var edadGest = the("eg").value;
 
-                for (let i = 10; i <= edadGest; i ++ ) {
+                for (let i = 10; i < edadGest; i ++ ) {
                     data.push({
                         y: 0,
                     });
@@ -1266,7 +1266,7 @@ the("dopplerMaternoFetalG").onclick = function()
             var data = [];
             var edadGest = the("eg").value;
 
-            for (let i = 20; i <= edadGest; i++) {
+            for (let i = 20; i < edadGest; i++) {
                 data.push({
                     y: 0,
                 });
@@ -1344,7 +1344,7 @@ the("dopplerMaternoFetalG").onclick = function()
             var data = [];
             var edadGest = the("eg").value;
 
-            for (let i = 20; i <= edadGest; i++) {
+            for (let i = 20; i < edadGest; i++) {
                 data.push({
                     y: 0,
                 });
@@ -1421,7 +1421,7 @@ the("dopplerMaternoFetalG").onclick = function()
          var data = [];
          var edadGest = the("eg").value;
 
-         for (let i = 20; i <= edadGest; i++) {
+         for (let i = 20; i < edadGest; i++) {
              data.push({
                  y: 0,
              });
