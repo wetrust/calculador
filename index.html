@@ -30,10 +30,6 @@
                         </li>
                         <hr>
                         <li class="nav-item text-center">
-                            <a class="nav-link" href="/">Opciones</a>
-                        </li>
-                        <hr>
-                        <li class="nav-item text-center">
                             <a class="nav-link" href="#">Acerca de</a>
                         </li>
                     </ul>
@@ -760,6 +756,11 @@
                     </div>
                 </div>
             </div>
+            <div class="row my-4">
+                <div class="col-12 text-center mb-3">
+                    <button class="btn" data-bs-toggle="modal" data-bs-target="#exampleDoppler" id="dopplerMaternoFetalG">VER GRÁFICA DOPPLER MATERNO FETAL</button>
+                </div>
+            </div>
             <div class="card shadow my-3">
                 <div class="card-header">
                     <p class="mb-0">Ductus Venoso (Prematuro Extremo)<br><small><small>Kessler J. y col.: U. Obstet. &amp; Gynecol. 28p 890-b 2006</small></small></p>
@@ -818,7 +819,7 @@
                     <div id="ilaV"></div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn" data-bs-dismiss="modal">Cerrar</button>
                 </div>
               </div>
             </div>
@@ -842,6 +843,41 @@
               </div>
             </div>
         </div>
+        <div class="modal" tabindex="-1" id="exampleDoppler">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Gráfica Edad Gestacional</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="utV"></div>
+                    <div id="auV"></div>
+                    <div id="cmV"></div>
+                    <div id="cppV"></div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
+            </div>
+        </div>
+        <section class="container d-none" id="about">
+            <hr>
+                <ul>
+                    <li></li>
+                    <li></li>
+                </ul>
+            <hr>
+            <ul>
+                <li></li>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </ul>
+        </section>
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>
         <script type="module" src="js/app.js"></script>
