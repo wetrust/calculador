@@ -176,6 +176,11 @@ the("goSegundo").onclick = function(){
     activo = "segundo"
 }
 
+the("continuarPortada").onclick = function(){
+    the("portada").classList.add("d-none");
+    the("inicio").classList.remove("d-none");
+}
+
 the("goDoppler").onclick = function(){
     the("examenes").classList.add("d-none");
     the("doppler").classList.remove("d-none");
