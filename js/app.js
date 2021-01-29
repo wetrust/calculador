@@ -1349,13 +1349,11 @@ the("dopplerMaternoFetalG").onclick = function()
     series: [{
         type: "line",
         name: 'Pct. 5',
-            dashStyle: "Dot",
         marker: { enabled: false },
         data: _au5
     }, {
         type: "line",
         name: 'Pct. 95',
-            dashStyle: "Dot",
         marker: { enabled: false },
         data: _au95
     }, {
@@ -1441,13 +1439,11 @@ the("dopplerMaternoFetalG").onclick = function()
     series: [{
         type: "line",
         name: 'Pct. 5',
-            dashStyle: "Dot",
         marker: { enabled: false },
         data: _cm5
     }, {
         type: "line",
         name: 'Pct. 95',
-            dashStyle: "Dot",
         marker: { enabled: false },
         data: _cm95
     }, {
@@ -1532,11 +1528,13 @@ the("dopplerMaternoFetalG").onclick = function()
     series: [{
         type: "line",
         name: 'Pct. 5',
+        dashStyle: "Dot",
         marker: { enabled: false },
         data: _cpp5
     }, {
         type: "line",
         name: 'Pct. 95',
+        dashStyle: "Dot",
         marker: { enabled: false },
         data: _cpp95
     }, {
