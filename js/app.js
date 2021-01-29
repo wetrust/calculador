@@ -1203,6 +1203,28 @@ the("dv").onkeyup = function()
 
 the("dopplerMaternoFetalG").onclick = function()
 {
+
+    //para impedir errores de visualizacion
+    //es necesario solo mostrar 10 semanas 
+    //por lo cual hay que cortar los gráficos
+    //tomando una porción de la tabla
+    let _utC = ['10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+    let _ut5 = [1.23,1.18,1.11,1.05,0.99,0.94,0.89,0.85,0.81,0.78,0.74,0.71,0.69,0.66,0.64,0.62,0.6,0.58,0.56,0.55,0.54,0.52,0.51,0.51,0.51,0.49,0.48,0.48,0.47,0.47,0.47]
+    let _ut95 = [2.84,2.71,2.53,2.38,2.24,2.11,1.99,1.88,1.79,1.71,1.61,1.54,1.47,1.41,1.35,1.3,1.25,1.21,1.17,1.13,1.11,1.06,1.04,1.01,0.99,0.97,0.95,0.94,0.92,0.91,0.91]
+    let _eg = the("eg").value;
+    //restar a la EG 10
+    _eg = +_eg -10
+    //porcionar el array 5 elementos antes de la eg y 4 elementos despues de la eg
+    //límite 0 y límite 30
+    let _lInicial = _eg - 5
+    let _lFinal = _eg + 5
+    _lInicial = (_lInicial < 0) ? 0 : _lInicial;
+    _lFinal = (_lFinal > 30) ? 30 : _lFinal;
+
+    _utC = _utC.slice(_lInicial, _lFinal);
+    _ut5 = _ut5.slice(_lInicial, _lFinal);
+    _ut95 = _ut95.slice(_lInicial, _lFinal);
+
     Highcharts.chart('utV', {
         chart: {
         height: 250
@@ -1231,19 +1253,19 @@ the("dopplerMaternoFetalG").onclick = function()
     },
     colors: ['#313131', '#313131', '#313131'],
     xAxis: {
-        categories: ['10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40'] 
+        categories: _utC
     },
     credits: { enabled: false },
     series: [{
         type: "line",
         name: 'Pct. 5',
         marker: { enabled: false },
-        data: [1.23,1.18,1.11,1.05,0.99,0.94,0.89,0.85,0.81,0.78,0.74,0.71,0.69,0.66,0.64,0.62,0.6,0.58,0.56,0.55,0.54,0.52,0.51,0.51,0.51,0.49,0.48,0.48,0.47,0.47,0.47]
+        data: _ut5
     }, {
         type: "line",
         name: 'Pct. 95',
         marker: { enabled: false },
-        data: [2.84,2.71,2.53,2.38,2.24,2.11,1.99,1.88,1.79,1.71,1.61,1.54,1.47,1.41,1.35,1.3,1.25,1.21,1.17,1.13,1.11,1.06,1.04,1.01,0.99,0.97,0.95,0.94,0.92,0.91,0.91]
+        data: _ut95
     }, {
         type: "line",
             name: 'Promedio Uterinas',
@@ -1253,9 +1275,8 @@ the("dopplerMaternoFetalG").onclick = function()
         data: (function () {
                 // generate an array of random data
                 var data = [];
-                var edadGest = the("eg").value;
 
-                for (let i = 10; i < edadGest; i ++ ) {
+                for (let i = _lInicial; i < _eg; i ++ ) {
                     data.push({
                         y: 0,
                     });
@@ -1269,7 +1290,7 @@ the("dopplerMaternoFetalG").onclick = function()
                 data.push({
                         y: auprom,
                     });
-                for (let i = edadGest +1; i <= 39; i ++ ) {
+                for (let i = _eg +1; i < _lFinal; i ++ ) {
                     data.push({
                         y: 0,
                     });
@@ -1278,6 +1299,21 @@ the("dopplerMaternoFetalG").onclick = function()
             }())
         }]
     });
+
+    let _auC = ['20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+    let _au5 = [0.97,0.95,0.94,0.92,0.9,0.89,0.87,0.85,0.82,0.8,0.78,0.75,0.73,0.7,0.67,0.65,0.62,0.58,0.55,0.52,0.49]
+    let _au95 = [1.6,1.56,1.53,1.5,1.46,1.43,1.4,1.37,1.35,1.32,1.29,1.27,1.25,1.22,1.2,1.18,1.16,1.14,1.13,1.11,1.09]
+    _eg = the("eg").value;
+    _eg = +_eg -20
+
+    _lInicial = _eg - 5
+    _lFinal = _eg + 5
+    _lInicial = (_lInicial < 0) ? 0 : _lInicial;
+    _lFinal = (_lFinal > 20) ? 20 : _lFinal;
+
+    _auC = _auC.slice(_lInicial, _lFinal);
+    _au5 = _au5.slice(_lInicial, _lFinal);
+    _au95 = _au95.slice(_lInicial, _lFinal);
 
     Highcharts.chart('auV', {
         chart: {
@@ -1301,7 +1337,7 @@ the("dopplerMaternoFetalG").onclick = function()
     },
     colors: ['#313131', '#313131', '#313131'],
     xAxis: {
-        categories:['20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+        categories:_auC
     },
     legend: {
         itemStyle: {
@@ -1315,13 +1351,13 @@ the("dopplerMaternoFetalG").onclick = function()
         name: 'Pct. 5',
             dashStyle: "Dot",
         marker: { enabled: false },
-        data: [0.97,0.95,0.94,0.92,0.9,0.89,0.87,0.85,0.82,0.8,0.78,0.75,0.73,0.7,0.67,0.65,0.62,0.58,0.55,0.52,0.49]
+        data: _au5
     }, {
         type: "line",
         name: 'Pct. 95',
             dashStyle: "Dot",
         marker: { enabled: false },
-        data: [1.6,1.56,1.53,1.5,1.46,1.43,1.4,1.37,1.35,1.32,1.29,1.27,1.25,1.22,1.2,1.18,1.16,1.14,1.13,1.11,1.09]
+        data: _au95
     }, {
         type: "line",
         name: 'Arteria Umbilical',
@@ -1330,9 +1366,8 @@ the("dopplerMaternoFetalG").onclick = function()
         lineWidth: 0,
         data: (function () {
             var data = [];
-            var edadGest = the("eg").value;
 
-            for (let i = 20; i < edadGest; i++) {
+            for (let i = _lInicial; i < _eg; i++) {
                 data.push({
                     y: 0,
                 });
@@ -1345,7 +1380,7 @@ the("dopplerMaternoFetalG").onclick = function()
             data.push({
                 y: ipau,
             });
-            for (let i = edadGest + 1; i <= 39; i++) {
+            for (let i = _eg + 1; i < _lFinal; i++) {
                 data.push({
                     y: 0,
                 });
@@ -1354,6 +1389,21 @@ the("dopplerMaternoFetalG").onclick = function()
         }())
     }]
     });
+
+    let _cmC = ['20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+    let _cm5 = [1.24,1.29,1.34,1.37,1.4,1.43,1.44,1.45,1.45,1.44,1.43,1.41,1.38,1.34,1.3,1.25,1.19,1.13,1.05,0.98,0.89]
+    let _cm95 = [1.98,2.12,2.25,2.36,2.45,2.53,2.59,2.63,2.66,2.67,2.67,2.65,2.62,2.56,2.5,2.41,2.31,2.2,2.07,1.92,1.76]
+    _eg = the("eg").value;
+    _eg = +_eg -20
+
+    _lInicial = _eg - 5
+    _lFinal = _eg + 5
+    _lInicial = (_lInicial < 0) ? 0 : _lInicial;
+    _lFinal = (_lFinal > 20) ? 20 : _lFinal;
+
+    _cmC = _cmC.slice(_lInicial, _lFinal);
+    _cm5 = _cm5.slice(_lInicial, _lFinal);
+    _cm95 = _cm95.slice(_lInicial, _lFinal);
 
     Highcharts.chart('cmV', {
         chart: {
@@ -1377,7 +1427,7 @@ the("dopplerMaternoFetalG").onclick = function()
     },
     colors: ['#313131', '#313131', '#313131'],
     xAxis: {
-        categories: ['20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+        categories: _cmC
     },
     legend: {
         itemStyle: {
@@ -1393,13 +1443,13 @@ the("dopplerMaternoFetalG").onclick = function()
         name: 'Pct. 5',
             dashStyle: "Dot",
         marker: { enabled: false },
-        data: [1.24,1.29,1.34,1.37,1.4,1.43,1.44,1.45,1.45,1.44,1.43,1.41,1.38,1.34,1.3,1.25,1.19,1.13,1.05,0.98,0.89]
+        data: _cm5
     }, {
         type: "line",
         name: 'Pct. 95',
             dashStyle: "Dot",
         marker: { enabled: false },
-        data: [1.98,2.12,2.25,2.36,2.45,2.53,2.59,2.63,2.66,2.67,2.67,2.65,2.62,2.56,2.5,2.41,2.31,2.2,2.07,1.92,1.76]
+        data: _cm95
     }, {
         type: "line",
         name: 'Arteria C. Media',
@@ -1408,9 +1458,8 @@ the("dopplerMaternoFetalG").onclick = function()
         lineWidth: 0,
         data: (function () {
             var data = [];
-            var edadGest = the("eg").value;
 
-            for (let i = 20; i < edadGest; i++) {
+            for (let i = _lInicial; i < _eg; i++) {
                 data.push({
                     y: 0,
                 });
@@ -1424,7 +1473,7 @@ the("dopplerMaternoFetalG").onclick = function()
             data.push({
                 y: ipacm,
             });
-            for (let i = edadGest + 1; i <= 39; i++) {
+            for (let i = _eg + 1; i < _lFinal; i++) {
                 data.push({
                     y: 0,
                 });
@@ -1433,6 +1482,21 @@ the("dopplerMaternoFetalG").onclick = function()
         }())
     }]
     });
+
+    let _cppC = ['20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+    let _cpp5 = [0.78,0.87,0.95,1.02,1.09,1.15,1.2,1.24,1.28,1.31,1.33,1.35,1.36,1.36,1.36,1.34,1.32,1.3,1.26,1.22,1.18]
+    let _cpp95 = [1.68,1.88,2.06,2.22,2.36,2.49,2.6,2.7,2.78,2.84,2.89,2.92,2.93,2.93,2.91,2.87,2.82,2.75,2.67,2.57,2.45]
+    _eg = the("eg").value;
+    _eg = +_eg -20
+
+    _lInicial = _eg - 5
+    _lFinal = _eg + 5
+    _lInicial = (_lInicial < 0) ? 0 : _lInicial;
+    _lFinal = (_lFinal > 20) ? 20 : _lFinal;
+
+    _cppC = _cppC.slice(_lInicial, _lFinal);
+    _cpp5 = _cpp5.slice(_lInicial, _lFinal);
+    _cpp95 = _cpp95.slice(_lInicial, _lFinal);
 
     Highcharts.chart('cppV', {
         chart: {
@@ -1462,20 +1526,19 @@ the("dopplerMaternoFetalG").onclick = function()
     },
     colors: ['#313131', '#313131', '#313131'],
     xAxis: {
-        categories:
-        ['20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40']
+        categories: _cppC
     },
     credits: { enabled: false },
     series: [{
         type: "line",
         name: 'Pct. 5',
         marker: { enabled: false },
-        data: [0.78,0.87,0.95,1.02,1.09,1.15,1.2,1.24,1.28,1.31,1.33,1.35,1.36,1.36,1.36,1.34,1.32,1.3,1.26,1.22,1.18]
+        data: _cpp5
     }, {
         type: "line",
         name: 'Pct. 95',
         marker: { enabled: false },
-        data: [1.68,1.88,2.06,2.22,2.36,2.49,2.6,2.7,2.78,2.84,2.89,2.92,2.93,2.93,2.91,2.87,2.82,2.75,2.67,2.57,2.45]
+        data: _cpp95
     }, {
      type: "line",
      name: 'Cuociente CP.',
@@ -1485,9 +1548,8 @@ the("dopplerMaternoFetalG").onclick = function()
      data: (function () {
          // generate an array of random data
          var data = [];
-         var edadGest = the("eg").value;
 
-         for (let i = 20; i < edadGest; i++) {
+         for (let i = _lInicial; i < _eg; i++) {
              data.push({
                  y: 0,
              });
@@ -1501,7 +1563,7 @@ the("dopplerMaternoFetalG").onclick = function()
          data.push({
              y: ccp,
          });
-         for (let i = edadGest + 1; i <= 38; i++) {
+         for (let i = _eg + 1; i < _lFinal; i++) {
              data.push({
                  y: 0,
              });
