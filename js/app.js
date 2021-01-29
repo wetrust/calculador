@@ -577,12 +577,14 @@ the("crecimientoFetalG").onclick = function(){
         series: [{
             type: "line",
             name: 'Pct. 5',
-            marker: {enabled: false},
+            dashStyle: "Dot",
+        marker: { enabled: false },
             data: [79,83,87,90,93,95,97,98,98,97,97,95,94,92,90,88,86,83,81,79,77,75,73,72,71]
         }, {
             type: "line",
             name: 'Pct. 95',
-            marker: {enabled: false},
+            dashStyle: "Dot",
+        marker: { enabled: false },
             data: [185,194,200,204,208,212,214,217,218,221,223,226,228,231,234,238,242,245,248,249,249,244,239,226,214]
         }, {
             type: "line",
