@@ -179,6 +179,7 @@ the("goSegundo").onclick = function(){
 the("continuarPortada").onclick = function(){
     the("portada").classList.add("d-none");
     the("inicio").classList.remove("d-none");
+    document.getElementsByTagName("nav")[0].classList.remove("d-none");
 }
 
 the("goDoppler").onclick = function(){
