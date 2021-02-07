@@ -176,13 +176,6 @@ the("goSegundo").onclick = function(){
     activo = "segundo"
 }
 
-the("continuarPortada").onclick = function(){
-    the("portada").classList.add("d-none");
-    the("inicio").classList.remove("d-none");
-    document.getElementsByTagName("nav")[0].classList.remove("d-none");
-    document.getElementsByTagName("body")[0].classList.add("margin-body");
-}
-
 the("goDoppler").onclick = function(){
     the("examenes").classList.add("d-none");
     the("doppler").classList.remove("d-none");
