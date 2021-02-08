@@ -698,7 +698,6 @@ the("edadGestacionalG").onclick = function(){
     _cc3 = _cc3.slice(_lInicial, _lFinal);
     _cc97 = _cc97.slice(_lInicial, _lFinal);
 
-
     Highcharts.chart('ccVE', {
         title: {
             text: 'Perímetro de Cráneo ** ',
@@ -765,6 +764,30 @@ the("edadGestacionalG").onclick = function(){
         }]
     });
 
+
+    //para impedir errores de visualizacion
+    //es necesario solo mostrar 10 semanas 
+    //por lo cual hay que cortar los gráficos
+    //tomando una porción de la tabla
+    let _cbC = ['15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+    let _cbd2DE = [12, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 26, 27, 29, 30, 31, 33, 36, 37, 38, 40, 40, 40, 41, 42, 44]
+    let _cb2DE = [15, 16, 17, 18, 20, 20, 22, 23, 24, 26, 28, 30, 31, 33, 34, 37, 39, 41, 43, 46, 47, 49, 51, 51, 52, 52]
+    let _cbu2DE = [18, 18, 19, 20, 22, 23, 25, 26, 27, 30, 32, 34, 34, 37, 38, 41, 43, 46, 48, 53, 56, 58, 60, 62, 62, 62]
+    _eg = the("eg").value;
+    //restar a la EG 15
+    _eg = +_eg - 15
+    //porcionar el array 5 elementos antes de la eg y 4 elementos despues de la eg
+    //límite 0 y límite 30
+    let _lInicial = _eg - 5
+    let _lFinal = _eg + 5
+    _lInicial = (_lInicial < 0) ? 0 : _lInicial;
+    _lFinal = (_lFinal > 28) ? 28 : _lFinal;
+
+    _cbC = _cbC.slice(_lInicial, _lFinal);
+    _cbd2DE = _cbd2DE.slice(_lInicial, _lFinal);
+    _cb2DE = _cb2DE.slice(_lInicial, _lFinal);
+    _cbu2DE = _cbu2DE.slice(_lInicial, _lFinal);
+
     Highcharts.chart('cerebeloV', {
         title: {
             text: 'Diámetro de Cerebelo',
@@ -785,24 +808,24 @@ the("edadGestacionalG").onclick = function(){
         },
         colors: ['#313131', '#313131', '#313131'],
         xAxis: {
-            categories:['15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+            categories:_cbC
         },
         credits: {enabled: false},
         series: [{
             type: "line",
             name: '-2DE',
             marker: {enabled: false},
-            data: [12, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 26, 27, 29, 30, 31, 33, 36, 37, 38, 40, 40, 40, 41, 42, 44]
+            data: _cbd2DE
         }, {
             type: "line",
             name: 'media',
             marker: {enabled: false},
-            data: [15, 16, 17, 18, 20, 20, 22, 23, 24, 26, 28, 30, 31, 33, 34, 37, 39, 41, 43, 46, 47, 49, 51, 51, 52, 52]
+            data: _cb2DE
         }, {
             type: "line",
             name: '+2DE',
             marker: {enabled: false},
-            data: [18, 18, 19, 20, 22, 23, 25, 26, 27, 30, 32, 34, 34, 37, 38, 41, 43, 46, 48, 53, 56, 58, 60, 62, 62, 62]
+            data: _cbu2DE
         }, {
             type: "line",
             name: 'Cerebelo',
@@ -813,7 +836,7 @@ the("edadGestacionalG").onclick = function(){
                 var data = [];
                 var edadGest = the("eg").value;
 
-                for (let i = 15; i < edadGest; i++) {
+                for (let i = _lInicial; i < _eg; i ++ ) {
                     data.push({
                         y: 0,
                     });
@@ -827,7 +850,7 @@ the("edadGestacionalG").onclick = function(){
                 data.push({
                     y: cerebelo,
                 });
-                for (let i = edadGest + 1; i <= 39; i++) {
+                for (let i = _eg +1; i < _lFinal; i ++ ) {
                     data.push({
                         y: 0,
                     });
