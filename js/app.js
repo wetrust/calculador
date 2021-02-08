@@ -1,22 +1,8 @@
 import { make, the, inputDate, humanDate } from './wetrust.js'
 import { fechas } from './functiones.js'
-import { lcn } from './lcn.js'
-import { saco } from './saco.js'
-import { dbp } from './dbp.js'
-import { cc } from './cc.js'
-import { ca } from './ca.js'
-import { lf } from './lf.js'
-import { lh } from './lh.js'
-import { cb } from './cb.js'
-import { bvm } from './bvm.js'
-import { ila } from  './ila.js'
+import { lcn, saco, dbp, cc, ca, lf, lh, cb, bvm, ila, ccca, uterinas, umbilical, cerebral, ccp, ductus } from './biometrias.js'
 import { pfe } from  './pfe.js'
-import { ccca } from  './ccca.js'
-import { uterinas } from './uterinas.js'
-import { umbilical } from './umbilical.js'
-import { cerebral } from './cerebral.js'
-import { ccp } from './ccp.js'
-import { ductus } from './ductus.js'
+import { p50 } from './p50.js'
 
 var activo = "inicio"
 var paginas = ["inicio", "examenes"]
@@ -1167,6 +1153,8 @@ the("cb").onkeyup = function(){
     let _cb = cb.calcular(the("eg").value, +this.value)
 
     ajustarProgreso(_cb, "cbG")
+
+    the("egp50").innerHTML = "EG P50 Según biometrias: " + p50.calcular(the("eg").value, the("dbp").value, the("cc").value, the("lf").value, the("cb").value, the("lh").value) + " semanas"
 
 }
 
