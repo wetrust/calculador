@@ -6,7 +6,7 @@ export class cc{
         
         return {pct3, pct97}
     }
-    
+
     static calcular(eg, _cc){
 
         let tabla = this.valores()
@@ -23,22 +23,27 @@ export class cc{
 
 export class ca{
 
-    static calcular(eg, _ca){
-
+    static valores(){
         let pct3 = [42, 52, 64, 75, 86, 97, 109, 119, 131, 141, 151, 161, 171, 181, 191, 200, 209, 218, 227, 236, 245, 253, 261, 269, 277, 285, 292, 299, 307]
         let pct97 = [71, 79, 92, 102, 113, 127, 141, 155, 170, 183, 192, 209, 223, 235, 248, 260, 271, 284, 295, 306, 318, 329, 339, 349, 359, 370, 380, 389, 399]
+        
+        return {pct3, pct97}
+    }
+
+    static calcular(eg, _ca){
+
+        let tabla = this.valores()
 
         if (eg < 12 || eg > 40) {
             return 0
-        } else {
-            eg = parseInt(eg);
-            eg = eg - 12;
-
-            let uno = pct97[eg] - pct3[eg];
-            let dos = _ca - pct3[eg];
-
-            return (parseInt(95 / (uno) * (dos) + 3))
         }
+        
+        eg = (parseInt(eg) -12);
+
+        let uno = tabla.pct97[eg] - tabla.pct3[eg];
+        let dos = _ca - tabla.pct3[eg];
+
+        return (parseInt(95 / (uno) * (dos) + 3))
     }
 }
 
