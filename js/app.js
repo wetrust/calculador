@@ -778,10 +778,10 @@ the("edadGestacionalG").onclick = function(){
     _eg = +_eg - 15
     //porcionar el array 5 elementos antes de la eg y 4 elementos despues de la eg
     //límite 0 y límite 30
-    let _lInicial = _eg - 5
-    let _lFinal = _eg + 5
+    _lInicial = _eg - 5
+    _lFinal = _eg + 5
     _lInicial = (_lInicial < 0) ? 0 : _lInicial;
-    _lFinal = (_lFinal > 28) ? 28 : _lFinal;
+    _lFinal = (_lFinal > 25) ? 25 : _lFinal;
 
     _cbC = _cbC.slice(_lInicial, _lFinal);
     _cbd2DE = _cbd2DE.slice(_lInicial, _lFinal);
@@ -834,7 +834,6 @@ the("edadGestacionalG").onclick = function(){
             lineWidth: 0,
             data: (function () {
                 var data = [];
-                var edadGest = the("eg").value;
 
                 for (let i = _lInicial; i < _eg; i ++ ) {
                     data.push({
@@ -860,6 +859,27 @@ the("edadGestacionalG").onclick = function(){
         }]
     })
 
+    //para impedir errores de visualizacion
+    //es necesario solo mostrar 10 semanas 
+    //por lo cual hay que cortar los gráficos
+    //tomando una porción de la tabla
+    let _lfC = ['12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+    let _lf3 = [6,9,12,14,17,20,22,25,27,30,32,35,37,40,42,45,47,49,52,54,56,58,59,61,62,64,65,66,67]
+    let _lf97 = [12,15,18,21,24,28,31,34,38,41,44,47,50,53,55,57,60,62,65,67,70,71,73,75,77,79,80,81,82]
+    _eg = the("eg").value;
+    //restar a la EG 15
+    _eg = +_eg - 12
+    //porcionar el array 5 elementos antes de la eg y 4 elementos despues de la eg
+    //límite 0 y límite 30
+    _lInicial = _eg - 5
+    _lFinal = _eg + 5
+    _lInicial = (_lInicial < 0) ? 0 : _lInicial;
+    _lFinal = (_lFinal > 28) ? 28 : _lFinal;
+
+    _lfC = _lfC.slice(_lInicial, _lFinal);
+    _lf3 = _lf3.slice(_lInicial, _lFinal);
+    _lf97 = _lf97.slice(_lInicial, _lFinal);
+
     Highcharts.chart('lfV', {
         title: {
             text: 'Largo Femoral',
@@ -880,19 +900,19 @@ the("edadGestacionalG").onclick = function(){
         },
         colors: ['#313131', '#313131', '#313131'],
         xAxis: {
-            categories:['12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+            categories:_lfC
         },
         credits: { enabled: false },
         series: [{
             type: "line",
             name: 'Pct. 3',
             marker: { enabled: false },
-            data: [6,9,12,14,17,20,22,25,27,30,32,35,37,40,42,45,47,49,52,54,56,58,59,61,62,64,65,66,67]
+            data: _lf3
         }, {
             type: "line",
             name: 'Pct. 97',
             marker: { enabled: false },
-            data: [12,15,18,21,24,28,31,34,38,41,44,47,50,53,55,57,60,62,65,67,70,71,73,75,77,79,80,81,82]
+            data: _lf97
         }, {
             type: "line",
             name: 'LF',
@@ -901,20 +921,21 @@ the("edadGestacionalG").onclick = function(){
             lineWidth: 0,
             data: (function () {
                 let data = [];
-                let edadGest = the("eg").value;
- 
-                for (let i = 12; i < edadGest; i++) {
-                    data.push({ y: 0, });
+                for (let i = _lInicial; i < _eg; i ++ ) {
+                    data.push({
+                        y: 0,
+                    });
                 }
 
                 let lf = the("lf").value;
                 lf = lf.toString();
                 lf = lf.replace(",", ".");
                 lf = parseFloat(lf);
+
                 data.push({
                     y: lf,
                 });
-                for (let i = edadGest + 1; i <= 39; i++) {
+                for (let i = _eg +1; i < _lFinal; i ++ ) {
                     data.push({
                         y: 0,
                     });
@@ -923,6 +944,27 @@ the("edadGestacionalG").onclick = function(){
             }())
         }]
     })
+
+    //para impedir errores de visualizacion
+    //es necesario solo mostrar 10 semanas 
+    //por lo cual hay que cortar los gráficos
+    //tomando una porción de la tabla
+    let _lhC = ['12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+    let _lh5 = [4.8, 7.6, 10.3, 13.1, 15.8, 18.5, 21.2, 23.8, 26.3, 28.8, 31.2, 33.5, 35.7, 37.9, 39.9, 41.9, 43.7, 45.5, 47.2, 48.9, 50.4, 52.1, 53.4, 54.8, 56.2, 57.6, 59.8, 60.4, 61.9]
+    let _lh95 = [12.3, 15.1, 17.9, 20.7, 23.5, 26.3, 29.1, 31.6, 34.2, 36.7, 39.2, 41.6, 43.9, 46.1, 48.1, 50.1, 52.1, 53.9, 55.6, 57.3, 58.9, 60.5, 62.1, 63.5, 64.9, 66.4, 67.8, 69.3, 70.8]
+    _eg = the("eg").value;
+    //restar a la EG 15
+    _eg = +_eg - 12
+    //porcionar el array 5 elementos antes de la eg y 4 elementos despues de la eg
+    //límite 0 y límite 30
+    _lInicial = _eg - 5
+    _lFinal = _eg + 5
+    _lInicial = (_lInicial < 0) ? 0 : _lInicial;
+    _lFinal = (_lFinal > 28) ? 28 : _lFinal;
+
+    _lhC = _lhC.slice(_lInicial, _lFinal);
+    _lh5 = _lh5.slice(_lInicial, _lFinal);
+    _lh95 = _lh95.slice(_lInicial, _lFinal);
 
     Highcharts.chart('lhV', {
         title: {
@@ -944,19 +986,19 @@ the("edadGestacionalG").onclick = function(){
         },
         colors: ['#313131', '#313131', '#313131'],
         xAxis: {
-            categories:['12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+            categories:_lhC
         },
         credits: { enabled: false },
         series: [{
             type: "line",
             name: 'Pct. 5',
             marker: { enabled: false },
-            data: [4.8, 7.6, 10.3, 13.1, 15.8, 18.5, 21.2, 23.8, 26.3, 28.8, 31.2, 33.5, 35.7, 37.9, 39.9, 41.9, 43.7, 45.5, 47.2, 48.9, 50.4, 52.1, 53.4, 54.8, 56.2, 57.6, 59.8, 60.4, 61.9]
+            data: _lh5
         }, {
             type: "line",
             name: 'Pct. 95',
             marker: { enabled: false },
-            data: [12.3, 15.1, 17.9, 20.7, 23.5, 26.3, 29.1, 31.6, 34.2, 36.7, 39.2, 41.6, 43.9, 46.1, 48.1, 50.1, 52.1, 53.9, 55.6, 57.3, 58.9, 60.5, 62.1, 63.5, 64.9, 66.4, 67.8, 69.3, 70.8]
+            data: _lh95
         }, {
             type: "line",
             name: 'Humero',
@@ -965,10 +1007,10 @@ the("edadGestacionalG").onclick = function(){
             lineWidth: 0,
             data: (function () {
                 var data = [];
-                var edadGest = the("eg").value;
-
-                for (let i = 12; i < edadGest; i++) {
-                    data.push({ y: 0, });
+                for (let i = _lInicial; i < _eg; i ++ ) {
+                    data.push({
+                        y: 0,
+                    });
                 }
 
                 var lh = the("lh").value;
@@ -979,7 +1021,7 @@ the("edadGestacionalG").onclick = function(){
                 data.push({
                     y: lh,
                 });
-                for (let i = edadGest + 1; i <= 39; i++) {
+                for (let i = _eg +1; i < _lFinal; i ++ ) {
                     data.push({
                         y: 0,
                     });
