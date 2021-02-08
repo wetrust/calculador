@@ -677,9 +677,31 @@ the("crecimientoFetalG").onclick = function(){
 
 the("edadGestacionalG").onclick = function(){
 
-    Highcharts.chart('caVE', {
+    //para impedir errores de visualizacion
+    //es necesario solo mostrar 10 semanas 
+    //por lo cual hay que cortar los gráficos
+    //tomando una porción de la tabla
+    let _ccC = ['12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+    let _cc3 = [1.23,1.18,1.11,1.05,0.99,0.94,0.89,0.85,0.81,0.78,0.74,0.71,0.69,0.66,0.64,0.62,0.6,0.58,0.56,0.55,0.54,0.52,0.51,0.51,0.51,0.49,0.48,0.48,0.47,0.47,0.47]
+    let _cc97 = [2.84,2.71,2.53,2.38,2.24,2.11,1.99,1.88,1.79,1.71,1.61,1.54,1.47,1.41,1.35,1.3,1.25,1.21,1.17,1.13,1.11,1.06,1.04,1.01,0.99,0.97,0.95,0.94,0.92,0.91,0.91]
+    let _eg = the("eg").value;
+    //restar a la EG 10
+    _eg = +_eg -12
+    //porcionar el array 5 elementos antes de la eg y 4 elementos despues de la eg
+    //límite 0 y límite 30
+    let _lInicial = _eg - 5
+    let _lFinal = _eg + 5
+    _lInicial = (_lInicial < 0) ? 0 : _lInicial;
+    _lFinal = (_lFinal > 28) ? 28 : _lFinal;
+
+    _ccC = _ccC.slice(_lInicial, _lFinal);
+    _cc3 = _cc3.slice(_lInicial, _lFinal);
+    _cc97 = _cc97.slice(_lInicial, _lFinal);
+
+
+    Highcharts.chart('ccVE', {
         title: {
-            text: 'Perímetro Abdominal **',
+            text: 'Perímetro de Cráneo ** ',
             x: -20
         },
         subtitle: {
@@ -693,58 +715,55 @@ the("edadGestacionalG").onclick = function(){
         },
         yAxis: {
             title: { text: 'Milimetros (mm)' },
-            tickPositions: [20, 60, 100, 140, 180, 220, 260, 300, 340, 400]
+            tickPositions: [30, 72, 114, 156, 198, 240, 282, 324, 366, 408]
         },
         colors: ['#313131', '#313131', '#313131'],
         xAxis: {
-            categories:['12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+            categories: _ccC
         },
-        credits: { enabled: false },
+        credits: {enabled: false},
         series: [{
             type: "line",
             name: 'Pct. 3',
-            marker: { enabled: false },
-            data: [40,50,60,72,84,97,107,119,131,141,151,161,171,181,191,200,209,218,227,236,245,253,261,269,277,285,292,299,307]
+            marker: {enabled: false},
+            data: _cc3
         }, {
             type: "line",
-            name: 'Pct 97',
-            marker: { enabled: false },
-            data: [68,78,88,101,112,127,141,155,168,183,196,209,223,235,248,260,271,284,295,306,318,329,339,349,359,370,380,389,399]
+            name: 'Pct. 97',
+            marker: {enabled: false},
+            data: _cc97
         }, {
             type: "line",
-            name: 'CA',
+            name: 'CC',
             dashStyle: "Dot",
             marker: { symbol: 'square' },
             lineWidth: 0,
             data: (function () {
                 var data = [];
-                var edadGest = the("eg").value;
- 
-                for (let i = 12; i < edadGest; i++) {
+
+                for (let i = _lInicial; i < _eg; i ++ ) {
                     data.push({
                         y: 0,
                     });
                 }
  
-                let ca = the("ca").value;
-                ca = ca.toString();
-                ca = ca.replace(",", ".");
-                ca = parseFloat(ca);
+                var cc = the("cc").value;
+                cc = cc.toString();
+                cc = cc.replace(",", ".");
+                cc = parseFloat(cc);
  
                 data.push({
-                    y:ca,
+                    y: cc,
                 });
-
-                for (let i = edadGest + 1; i <= 39; i++) {
+                for (let i = _eg +1; i < _lFinal; i ++ ) {
                     data.push({
                         y: 0,
                     });
                 }
-
                 return data;
             }())
         }]
-    })
+    });
 
     Highcharts.chart('cerebeloV', {
         title: {
