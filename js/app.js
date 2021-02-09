@@ -1316,7 +1316,31 @@ the("edadAjusteSi").onchange = function(){
         return
     }
 
-    the("ajusteSegundoReady").classList.remove("d-none")
+    let _furOld = fechas.toDate(the("fur").value)
+    let _fppOld = fechas.toDate(the("fpp").value)
+
+    the("furOldSegundo").innerHTML = humanDate(_furOld)
+    the("egOldSegundo").innerHTML = the("eg").value + ", " + the("dias").value
+    the("fppOldSegundo").innerHTML = humanDate(_fppOld)
+
+    //calcular Fur según LCN
+    let _p50 = p50.calcular(the("dbp").value, the("cc").value, the("lf").value, the("cb").value, the("lh").value)
+    let _fexamen = fechas.toDate(the("fexamen").value)
+
+    //calcular la fur con la parte entera del lcn, despues agregar los días
+    let _ip50 = Math.trunc(_p50)
+    let _fur = fechas.fur(_ip50, _fexamen);
+    _fur.setDate(_fur.getDate() - (_ip50 - _p50));
+
+    the("fur").value = inputDate(_fur)
+
+    the("furNewSegundo").innerHTML = humanDate(_fur)
+    the("egNewSegundo").innerHTML = _lcn
+    the("fppNewSegundo").innerHTML = humanDate(fechas.fpp(_fur))
+
+    the("fur").onchange()
+    the("ajustePrimeroReady").classList.remove("d-none")
+
 }
 
 //Doppler
@@ -1781,7 +1805,7 @@ the("dopplerMaternoFetalG").onclick = function()
 }
 
 function calcularP50(){
-    let resultado = p50.calcular(the("eg").value, the("dbp").value, the("cc").value, the("lf").value, the("cb").value, the("lh").value)
+    let resultado = p50.calcular(the("dbp").value, the("cc").value, the("lf").value, the("cb").value, the("lh").value)
     the("egp50").innerHTML = resultado + " semanas"
 
     resultado = resultado.split(".")

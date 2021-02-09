@@ -1,6 +1,6 @@
 export class p50{
 
-    static calcular(eg, _dbp, _cc, _lf, _cb, _lh){
+    static calcular(_dbp, _cc, _lf, _cb, _lh){
 
         //calcular dbp
         const N7 = new Number(9.468544279);
@@ -12,12 +12,12 @@ export class p50{
         var c2 = new Number(1.004137705);
         N = new Number(c1 * Math.pow(c2, _cc));
         _cc =  Math.floor(N) + "." + Math.round((N - Math.floor(N)) * 7);
-        
+
         c1 = new Number(11.20178254);
         c2 = new Number(1.01704237);
         N = new Number(c1 * Math.pow(c2, _lf));
         _lf =  Math.floor(N) + "." + Math.round((N - Math.floor(N)) * 7);
-    
+
         var dbpdias = (Math.floor(_dbp) * 7) + ((_dbp - Math.floor(_dbp)) * 10);
         var ccdias = (Math.floor(_cc) * 7) + ((_cc - Math.floor(_cc)) * 10);
         var lfdias = (Math.floor(_lf) * 7) + ((_lf - Math.floor(_lf)) * 10);
