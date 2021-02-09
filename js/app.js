@@ -1248,12 +1248,72 @@ the("edadAjusteNo").onchange = function(){
 }
 
 the("edadAjusteSi").onchange = function(){
-    let _lcn = the("lcn").value
-    let _saco = the("saco").value
+    let _dbp = the("dbp").value
+    let _cc = the("cc").value
+    let _ca = the("ca").value
+    let _lf = the("lf").value
+    let _lh = the("lh").value
+    let _cb = the("cb").value
 
-    if (_lcn != "" || +_lcn != 0){
-        the("determinacionLCN").classList.remove("d-none")
-        the("ajustePrimero").classList.remove("d-none")
+    let modal = make.modal();
+
+    document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+    the(modal.titulo).innerHTML = "Mensaje";
+    the(modal.titulo).classList.add("mx-auto");
+    the(modal.titulo).parentElement.classList.add("text-white", "bg-danger");
+
+    //$("#"+modal.id + " button").html("Aceptar");
+    the(modal.id).childNodes[0].classList.remove("modal-lg");
+    the(modal.id).childNodes[0].childNodes[0].childNodes[2].childNodes[0].innerHTML = "Aceptar"
+
+    var myModal = new bootstrap.Modal(the(modal.id), {backdrop: 'static', keyboard: false})
+
+    if (_dbp == "" || +_dbp == 0){
+        the(modal.contenido).innerHTML = '<p class="text-center">Ingrese DBP</p>';
+        myModal.show()
+        this.checked = false
+        the("edadAjusteNo").checked = true
+        return
+    }
+
+    if (_cc == "" || +_cc == 0){
+        the(modal.contenido).innerHTML = '<p class="text-center">Ingrese CC</p>';
+        myModal.show()
+        this.checked = false
+        the("edadAjusteNo").checked = true
+        return
+    }
+
+    if (_ca == "" || +_ca == 0){
+        the(modal.contenido).innerHTML = '<p class="text-center">Ingrese CA</p>';
+        myModal.show()
+        this.checked = false
+        the("edadAjusteNo").checked = true
+        return
+    }
+
+    if (_lf == "" || +_lf == 0){
+        the(modal.contenido).innerHTML = '<p class="text-center">Ingrese LF</p>';
+        myModal.show()
+        this.checked = false
+        the("edadAjusteNo").checked = true
+        return
+    }
+
+    if (_lh == "" || +_lh == 0){
+        the(modal.contenido).innerHTML = '<p class="text-center">Ingrese LH</p>';
+        myModal.show()
+        this.checked = false
+        the("edadAjusteNo").checked = true
+        return
+    }
+
+    if (_cb == "" || +_cb == 0){
+        the(modal.contenido).innerHTML = '<p class="text-center">Ingrese CB</p>';
+        myModal.show()
+        this.checked = false
+        the("edadAjusteNo").checked = true
+        return
     }
 
     the("ajusteSegundoReady").classList.remove("d-none")
@@ -1726,7 +1786,7 @@ function calcularP50(){
 
     resultado = resultado.split(".")
 
-    if (isNaN(resultado[0]) == false){
+    if (isNaN(resultado[0]) == false ){
         the("edadSegundoAjuste").classList.remove("d-none")
     }else{
         the("edadSegundoAjuste").classList.add("d-none")
