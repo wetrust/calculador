@@ -1335,7 +1335,7 @@ the("edadAjusteSi").onchange = function(){
     the("fur").value = inputDate(_fur)
 
     the("furNewSegundo").innerHTML = humanDate(_fur)
-    the("egNewSegundo").innerHTML = _lcn
+    the("egNewSegundo").innerHTML = _p50
     the("fppNewSegundo").innerHTML = humanDate(fechas.fpp(_fur))
 
     the("fur").onchange()
