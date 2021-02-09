@@ -1156,6 +1156,7 @@ the("cb").onkeyup = function(){
 
     the("egp50").innerHTML = "EG P50 Según biometrias: " + p50.calcular(the("eg").value, the("dbp").value, the("cc").value, the("lf").value, the("cb").value, the("lh").value) + " semanas"
 
+    the("edadSegundoAjuste").classList.remove("d-none")
 }
 
 the("bvm").onkeyup = function(){
