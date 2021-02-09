@@ -536,8 +536,8 @@
                 </div>
             </div>
             <div class="card shadow mt-3">
-                <div class="card-header">
-                    ¿Mostrar Edad Gestacional Ecográfica?
+                <div class="card-header text-center">
+                    <p class="mb-0">¿ Ver edad gestacional según biometría P50 ?</p>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -601,11 +601,16 @@
                                     </div>
                                 </div>
                             </div>
-                            <p id="egp50" class="my-2 text-center"></p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-flex justify-content-start align-items-center">
+                                <p class="mb-0 me-3">Edad gestacional según biometrias P50 :</p>
+                                <p id="egp50" class="mb-0 text-white bg-wetrust px-2"></p>
+                            </div>
                         </div>
                     </div>
                     <div class="card shadow my-3 d-none" id="edadSegundoAjuste">
-                        <div class="card-header">
+                        <div class="card-header text-center">
                             Determinar Edad Gestacional Ecográfica?
                         </div>
                         <div class="card-body">
@@ -625,6 +630,33 @@
                                 </div>
                                 <div class="col-1"></div>
                             </div>
+                            <div class="card shadow my-3 d-none" id="ajusteSegundoReady">
+                                <div class="card-body">
+                                    <div class="row mb-2">
+                                        <div class="col">
+                                            <small>Referida:</small><br><small id="furOldSegundo"></small>
+                                        </div>
+                                        <div class="col px-0">
+                                            <small>EG:</small><br><small id="egOldSegundo"></small>
+                                        </div>
+                                        <div class="col">
+                                            <small>FPP:</small><br><small id="fppOldSegundo"></small>
+                                        </div>
+                                    </div>
+                                    <div class="row bg-secondary text-white">
+                                        <div class="col">
+                                            <small>Calculada:</small><br><small id="furNewSegundo"></small>
+                                        </div>
+                                        <div class="col px-0">
+                                            <small>EG:</small><br><small id="egNewSegundo"></small>
+                                        </div>
+                                        <div class="col">
+                                            <small>FPP:</small><br><small id="fppNewSegundo"></small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>

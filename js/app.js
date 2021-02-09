@@ -1096,6 +1096,8 @@ the("dbp").onkeyup = function(){
 
     ajustarProgreso(_dbp, "dbpG")
 
+    calcularP50()
+
 }
 
 the("cc").onkeyup = function(){
@@ -1113,6 +1115,8 @@ the("cc").onkeyup = function(){
     the("ccca").value = _ccca
     ajustarProgreso(ccca.percentil(the("eg").value, _ccca), "cccaG")
 
+    calcularP50()
+
 }
 
 the("ca").onkeyup = function(){
@@ -1128,6 +1132,8 @@ the("ca").onkeyup = function(){
 
     the("ccca").value = _ccca
     ajustarProgreso(ccca.percentil(the("eg").value, _ccca), "cccaG")
+
+    calcularP50()
 }
 
 the("lf").onkeyup = function(){
@@ -1140,12 +1146,15 @@ the("lf").onkeyup = function(){
     the("pfe").dataset.value = _pfe
     ajustarProgreso(pfe.calcular(the("eg").value, _pfe), "pfeG")
 
+    calcularP50()
+
 }
 
 the("lh").onkeyup = function(){
     let _lh = lh.calcular(the("eg").value, +this.value)
 
     ajustarProgreso(_lh, "lhG")
+    calcularP50()
 
 }
 
@@ -1153,10 +1162,8 @@ the("cb").onkeyup = function(){
     let _cb = cb.calcular(the("eg").value, +this.value)
 
     ajustarProgreso(_cb, "cbG")
+    calcularP50()
 
-    the("egp50").innerHTML = "EG P50 Según biometrias: " + p50.calcular(the("eg").value, the("dbp").value, the("cc").value, the("lf").value, the("cb").value, the("lh").value) + " semanas"
-
-    the("edadSegundoAjuste").classList.remove("d-none")
 }
 
 the("bvm").onkeyup = function(){
@@ -1175,10 +1182,81 @@ the("ila").onkeyup = function(){
 
 the("edadSegundoNo").onchange = function(){
     the("biometriAdicional").classList.add("d-none")
+    the("edadSegundoAjuste").classList.add("d-none")
 }
 
 the("edadSegundoSi").onchange = function(){
+    let _dbp = the("dbp").value
+    let _cc = the("cc").value
+    let _ca = the("ca").value
+    let _lf = the("lf").value
+
+    let modal = make.modal();
+
+    document.getElementsByTagName("body")[0].insertAdjacentHTML( 'beforeend', modal.modal);
+    the(modal.titulo).innerHTML = "Mensaje";
+    the(modal.titulo).classList.add("mx-auto");
+    the(modal.titulo).parentElement.classList.add("text-white", "bg-danger");
+
+    //$("#"+modal.id + " button").html("Aceptar");
+    the(modal.id).childNodes[0].classList.remove("modal-lg");
+    the(modal.id).childNodes[0].childNodes[0].childNodes[2].childNodes[0].innerHTML = "Aceptar"
+
+    var myModal = new bootstrap.Modal(the(modal.id), {
+        backdrop: 'static',
+        keyboard: false
+      })
+
+
+    if (_dbp == "" || +_dbp == 0){
+        the(modal.contenido).innerHTML = '<p class="text-center">Ingrese DBP</p>';
+        myModal.show()
+        this.checked = false
+        the("edadSegundoNo").checked = true
+        return
+    }
+
+    if (_cc == "" || +_cc == 0){
+        the(modal.contenido).innerHTML = '<p class="text-center">Ingrese CC</p>';
+        myModal.show()
+        this.checked = false
+        the("edadSegundoNo").checked = true
+        return
+    }
+
+    if (_ca == "" || +_ca == 0){
+        the(modal.contenido).innerHTML = '<p class="text-center">Ingrese CA</p>';
+        myModal.show()
+        this.checked = false
+        the("edadSegundoNo").checked = true
+        return
+    }
+
+    if (_lf == "" || +_lf == 0){
+        the(modal.contenido).innerHTML = '<p class="text-center">Ingrese LF</p>';
+        myModal.show()
+        this.checked = false
+        the("edadSegundoNo").checked = true
+        return
+    }
+
     the("biometriAdicional").classList.remove("d-none")
+}
+
+the("edadAjusteNo").onchange = function(){
+    the("ajusteSegundoReady").classList.add("d-none")
+}
+
+the("edadAjusteSi").onchange = function(){
+    let _lcn = the("lcn").value
+    let _saco = the("saco").value
+
+    if (_lcn != "" || +_lcn != 0){
+        the("determinacionLCN").classList.remove("d-none")
+        the("ajustePrimero").classList.remove("d-none")
+    }
+
+    the("ajusteSegundoReady").classList.remove("d-none")
 }
 
 //Doppler
@@ -1640,6 +1718,20 @@ the("dopplerMaternoFetalG").onclick = function()
      }())
     }]
     });
+}
+
+function calcularP50(){
+    let resultado = p50.calcular(the("eg").value, the("dbp").value, the("cc").value, the("lf").value, the("cb").value, the("lh").value)
+    the("egp50").innerHTML = resultado + " semanas"
+
+    resultado = resultado.split(".")
+
+    if (isNaN(resultado[0]) == false){
+        the("edadSegundoAjuste").classList.remove("d-none")
+    }else{
+        the("edadSegundoAjuste").classList.add("d-none")
+    }
+
 }
 
 function ajustarProgreso(valor, objeto)
