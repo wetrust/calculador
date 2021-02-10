@@ -1339,7 +1339,7 @@ the("edadAjusteSi").onchange = function(){
     the("fppNewSegundo").innerHTML = humanDate(fechas.fpp(_fur))
 
     the("fur").onchange()
-    the("ajustePrimeroReady").classList.remove("d-none")
+    the("ajusteSegundoReady").classList.remove("d-none")
 
 }
 
