@@ -20,27 +20,6 @@ let _fpp = fechas.fpp(_fur)
 the("fpp").value = inputDate(_fpp)
 the("txtFPP").innerText = humanDate(_fpp)
 
-//cambiar la fur
-//the("fur").onchange = function(){
-//convertir a fecha
-//    let _fur = fechas.toDate(this.value)
-//clonar a prelude
-//    the("txtFUM").innerText = humanDate(_fur)
-
-//calcular la eg
-//    let _fexamen = fechas.toDate(the("fexamen").value)
-//    let eg = fechas.eg(_fur, _fexamen)
-//    the("eg").value = eg
-//    the("txtEG").innerHTML = eg + "sem"
-
-//calcular fpp
-//    let _fpp = fechas.fpp(_fur)
-
-    //set en input y prelude
-//    the("fpp").value = inputDate(_fpp)
-//    the("txtFPP").innerText = humanDate(_fpp)
-//}
-
 the("fur").onchange = function(){
     //convertir a fecha
     let _fur = fechas.toDate(this.value)
@@ -72,13 +51,6 @@ the("fur").onchange = function(){
     the("txtFPP").innerText = humanDate(_fpp)
 }
 
-//the("eg").onchange = function(){
-//    let _fecha = fechas.toDate(the("fexamen").value)
-
-//    the("fur").value = inputDate(fechas.fur(+this.value, _fecha));
-//    the("fur").onchange()
-//}
-
 the("eg").onchange = function(){
     let semanas = parseInt(this.value);
     let dias = parseInt(the("dias").value);
@@ -90,16 +62,6 @@ the("eg").onchange = function(){
     the("fur").value = inputDate(_fexamen);
     the("fur").onchange()
 }
-
-//the("fexamen").onchange = function(){
-    //convertir a fecha
-//    let _fexamen = fechas.toDate(this.value)
-//    let _fur = fechas.toDate(the("fur").value)
-
-//    let eg = fechas.eg(_fur, _fexamen)
-//    the("eg").value = eg
-//    the("txtEG").innerHTML = eg + "sem"
-//}
 
 the("fexamen").onchange =  function(){
     //convertir a fecha
@@ -1801,6 +1763,97 @@ the("dopplerMaternoFetalG").onclick = function()
          return data;
      }())
     }]
+    });
+
+
+    let _dvC = ['20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40']
+    let _dv5 = [0.32,0.32,0.32,0.32,0.32,0.32,0.31,0.31,0.31,0.3,0.29,0.28,0.28,0.27,0.26,0.25,0.24,0.23,0.22,0.21,0.2]
+    let _dv95 = [0.83,0.83,0.83,0.83,0.83,0.83,0.82,0.82,0.81,0.81,0.8,0.79,0.78,0.77,0.76,0.75,0.74,0.73,0.72,0.71,0.7]
+    _eg = the("eg").value;
+    _eg = +_eg -20
+
+    _lInicial = _eg - 5
+    _lFinal = _eg + 5
+    _lInicial = (_lInicial < 0) ? 0 : _lInicial;
+    _lFinal = (_lFinal > 20) ? 20 : _lFinal;
+
+    _dvC = _dvC.slice(_lInicial, _lFinal);
+    _dv5 = _dv5.slice(_lInicial, _lFinal);
+    _dv95 = _dv95.slice(_lInicial, _lFinal);
+
+    Highcharts.chart('dvV', {
+        chart: {
+            height: 250
+        },
+        title: {
+            text: 'Ductus Venoso',
+            x: -20, //center
+            style: {
+                fontSize: '14px'
+            }
+        },
+        plotOptions: {
+            series: {
+                enableMouseTracking: false
+            }
+        },
+        yAxis: {
+            title: { text: 'Valor IP' },
+            tickPositions: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+        },
+        legend: {
+            itemStyle: {
+                fontSize: '10px',
+                fontWeight:'normal'
+            }
+        },
+        colors: ['#313131', '#313131', '#313131'],
+        xAxis: {
+            categories: _dvC
+        },
+        credits: { enabled: false },
+        series: [{
+            type: "line",
+            name: 'Pct. 5',
+            marker: { enabled: false },
+            data: _dv5
+        }, {
+            type: "line",
+            name: 'Pct. 95',
+            marker: { enabled: false },
+            data: _dv95
+        }, {
+            type: "line",
+            name: 'Ductus Venoso',
+            dashStyle: "Dot",
+            marker: { symbol: 'square' },
+            lineWidth: 0,
+            data: (function () {
+                var data = [];
+
+                for (let i = _lInicial; i < _eg; i++) {
+                    data.push({
+                        y: 0,
+                    });
+                }
+
+                var dv = the("dv").value;
+                dv = dv.toString();
+                dv = dv.replace(",", ".");
+                dv = parseFloat(dv);
+                    
+                data.push({
+                    y: dv,
+                });
+
+                for (let i = _eg + 1; i < _lFinal; i++) {
+                    data.push({
+                        y: 0,
+                    });
+                }
+                return data;
+            }())
+        }]
     });
 }
 
