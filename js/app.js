@@ -1421,52 +1421,52 @@ the("dopplerMaternoFetalG").onclick = function()
 
     Highcharts.chart('utV', {
         chart: {
-        height: 250
-    },
-    title: {
-        text: 'IP Promedio Arteria Uterinas *',
-        x: -20,
-             style: {
-        fontSize: '14px'
-    }
-    },
-    plotOptions: {
-        series: {
-            enableMouseTracking: false
-        }
-    },
-    legend: {
-        itemStyle: {
-            fontSize: '10px',
-            fontWeight:'normal'
-        }
-    },
-    yAxis: {
-        title: { text: 'Valor IP' },
-        tickPositions: [0.1, 0.5, 1, 1.5, 2, 2.5, 3]
-    },
-    colors: ['#313131', '#313131', '#313131'],
-    xAxis: {
-        categories: _utC
-    },
-    credits: { enabled: false },
-    series: [{
-        type: "line",
-        name: 'Pct. 5',
-        marker: { enabled: false },
-        data: _ut5
-    }, {
-        type: "line",
-        name: 'Pct. 95',
-        marker: { enabled: false },
-        data: _ut95
-    }, {
-        type: "line",
+            height: 250
+        },
+        title: {
+            text: 'IP Promedio Arteria Uterinas *',
+            x: -20,
+            style: {
+                fontSize: '14px'
+            }
+        },
+        plotOptions: {
+            series: {
+                enableMouseTracking: false
+            }
+        },
+        legend: {
+            itemStyle: {
+                fontSize: '10px',
+                fontWeight:'normal'
+            }
+        },
+        yAxis: {
+            title: { text: 'Valor IP' },
+            tickPositions: [0.1, 0.5, 1, 1.5, 2, 2.5, 3]
+        },
+        colors: ['#313131', '#313131', '#313131'],
+        xAxis: {
+            categories: _utC
+        },
+        credits: { enabled: false },
+        series: [{
+            type: "line",
+            name: 'Pct. 5',
+            marker: { enabled: false },
+            data: _ut5
+        }, {
+            type: "line",
+            name: 'Pct. 95',
+            marker: { enabled: false },
+            data: _ut95
+        }, {
+            type: "line",
             name: 'Promedio Uterinas',
             dashStyle: "Dot",
             marker: { symbol: 'square' },
             lineWidth: 0,
-        data: (function () {
+            data: (function () {
                 // generate an array of random data
                 var data = [];
 
@@ -1475,20 +1475,22 @@ the("dopplerMaternoFetalG").onclick = function()
                         y: 0,
                     });
                 }
-                
+
                 var auprom = the("aup").value;
                 auprom = auprom.toString();
                 auprom = auprom.replace(",", ".");
                 auprom = parseFloat(auprom);
-                
+
                 data.push({
-                        y: auprom,
-                    });
+                    y: auprom,
+                });
+
                 for (let i = _eg +1; i < _lFinal; i ++ ) {
                     data.push({
                         y: 0,
                     });
                 }
+
                 return data;
             }())
         }]
@@ -1815,11 +1817,13 @@ the("dopplerMaternoFetalG").onclick = function()
         series: [{
             type: "line",
             name: 'Pct. 5',
+            dashStyle: "Dot",
             marker: { enabled: false },
             data: _dv5
         }, {
             type: "line",
             name: 'Pct. 95',
+            dashStyle: "Dot",
             marker: { enabled: false },
             data: _dv95
         }, {
