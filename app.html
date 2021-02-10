@@ -243,22 +243,6 @@
                     </div>
                 </div>
             </div>
-            <div class="card shadow mt-3 d-none" id="dbpPrimero">
-                <div class="card-header">
-                    DBP
-                </div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-5">
-                            <label for="dbpPrimero" class="form-label">DBP</label>
-                            <div class="input-group mb-3">
-                                <input type="number" class="form-control" id="dbpPrimero">
-                                <span class="input-group-text">mm</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="card shadow my-3 d-none">
                 <div class="card-header">
                     Saco Gestacional
@@ -526,13 +510,66 @@
                 </div>
             </div>
             <div class="row my-4">
-                <div class="col-12 text-center mb-3">
+                <div class="col-12 text-center">
                     <button class="btn" data-bs-toggle="modal" data-bs-target="#exampleCrecimiento" id="crecimientoFetalG">VER GRÁFICAS DE CRECIMIENTO FETAL</button>
                     <p class="mb-0"><small>Hadlock FP. y col. Radiology 181: 129 - 133; 1991</small></p>
                 </div>
-                <div class="col-12 text-center">
-                    <button class="btn" data-bs-toggle="modal" data-bs-target="#exampleEdad" id="edadGestacionalG">VER GRÁFICAS DE EDAD GESTACIONAL</button>
-                    <p class="mb-0"><small>Hadlock FP., Jeanty P. Hill y col.</small></p>
+            </div>
+            <div class="card shadow my-3">
+                <div class="card-header">
+                    <p class="mb-0">Líquido Amniótico<br><small><small>* Magann EF y col. Am J O & G 1982: 1581, 2000</small></small><br><small><small>** Moore y col. Am J. O &amp; G. 1990; 162 : 1168 - 1173</small></small></p>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <label for="liquido" class="form-label">Evaluación de líquido amniótico</label>
+                            <select class="form-select" id="liquido">
+                                <option value="normal" selected>Normal</option>
+                                <option value="disminuido">Disminuido</option>
+                                <option value="aumentado">Aumentado</option>
+                              </select>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-12">
+                            <label for="bvm" class="form-label">BVM *</label>
+                        </div>
+                        <div class="col-5">
+                            <div class="input-group">
+                                <input type="number" class="form-control" id="bvm">
+                                <span class="input-group-text">mm</span>
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="d-flex align-items-center h-100">
+                                <div class="d-flex justify-content-center w-100">
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="bvmG">
+                                        <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-12">
+                            <label for="ila" class="form-label">ILA *</label>
+                        </div>
+                        <div class="col-5">
+                            <div class="input-group">
+                                <input type="number" class="form-control" id="ila">
+                                <span class="input-group-text">mm</span>
+                            </div>
+                        </div>
+                        <div class="col-7">
+                            <div class="d-flex align-items-center h-100">
+                                <div class="d-flex justify-content-center w-100">
+                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="ilaG">
+                                        <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="card shadow mt-3">
@@ -661,61 +698,10 @@
                     </div>
                 </div>
             </div>
-            <div class="card shadow my-3">
-                <div class="card-header">
-                    <p class="mb-0">Líquido Amniótico<br><small><small>* Magann EF y col. Am J O & G 1982: 1581, 2000</small></small><br><small><small>** Moore y col. Am J. O &amp; G. 1990; 162 : 1168 - 1173</small></small></p>
-                </div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-12">
-                            <label for="liquido" class="form-label">Evaluación de líquido amniótico</label>
-                            <select class="form-select" id="liquido">
-                                <option value="normal" selected>Normal</option>
-                                <option value="disminuido">Disminuido</option>
-                                <option value="aumentado">Aumentado</option>
-                              </select>
-                        </div>
-                    </div>
-                    <div class="row mt-2">
-                        <div class="col-12">
-                            <label for="bvm" class="form-label">BVM *</label>
-                        </div>
-                        <div class="col-5">
-                            <div class="input-group">
-                                <input type="number" class="form-control" id="bvm">
-                                <span class="input-group-text">mm</span>
-                            </div>
-                        </div>
-                        <div class="col-7">
-                            <div class="d-flex align-items-center h-100">
-                                <div class="d-flex justify-content-center w-100">
-                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="bvmG">
-                                        <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-2">
-                        <div class="col-12">
-                            <label for="ila" class="form-label">ILA *</label>
-                        </div>
-                        <div class="col-5">
-                            <div class="input-group">
-                                <input type="number" class="form-control" id="ila">
-                                <span class="input-group-text">mm</span>
-                            </div>
-                        </div>
-                        <div class="col-7">
-                            <div class="d-flex align-items-center h-100">
-                                <div class="d-flex justify-content-center w-100">
-                                    <div class="progress mt-2 mb-2 mr-sm-2 mb-sm-0 w-100" id="ilaG">
-                                        <div class="progress-consulta" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="row my-4">
+                <div class="col-12 text-center">
+                    <button class="btn" data-bs-toggle="modal" data-bs-target="#exampleEdad" id="edadGestacionalG">VER GRÁFICAS DE EDAD GESTACIONAL</button>
+                    <p class="mb-0"><small>Hadlock FP., Jeanty P. Hill y col.</small></p>
                 </div>
             </div>
             <div class="p-3 text-center bg-wetrust text-white"><em>Para construcción de informes remitase a software crecimientofetal.cl</em></div>
@@ -855,11 +841,6 @@
                     </div>
                 </div>
             </div>
-            <div class="row my-4">
-                <div class="col-12 text-center mb-3">
-                    <button class="btn" data-bs-toggle="modal" data-bs-target="#exampleDoppler" id="dopplerMaternoFetalG">VER GRÁFICA DOPPLER MATERNO FETAL</button>
-                </div>
-            </div>
             <div class="card shadow my-3">
                 <div class="card-header">
                     <p class="mb-0">Ductus Venoso (Prematuro Extremo)<br><small><small>Kessler J. y col.: U. Obstet. &amp; Gynecol. 28p 890-b 2006</small></small></p>
@@ -885,6 +866,11 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="row my-4">
+                <div class="col-12 text-center mb-3">
+                    <button class="btn" data-bs-toggle="modal" data-bs-target="#exampleDoppler" id="dopplerMaternoFetalG">VER GRÁFICA DOPPLER MATERNO FETAL</button>
                 </div>
             </div>
             <div class="p-3 text-center bg-wetrust text-white"><em>Para construcción de informes remitase a software crecimientofetal.cl</em></div>

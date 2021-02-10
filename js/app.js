@@ -179,13 +179,6 @@ the("lcn").onkeyup = function(){
     }else{
         the("lcnf").classList.add("d-none")
     }
-
-    if (this.value > 52) {
-        the("dbpPrimero").classList.remove("d-none");
-    }
-    else{
-        the("dbpPrimero").classList.add("d-none");
-    }
 }
 
 the("graphLCN").onclick = function(){
@@ -1788,7 +1781,7 @@ the("dopplerMaternoFetalG").onclick = function()
             height: 250
         },
         title: {
-            text: 'Ductus Venoso',
+            text: 'IP Ductus Venoso',
             x: -20, //center
             style: {
                 fontSize: '14px'
