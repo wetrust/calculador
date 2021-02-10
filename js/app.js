@@ -35,11 +35,11 @@ the("fur").onchange = function(){
         let semanas = Math.trunc(eg / 7);
         let dias = Math.trunc(eg - (semanas * 7));
         the("eg").value = semanas;
-        the("txtEG").innerHTML = semanas + " sem"
+        the("txtEG").innerHTML = semanas + " semanas"
         the("dias").value = dias;
     } else {
         the("eg").value = 0;
-        the("txtEG").innerHTML = semanas + " sem"
+        the("txtEG").innerHTML = semanas + " semanas"
         the("dias").value = 0;
     }
 
@@ -76,12 +76,12 @@ the("fexamen").onchange =  function(){
         let semanas = Math.trunc(eg / 7);
         let dias = Math.trunc(eg - (semanas * 7));
         the("eg").value = semanas;
-        the("txtEG").innerHTML = semanas + " sem"
+        the("txtEG").innerHTML = semanas + " semanas"
         the("dias").value = dias;
     }
     else{
         the("eg").value = 0;
-        the("txtEG").innerHTML = semanas + " sem"
+        the("txtEG").innerHTML = semanas + " semanas"
         the("dias").value = 0;
     }
 }
