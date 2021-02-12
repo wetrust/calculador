@@ -130,7 +130,7 @@ the("goDoppler").onclick = function(){
     activo = "doppler"
 }
 
-the("back").onclick = volver
+the("back").onclick = back
 
 //primer trimestre
 the("lcn").onkeyup = function(){
@@ -1876,7 +1876,7 @@ function psohdlk(_cc, _ca, _lf)
 
 }
 
-function volver(){
+function back(){
     the(activo).classList.add("d-none");
     
     let examen = examenes.indexOf(activo)
