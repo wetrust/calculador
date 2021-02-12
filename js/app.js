@@ -1894,3 +1894,5 @@ function back(){
         the("prelude").classList.add("d-none");
     }
 }
+
+window.onpopstate = back
