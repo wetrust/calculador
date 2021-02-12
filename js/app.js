@@ -130,24 +130,7 @@ the("goDoppler").onclick = function(){
     activo = "doppler"
 }
 
-the("back").onclick = function(){
-    the(activo).classList.add("d-none");
-    
-    let examen = examenes.indexOf(activo)
-
-    if (examen != -1){
-        activo = "examenes"
-    }else{
-        let id = paginas.indexOf(activo)
-        activo = paginas[id-1]
-    }
-
-    the(activo).classList.remove("d-none");
-    
-    if(activo == "inicio"){
-        the("prelude").classList.add("d-none");
-    }
-}
+the("back").onclick = volver
 
 //primer trimestre
 the("lcn").onkeyup = function(){
@@ -1891,4 +1874,23 @@ function psohdlk(_cc, _ca, _lf)
 
     return (isNaN(psoP) == true) ? 0 : Math.trunc(psoP);
 
+}
+
+function volver(){
+    the(activo).classList.add("d-none");
+    
+    let examen = examenes.indexOf(activo)
+
+    if (examen != -1){
+        activo = "examenes"
+    }else{
+        let id = paginas.indexOf(activo)
+        activo = paginas[id-1]
+    }
+
+    the(activo).classList.remove("d-none");
+    
+    if(activo == "inicio"){
+        the("prelude").classList.add("d-none");
+    }
 }
