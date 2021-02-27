@@ -104,6 +104,14 @@ for(let i = 0;i < losInput.length; i++)
     }
 }
 
+//
+
+goInicio
+
+the("goInicio").onclick = function(){
+    window.location.href = 'index.html';
+}
+
 //controlador de botones
 the("goPrelude").onclick = function(){
     the("inicio").classList.add("d-none");
@@ -1032,6 +1040,20 @@ the("edadPrimeroAjustarSi").onchange = function(){
 the("dbp").onkeyup = function(){
     let _dbp = dbp.calcular(the("eg").value, +this.value)
 
+    if (_dbp < 0 || _dbp > 99){
+        this.classList.add("is-invalid")
+        this.classList.remove("is-valid")
+        the("dbpG").parentElement.classList.add("d-none")
+        let etiqueta = the("dbpG").parentElement.parentElement.children[0]
+        etiqueta.classList.remove("d-none")
+        valorPercentil(_dbp, etiqueta)
+    }else{
+        this.classList.remove("is-invalid")
+        this.classList.add("is-valid")
+        the("dbpG").parentElement.classList.remove("d-none")
+        the("dbpG").parentElement.parentElement.children[0].classList.add("d-none")
+    }
+
     ajustarProgreso(_dbp, "dbpG")
 
     calcularP50()
@@ -1040,6 +1062,14 @@ the("dbp").onkeyup = function(){
 
 the("cc").onkeyup = function(){
     let _cc = cc.calcular(the("eg").value, +this.value)
+
+    if (_cc < 0 || _cc > 99){
+        this.classList.add("is-invalid")
+        this.classList.remove("is-valid")
+    }else{
+        this.classList.remove("is-invalid")
+        this.classList.add("is-valid")
+    }
 
     ajustarProgreso(_cc, "ccG")
 
@@ -1059,6 +1089,15 @@ the("cc").onkeyup = function(){
 
 the("ca").onkeyup = function(){
     let _ca = ca.calcular(the("eg").value, +this.value)
+
+    if (_ca < 0 || _ca > 99){
+        this.classList.add("is-invalid")
+        this.classList.remove("is-valid")
+    }else{
+        this.classList.remove("is-invalid")
+        this.classList.add("is-valid")
+    }
+
     ajustarProgreso(_ca, "caG")
 
     let _pfe = psohdlk(the("cc").value, the("ca").value, the("lf").value) 
@@ -1077,6 +1116,14 @@ the("ca").onkeyup = function(){
 the("lf").onkeyup = function(){
     let _lf = lf.calcular(the("eg").value, +this.value)
 
+    if (_lf < 0 || _lf > 99){
+        this.classList.add("is-invalid")
+        this.classList.remove("is-valid")
+    }else{
+        this.classList.remove("is-invalid")
+        this.classList.add("is-valid")
+    }
+
     ajustarProgreso(_lf, "lfG")
 
     let _pfe = psohdlk(the("cc").value, the("ca").value, the("lf").value) 
@@ -1091,6 +1138,14 @@ the("lf").onkeyup = function(){
 the("lh").onkeyup = function(){
     let _lh = lh.calcular(the("eg").value, +this.value)
 
+    if (_lh < 0 || _lh > 99){
+        this.classList.add("is-invalid")
+        this.classList.remove("is-valid")
+    }else{
+        this.classList.remove("is-invalid")
+        this.classList.add("is-valid")
+    }
+
     ajustarProgreso(_lh, "lhG")
     calcularP50()
 
@@ -1098,6 +1153,14 @@ the("lh").onkeyup = function(){
 
 the("cb").onkeyup = function(){
     let _cb = cb.calcular(the("eg").value, +this.value)
+
+    if (_cb < 0 || _cb > 99){
+        this.classList.add("is-invalid")
+        this.classList.remove("is-valid")
+    }else{
+        this.classList.remove("is-invalid")
+        this.classList.add("is-valid")
+    }
 
     ajustarProgreso(_cb, "cbG")
     calcularP50()
@@ -1107,12 +1170,28 @@ the("cb").onkeyup = function(){
 the("bvm").onkeyup = function(){
     let _bvm = bvm.calcular(the("eg").value, +this.value)
 
+    if (_bvm < 0 || _bvm > 99){
+        this.classList.add("is-invalid")
+        this.classList.remove("is-valid")
+    }else{
+        this.classList.remove("is-invalid")
+        this.classList.add("is-valid")
+    }
+
     ajustarProgreso(_bvm, "bvmG")
 
 }
 
 the("ila").onkeyup = function(){
     let _ila = ila.calcular(the("eg").value, +this.value)
+
+    if (_ila < 0 || _ila > 99){
+        this.classList.add("is-invalid")
+        this.classList.remove("is-valid")
+    }else{
+        this.classList.remove("is-invalid")
+        this.classList.add("is-valid")
+    }
 
     ajustarProgreso(_ila, "ilaG")
 
@@ -1286,6 +1365,14 @@ the("aud").onkeyup = function()
 {
     let _ut = uterinas.calcular(the("eg").value, +this.value)
 
+    if (_ut < 0 || _ut > 99){
+        this.classList.add("is-invalid")
+        this.classList.remove("is-valid")
+    }else{
+        this.classList.remove("is-invalid")
+        this.classList.add("is-valid")
+    }
+
     ajustarProgreso(_ut.raw, "audG")
 
     let aud = the("aud").value
@@ -1314,6 +1401,14 @@ the("aui").onkeyup = function()
 {
     let _ut = uterinas.calcular(the("eg").value, +this.value)
 
+    if (_ut < 0 || _ut > 99){
+        this.classList.add("is-invalid")
+        this.classList.remove("is-valid")
+    }else{
+        this.classList.remove("is-invalid")
+        this.classList.add("is-valid")
+    }
+
     ajustarProgreso(_ut.raw, "auiG")
 
     let aud = the("aud").value
@@ -1341,6 +1436,14 @@ the("au").onkeyup = function()
 {
     let _au = umbilical.calcular(the("eg").value, +this.value)
 
+    if (_au < 0 || _au > 99){
+        this.classList.add("is-invalid")
+        this.classList.remove("is-valid")
+    }else{
+        this.classList.remove("is-invalid")
+        this.classList.add("is-valid")
+    }
+
     ajustarProgreso(_au, "auG")
 
     let _ccp = ccp.calcular(the("acm").value, this.value)
@@ -1355,6 +1458,14 @@ the("acm").onkeyup = function()
 {
     let _acm = cerebral.calcular(the("eg").value, +this.value)
 
+    if (_acm < 0 || _acm > 99){
+        this.classList.add("is-invalid")
+        this.classList.remove("is-valid")
+    }else{
+        this.classList.remove("is-invalid")
+        this.classList.add("is-valid")
+    }
+
     ajustarProgreso(_acm, "acmG")
 
     let _ccp = ccp.calcular(the("acm").value, the("au").value)
@@ -1366,6 +1477,14 @@ the("acm").onkeyup = function()
 the("dv").onkeyup = function()
 {
     let _dv = ductus.calcular(the("eg").value, +this.value)
+
+    if (_dv < 0 || _dv > 99){
+        this.classList.add("is-invalid")
+        this.classList.remove("is-valid")
+    }else{
+        this.classList.remove("is-invalid")
+        this.classList.add("is-valid")
+    }
 
     ajustarProgreso(_dv, "dvG")
 
@@ -1893,6 +2012,11 @@ function back(){
     if(activo == "inicio"){
         the("prelude").classList.add("d-none");
     }
+}
+
+function valorPercentil(valor, elemento){
+    elemento.children[0].innerHTML = "Fuera de rango"
+
 }
 
 window.onpopstate = back
