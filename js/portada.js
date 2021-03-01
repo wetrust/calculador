@@ -13,3 +13,7 @@ the("continuarTres").onclick = function(){
 the("continuarCuatro").onclick = function(){
     window.location.href = 'app.html';
 }
+
+the("saltar").onclick = function(){
+    window.location.href = 'app.html';
+}
