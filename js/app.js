@@ -105,9 +105,6 @@ for(let i = 0;i < losInput.length; i++)
 }
 
 //
-
-goInicio
-
 the("goInicio").onclick = function(){
     window.location.href = 'index.html';
 }
@@ -1066,9 +1063,15 @@ the("cc").onkeyup = function(){
     if (_cc < 0 || _cc > 99){
         this.classList.add("is-invalid")
         this.classList.remove("is-valid")
+        the("ccG").parentElement.classList.add("d-none")
+        let etiqueta = the("ccG").parentElement.parentElement.children[0]
+        etiqueta.classList.remove("d-none")
+        valorPercentil(_cc, etiqueta)
     }else{
         this.classList.remove("is-invalid")
         this.classList.add("is-valid")
+        the("ccG").parentElement.classList.remove("d-none")
+        the("ccG").parentElement.parentElement.children[0].classList.add("d-none")
     }
 
     ajustarProgreso(_cc, "ccG")
@@ -1093,9 +1096,15 @@ the("ca").onkeyup = function(){
     if (_ca < 0 || _ca > 99){
         this.classList.add("is-invalid")
         this.classList.remove("is-valid")
+        the("caG").parentElement.classList.add("d-none")
+        let etiqueta = the("caG").parentElement.parentElement.children[0]
+        etiqueta.classList.remove("d-none")
+        valorPercentil(_ca, etiqueta)
     }else{
         this.classList.remove("is-invalid")
         this.classList.add("is-valid")
+        the("caG").parentElement.classList.remove("d-none")
+        the("caG").parentElement.parentElement.children[0].classList.add("d-none")
     }
 
     ajustarProgreso(_ca, "caG")
@@ -1119,9 +1128,15 @@ the("lf").onkeyup = function(){
     if (_lf < 0 || _lf > 99){
         this.classList.add("is-invalid")
         this.classList.remove("is-valid")
+        the("lfG").parentElement.classList.add("d-none")
+        let etiqueta = the("lfG").parentElement.parentElement.children[0]
+        etiqueta.classList.remove("d-none")
+        valorPercentil(_lf, etiqueta)
     }else{
         this.classList.remove("is-invalid")
         this.classList.add("is-valid")
+        the("lfG").parentElement.classList.remove("d-none")
+        the("lfG").parentElement.parentElement.children[0].classList.add("d-none")
     }
 
     ajustarProgreso(_lf, "lfG")
@@ -1141,9 +1156,15 @@ the("lh").onkeyup = function(){
     if (_lh < 0 || _lh > 99){
         this.classList.add("is-invalid")
         this.classList.remove("is-valid")
+        the("lhG").parentElement.classList.add("d-none")
+        let etiqueta = the("lhG").parentElement.parentElement.children[0]
+        etiqueta.classList.remove("d-none")
+        valorPercentil(_lh, etiqueta)
     }else{
         this.classList.remove("is-invalid")
         this.classList.add("is-valid")
+        the("lhG").parentElement.classList.remove("d-none")
+        the("lhG").parentElement.parentElement.children[0].classList.add("d-none")
     }
 
     ajustarProgreso(_lh, "lhG")
@@ -1157,9 +1178,15 @@ the("cb").onkeyup = function(){
     if (_cb < 0 || _cb > 99){
         this.classList.add("is-invalid")
         this.classList.remove("is-valid")
+        the("cbG").parentElement.classList.add("d-none")
+        let etiqueta = the("cbG").parentElement.parentElement.children[0]
+        etiqueta.classList.remove("d-none")
+        valorPercentil(_cb, etiqueta)
     }else{
         this.classList.remove("is-invalid")
         this.classList.add("is-valid")
+        the("cbG").parentElement.classList.remove("d-none")
+        the("cbG").parentElement.parentElement.children[0].classList.add("d-none")
     }
 
     ajustarProgreso(_cb, "cbG")
@@ -1173,9 +1200,15 @@ the("bvm").onkeyup = function(){
     if (_bvm < 0 || _bvm > 99){
         this.classList.add("is-invalid")
         this.classList.remove("is-valid")
+        the("bvmG").parentElement.classList.add("d-none")
+        let etiqueta = the("bvmG").parentElement.parentElement.children[0]
+        etiqueta.classList.remove("d-none")
+        valorPercentil(_bvm, etiqueta)
     }else{
         this.classList.remove("is-invalid")
         this.classList.add("is-valid")
+        the("bvmG").parentElement.classList.remove("d-none")
+        the("bvmG").parentElement.parentElement.children[0].classList.add("d-none")
     }
 
     ajustarProgreso(_bvm, "bvmG")
@@ -1188,9 +1221,15 @@ the("ila").onkeyup = function(){
     if (_ila < 0 || _ila > 99){
         this.classList.add("is-invalid")
         this.classList.remove("is-valid")
+        the("ilaG").parentElement.classList.add("d-none")
+        let etiqueta = the("ilaG").parentElement.parentElement.children[0]
+        etiqueta.classList.remove("d-none")
+        valorPercentil(_ila, etiqueta)
     }else{
         this.classList.remove("is-invalid")
         this.classList.add("is-valid")
+        the("ilaG").parentElement.classList.remove("d-none")
+        the("ilaG").parentElement.parentElement.children[0].classList.add("d-none")
     }
 
     ajustarProgreso(_ila, "ilaG")
@@ -1368,9 +1407,15 @@ the("aud").onkeyup = function()
     if (_ut < 0 || _ut > 99){
         this.classList.add("is-invalid")
         this.classList.remove("is-valid")
+        the("audG").parentElement.classList.add("d-none")
+        let etiqueta = the("audG").parentElement.parentElement.children[0]
+        etiqueta.classList.remove("d-none")
+        valorPercentil(_ut, etiqueta)
     }else{
         this.classList.remove("is-invalid")
         this.classList.add("is-valid")
+        the("audG").parentElement.classList.remove("d-none")
+        the("audG").parentElement.parentElement.children[0].classList.add("d-none")
     }
 
     ajustarProgreso(_ut.raw, "audG")
@@ -1404,9 +1449,15 @@ the("aui").onkeyup = function()
     if (_ut < 0 || _ut > 99){
         this.classList.add("is-invalid")
         this.classList.remove("is-valid")
+        the("auiG").parentElement.classList.add("d-none")
+        let etiqueta = the("auiG").parentElement.parentElement.children[0]
+        etiqueta.classList.remove("d-none")
+        valorPercentil(_ut, etiqueta)
     }else{
         this.classList.remove("is-invalid")
         this.classList.add("is-valid")
+        the("auiG").parentElement.classList.remove("d-none")
+        the("auiG").parentElement.parentElement.children[0].classList.add("d-none")
     }
 
     ajustarProgreso(_ut.raw, "auiG")
@@ -1439,9 +1490,15 @@ the("au").onkeyup = function()
     if (_au < 0 || _au > 99){
         this.classList.add("is-invalid")
         this.classList.remove("is-valid")
+        the("auG").parentElement.classList.add("d-none")
+        let etiqueta = the("auG").parentElement.parentElement.children[0]
+        etiqueta.classList.remove("d-none")
+        valorPercentil(_au, etiqueta)
     }else{
         this.classList.remove("is-invalid")
         this.classList.add("is-valid")
+        the("auG").parentElement.classList.remove("d-none")
+        the("auG").parentElement.parentElement.children[0].classList.add("d-none")
     }
 
     ajustarProgreso(_au, "auG")
@@ -1461,9 +1518,15 @@ the("acm").onkeyup = function()
     if (_acm < 0 || _acm > 99){
         this.classList.add("is-invalid")
         this.classList.remove("is-valid")
+        the("acmG").parentElement.classList.add("d-none")
+        let etiqueta = the("acmG").parentElement.parentElement.children[0]
+        etiqueta.classList.remove("d-none")
+        valorPercentil(_acm, etiqueta)
     }else{
         this.classList.remove("is-invalid")
         this.classList.add("is-valid")
+        the("acmG").parentElement.classList.remove("d-none")
+        the("acmG").parentElement.parentElement.children[0].classList.add("d-none")
     }
 
     ajustarProgreso(_acm, "acmG")
@@ -1481,9 +1544,15 @@ the("dv").onkeyup = function()
     if (_dv < 0 || _dv > 99){
         this.classList.add("is-invalid")
         this.classList.remove("is-valid")
+        the("dvG").parentElement.classList.add("d-none")
+        let etiqueta = the("dvG").parentElement.parentElement.children[0]
+        etiqueta.classList.remove("d-none")
+        valorPercentil(_dv, etiqueta)
     }else{
         this.classList.remove("is-invalid")
         this.classList.add("is-valid")
+        the("dvG").parentElement.classList.remove("d-none")
+        the("dvG").parentElement.parentElement.children[0].classList.add("d-none")
     }
 
     ajustarProgreso(_dv, "dvG")
