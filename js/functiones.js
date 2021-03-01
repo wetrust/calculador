@@ -30,6 +30,14 @@ export class fechas{
         return date;
     }
 
+    static fppToFUR(date){
+        date = (typeof date === typeof undefined) ? new Date() : date
+
+        date.setDate(date.getDate() - 280);
+
+        return date;
+    }
+
     //hay un error al tomas una fecha
     //ya que a la fecha le quita 3 o 4 horas y se atraza
     //por eso cuando tomas una fecha string hay que agregarles las 

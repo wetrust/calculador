@@ -86,6 +86,38 @@ the("fexamen").onchange =  function(){
     }
 }
 
+the("fpp").onchange = function(){
+    //convertir a fecha
+    let _fpp = fechas.toDate(this.value)
+    //clonar a prelude
+    the("txtFPP").innerText = humanDate(_fpp)
+
+    //calcular fur
+    let _fur = fechas.fppToFUR(_fpp)
+
+    //set en input y prelude
+    the("fur").value = inputDate(_fur)
+    the("txtFUM").innerText = humanDate(_fur)
+
+    //calcular la eg
+    let _fexamen = fechas.toDate(the("fexamen").value)
+
+    let eg = fechas.eg(_fur, _fexamen)
+
+    if (eg > 0){
+        let semanas = Math.trunc(eg / 7);
+        let dias = Math.trunc(eg - (semanas * 7));
+        the("eg").value = semanas;
+        the("txtEG").innerHTML = semanas + " semanas"
+        the("dias").value = dias;
+    } else {
+        the("eg").value = 0;
+        the("txtEG").innerHTML = semanas + " semanas"
+        the("dias").value = 0;
+    }
+
+}
+
 //controlador de los keypress
 let losInput = document.getElementsByTagName("input")
 
