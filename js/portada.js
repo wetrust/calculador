@@ -11,6 +11,11 @@ the("continuarTres").onclick = function(){
 }
 
 the("continuarCuatro").onclick = function(){
+    the("tres").classList.add("d-none");
+    the("cuatro").classList.remove("d-none");
+}
+
+the("continuarCinco").onclick = function(){
     window.location.href = 'app.html';
 }
 
