@@ -11,5 +11,13 @@ the("goSegundoInformeSi").onchange = function() {
 };
 
 the("informeCrecimiento").onclick = function(){
-    window.print()
+    if (window.webkit != undefined){
+        if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.toggleMessageHandler) {
+            window.webkit.messageHandlers.toggleMessageHandler.postMessage({
+                "message": "print"
+            });
+        }
+    }else{
+        window.print()
+    }
 }
