@@ -16,12 +16,12 @@
         <title>Calculador Ecográfico</title>
     </head>
     <body class="wetrust margin-body">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top d-print-none">
             <div class="container-fluid">
                 <a class="navbar-brand text-wetrust" href="index.html"><img src="images/android-chrome-512x512.png" alt="" width="32" height="32">Calculador ecográfico</a>
             </div>
         </nav>
-        <section class="container" id="inicio">
+        <section class="container d-print-none" id="inicio">
             <div class="card shadow">
                 <div class="card-header text-uppercase">
                     Opciones de calculo permitidas
@@ -88,7 +88,7 @@
                 </div>
             </div>
         </section>
-        <section class="container d-none" id="prelude">
+        <section class="container d-none d-print-none" id="prelude">
             <div class="row">
                 <div class="col-3">
                     <div class="d-flex align-items-center h-100">
@@ -115,7 +115,7 @@
                 </div>
             </div>
         </section>
-        <section class="container d-none" id="examenes">
+        <section class="container d-none d-print-none" id="examenes">
             <div class="card shadow mt-3">
                 <div class="card-header">
                     Ecografía Obstétrica 1º Trimestre
@@ -168,7 +168,7 @@
                 </div>
             </div>
         </section>
-        <section class="container d-none" id="primero">
+        <section class="container d-none d-print-none" id="primero">
             <div class="card shadow mt-3">
                 <div class="card-header">
                     Embrión (LCN)
@@ -347,7 +347,7 @@
             </div>
             <div class="p-3 text-center bg-wetrust text-white"><em>Para construcción de informes remitase a software crecimientofetal.cl</em></div>
         </section>
-        <section class="container d-none" id="segundo">
+        <section class="container d-none d-print-none" id="segundo">
             <div class="card shadow mt-3">
                 <div class="card-header">
                     <p class="mb-0">Biometría Fetal<br><small><small>Hadlock FP. y col. Radiology 152: 497 - 501; 1984.</small></small></p>
@@ -451,7 +451,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card shadow mt-3">
+            <div class="card shadow mt-4">
                 <div class="card-header">
                     <p class="mb-0">Crecimiento Intrauterino<br><small><small>Hadlock FP. y col. Radiology 181: 129 - 133; 1991</small></small></p>
                 </div>
@@ -500,7 +500,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card shadow my-3">
+            <div class="card shadow my-4">
                 <div class="card-header">
                     <p class="mb-0">Líquido Amniótico<br><small><small>* Magann EF y col. Am J O & G 1982: 1581, 2000</small></small><br><small><small>** Moore y col. Am J. O &amp; G. 1990; 162 : 1168 - 1173</small></small></p>
                 </div>
@@ -571,7 +571,65 @@
                     <p class="mb-0"><small>Hadlock FP. y col. Radiology 181: 129 - 133; 1991</small></p>
                 </div>
             </div>
-            <div class="card shadow mt-3">
+            <div class="card shadow mt-4">
+                <div class="card-header text-center bg-secondary>
+                    <p class="mb-0">¿ Ver propuesta de Informe Crecimiento Fetal?</p>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-5">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input h3" type="radio" name="goSegundoInforme" id="goSegundoInformeNo" value="No" checked>
+                                <label class="form-check-label h5 mt-2" for="goSegundoInformeNo">No</label>
+                              </div>  
+                        </div>
+                        <div class="col-5">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input h3" type="radio" name="goSegundoInforme" id="goSegundoInformeSi" value="Si">
+                                <label class="form-check-label h5 mt-2" for="goSegundoInformeSi">Si</label>
+                              </div>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                    <div class="card my-3 d-none" id="protocoloInformeCrecimiento">
+                        <div class="card-body">
+                            <label for="placenta" class="form-label">Nombre paciente:</label>
+                            <input class="form-control" type="text" id="nombreInformeCrecimiento">
+
+                            <label for="placenta" class="form-label mt-4">Placenta normo inserta:</label>
+                            <select class="form-select" id="placenta">
+                                <option value="no" selected>No</option>
+                                <option value="si">Si</option>
+                            </select>
+
+                            <label for="feto" class="form-label mt-4">Feto:</label>
+                            <div class="row">
+                                <div class="col">
+                                    <select class="form-select" id="fetoGemelar">
+                                        <option value="único" selected>Único</option>
+                                        <option value="gemelar">Gemelar</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <select class="form-select" id="fetoEstado">
+                                        <option value="activo" selected>Activo</option>
+                                        <option value="inactivo">Inactivo</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <label for="fcf" class="form-label mt-4">Frecuencia Cardiaca Fetal:</label>
+                            <select class="form-select" id="fcf">
+                                <option value="no" selected>No</option>
+                                <option value="si">Si</option>
+                            </select>
+                            <button type="button" class="btn mt-4" id="informeCrecimiento">Ver Informe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card shadow mt-4">
                 <div class="card-header text-center">
                     <p class="mb-0">¿ Ver edad gestacional según biometría P50 ?</p>
                 </div>
@@ -711,9 +769,10 @@
                     <p class="mb-0"><small>Hadlock FP., Jeanty P. Hill y col.</small></p>
                 </div>
             </div>
-            <div class="p-3 text-center bg-wetrust text-white"><em>Para construcción de informes remitase a software crecimientofetal.cl</em></div>
+            
+            <div class="my-3 p-3 text-center bg-wetrust text-white"><em>Para construcción de informes remitase a software crecimientofetal.cl</em></div>
         </section>
-        <section class="container d-none" id="doppler">
+        <section class="container d-none d-print-none" id="doppler">
             <div class="card shadow mt-3">
                 <div class="card-header">
                     <p class="mb-0">Flujometría Doppler Materno ( &gt; 10 sem)<br><small><small>Gómes O., Figueras y col. UOG 2008; 32:128</small></small></p>
@@ -910,7 +969,7 @@
             </div>
             <div class="p-3 text-center bg-wetrust text-white"><em>Para construcción de informes remitase a software crecimientofetal.cl</em></div>
         </section>
-        <div class="modal" tabindex="-1" id="exampleModal">
+        <div class="modal d-print-none" tabindex="-1" id="exampleModal">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -922,7 +981,7 @@
                 </div>
             </div>
         </div>
-        <div class="modal" tabindex="-1" id="exampleCrecimiento">
+        <div class="modal d-print-none" tabindex="-1" id="exampleCrecimiento">
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
                 <div class="modal-header">
@@ -939,7 +998,7 @@
               </div>
             </div>
         </div>
-        <div class="modal" tabindex="-1" id="exampleEdad">
+        <div class="modal d-print-none" tabindex="-1" id="exampleEdad">
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
                 <div class="modal-header">
@@ -955,7 +1014,7 @@
               </div>
             </div>
         </div>
-        <div class="modal" tabindex="-1" id="exampleDoppler">
+        <div class="modal d-print-none" tabindex="-1" id="exampleDoppler">
             <div class="modal-dialog modal-lg">
               <div class="modal-content">
                 <div class="modal-header">
@@ -972,7 +1031,7 @@
               </div>
             </div>
         </div>
-        <section class="container d-none" id="about">
+        <section class="container d-none d-print-none" id="about">
             <hr>
                 <ul>
                     <li></li>
@@ -988,7 +1047,7 @@
                 </ul>
             </ul>
         </section>
-        <section class="container completo d-none">
+        <section class="container completo d-none d-print-none">
             <div id="carouselExampleIndicators completo" class="carousel slide" data-bs-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
@@ -1016,8 +1075,52 @@
                 </a>
               </div>
         </section>
+        <section class="container d-none d-print-block" id="impresion">
+            <h1 class="text-center border-bottom h5 pb-3" id="impresionTitulo">Evaluación ecográfica del crecimiento fetal</h1>
+            <hr>
+            <div class="row">
+                <div class="col-6"><p class="mb-0"><small>Nombre: <span id=""></span></small></p></div>
+                <div class="col-6"><p class="mb-0"><small>Fecha exámen: <span id=""></span></small></p></div>
+                <div class="col-6"><p><small>FUR: <span id=""></span></small></p></div>
+                <div class="col-6"><p><small>Edad Gestacional: <span id=""></span></small></p></div>
+            </div>
+            <p class="mb-2">DESCRIPCIÓN</p>
+            <div class="row">
+                <div class="col-6"><p class="mb-0"><small>Placenta normo insertada: <span id=""></span></small></p></div>
+                <div class="col-6"><p class="mb-0"><small>Líquido amniótico: <span id=""></span></small></p></div>
+                <div class="col-6"><p><small>Feto: <span id=""></span></small></p></div>
+                <div class="col-6"><p><small>FCF: <span id=""></span> x min.</small></p></div>
+            </div>
+            <p class="mb-2">BIOMETRÍAS</p>
+            <div class="row">
+                <div class="col-4"><p class="mb-0"><small>Medida</small></p></div>
+                <div class="col-4"><p class="mb-0">Gráfica</p></div>
+                <div class="col-4"><p class="mb-0"><small>Percentil</small></p></div>
+                <div class="col-4"><p class="mb-0"><small>DBP: <span id=""></span></small></p></div>
+                <div class="col-4"><p class="mb-0" id=""></p></div>
+                <div class="col-4"><p class="mb-0"><small>Pct: <span id=""></span></small></p></div>
+                <div class="col-4"><p class="mb-0"><small>CC: <span id=""></span></small></p></div>
+                <div class="col-4"><p class="mb-0" id=""></p></div>
+                <div class="col-4"><p class="mb-0"><small>Pct: <span id=""></span></small></p></div>
+                <div class="col-4"><p class="mb-0"><small>CA: <span id=""></span></small></p></div>
+                <div class="col-4"><p class="mb-0" id=""></p></div>
+                <div class="col-4"><p class="mb-0"><small>Pct: <span id=""></span></small></p></div>
+                <div class="col-4"><p class="mb-0"><small>LF: <span id=""></span></small></p></div>
+                <div class="col-4"><p class="mb-0" id=""></p></div>
+                <div class="col-4"><p class="mb-0"><small>Pct: <span id=""></span></small></p></div>
+
+                <div class="col-4"><p class="mb-0"><small>Peso Fetal Estimado: <span id=""></span></small></p></div>
+                <div class="col-4"><p class="mb-0" id=""></p></div>
+                <div class="col-4"><p class="mb-0"><small>Pct: <span id=""></span></small></p></div>
+
+                <div class="col-4"><p class="mb-0"><small>Relación CC-CA: <span id=""></span></small></p></div>
+                <div class="col-4"><p class="mb-0" id=""></p></div>
+                <div class="col-4"><p class="mb-0"><small>Pct: <span id=""></span></small></p></div>
+            </div>
+        </section>
         <script src="js/highcharts.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>
+        <script type="module" src="js/informes.js"></script>
         <script type="module" src="js/app.js"></script>
     </body>
 </html>

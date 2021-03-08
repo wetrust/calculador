@@ -1,27 +1,14 @@
-import {
-	make, the, inputDate, humanDate
-}
-from './wetrust.js';
-import {
-	fechas
-}
-from './functiones.js';
-import {
-	lcn, saco, dbp, cc, ca, lf, lh, cb, bvm, ila, ccca, uterinas, umbilical, cerebral, ccp, ductus
-}
-from './biometrias.js';
-import {
-	pfe
-}
-from './pfe.js';
-import {
-	p50
-}
-from './p50.js';
+import { make, the, inputDate, humanDate } from './wetrust.js';
+import { fechas } from './functiones.js';
+import { lcn, saco, dbp, cc, ca, lf, lh, cb, bvm, ila, ccca, uterinas, umbilical, cerebral, ccp, ductus } from './biometrias.js';
+import { pfe } from './pfe.js';
+import { p50 } from './p50.js';
+
 var activo = "inicio";
 var paginas = ["inicio", "examenes"];
 var examenes = ["primero", "segundo", "doppler"];
 let _fecha = new Date();
+
 the("fexamen").value = inputDate(_fecha);
 let _fur = fechas.fur(10, _fecha);
 the("fur").value = inputDate(_fur);
@@ -29,6 +16,7 @@ the("txtFUM").innerText = humanDate(_fur);
 let _fpp = fechas.fpp(_fur);
 the("fpp").value = inputDate(_fpp);
 the("txtFPP").innerText = humanDate(_fpp);
+
 the("fur").onchange = function() {
 	//convertir a fecha
 	let _fur = fechas.toDate(this.value);
@@ -54,6 +42,7 @@ the("fur").onchange = function() {
 	the("fpp").value = inputDate(_fpp);
 	the("txtFPP").innerText = humanDate(_fpp);
 };
+
 the("eg").onchange = function() {
 	let semanas = parseInt(this.value);
 	let dias = parseInt(the("dias").value);
@@ -63,6 +52,7 @@ the("eg").onchange = function() {
 	the("fur").value = inputDate(_fexamen);
 	the("fur").onchange();
 };
+
 the("fexamen").onchange = function() {
 	//convertir a fecha
 	let _fur = fechas.toDate(the("fur").value);
@@ -81,6 +71,7 @@ the("fexamen").onchange = function() {
 		the("dias").value = 0;
 	}
 };
+
 the("fpp").onchange = function() {
 	//convertir a fecha
 	let _fpp = fechas.toDate(this.value);
@@ -106,6 +97,7 @@ the("fpp").onchange = function() {
 		the("dias").value = 0;
 	}
 };
+
 //controlador de los keypress
 let losInput = document.getElementsByTagName("input");
 for(let i = 0; i < losInput.length; i++) {
@@ -120,9 +112,11 @@ for(let i = 0; i < losInput.length; i++) {
 		}
 	};
 }
+
 the("goInicio").onclick = function() {
 	window.location.href = 'index.html';
 };
+
 //controlador de botones
 the("goPrelude").onclick = function() {
 	the("inicio").classList.add("d-none");
@@ -130,21 +124,25 @@ the("goPrelude").onclick = function() {
 	the("examenes").classList.remove("d-none");
 	activo = "examenes";
 };
+
 the("goPrimero").onclick = function() {
 	the("examenes").classList.add("d-none");
 	the("primero").classList.remove("d-none");
 	activo = "primero";
 };
+
 the("goSegundo").onclick = function() {
 	the("examenes").classList.add("d-none");
 	the("segundo").classList.remove("d-none");
 	activo = "segundo";
 };
+
 the("goDoppler").onclick = function() {
 	the("examenes").classList.add("d-none");
 	the("doppler").classList.remove("d-none");
 	activo = "doppler";
 };
+
 the("back").onclick = back;
 //primer trimestre
 the("lcn").onkeyup = function() {
@@ -171,6 +169,7 @@ the("lcn").onkeyup = function() {
 		the("lcnf").classList.add("d-none");
 	}
 };
+
 the("graphLCN").onclick = function() {
 	Highcharts.chart('gLCN', {
 		title: {
@@ -269,6 +268,7 @@ the("graphLCN").onclick = function() {
 		}]
 	});
 };
+
 the("crecimientoFetalG").onclick = function() {
 	Highcharts.chart('pesoV', {
 		title: {
@@ -649,6 +649,7 @@ the("crecimientoFetalG").onclick = function() {
 		}]
 	});
 };
+
 the("edadGestacionalG").onclick = function() {
 	//para impedir errores de visualizacion
 	//es necesario solo mostrar 10 semanas 
@@ -1024,6 +1025,7 @@ the("edadGestacionalG").onclick = function() {
 		}]
 	});
 };
+
 the("saco").onkeyup = function() {
 	let _saco = saco.calcular(this.value);
 	the("sacoeg").value = _saco + " semanas";
@@ -1044,11 +1046,13 @@ the("saco").onkeyup = function() {
 		the("sacof").classList.add("d-none");
 	}
 };
+
 the("edadPrimeroNo").onchange = function() {
 	the("determinacionLCN").classList.add("d-none");
 	the("determinacionSaco").classList.add("d-none");
 	the("ajustePrimero").classList.add("d-none");
 };
+
 the("edadPrimeroSi").onchange = function() {
 	let _lcn = the("lcn").value;
 	let _saco = the("saco").value;
@@ -1060,6 +1064,7 @@ the("edadPrimeroSi").onchange = function() {
 		the("determinacionSaco").classList.remove("d-none");
 	}
 };
+
 the("edadPrimeroAjustarSi").onchange = function() {
 	let _furOld = fechas.toDate(the("fur").value);
 	let _fppOld = fechas.toDate(the("fpp").value);
@@ -1080,6 +1085,7 @@ the("edadPrimeroAjustarSi").onchange = function() {
 	the("fur").onchange();
 	the("ajustePrimeroReady").classList.remove("d-none");
 };
+
 //Segundo Tercer trimestre
 the("dbp").onkeyup = function() {
 	let _dbp = dbp.calcular(the("eg").value, +this.value);
@@ -1100,14 +1106,17 @@ the("dbp").onkeyup = function() {
 	the("dbpPct").innerHTML = "Pct: " + _dbp;
 	calcularP50();
 };
+
 the("dbpVisualizador").onclick = function() {
 	this.classList.add("d-none");
 	the("dbpPercentil").classList.remove("d-none");
 };
+
 the("dbpPercentil").onclick = function() {
 	this.classList.add("d-none");
 	the("dbpVisualizador").classList.remove("d-none");
 };
+
 the("cc").onkeyup = function() {
 	let _cc = cc.calcular(the("eg").value, +this.value);
 	if(_cc < 0 || _cc > 99) {
@@ -1136,14 +1145,17 @@ the("cc").onkeyup = function() {
 	the("cccaPct").innerHTML = "Pct: " + ccca.percentil(the("eg").value, _ccca);
 	calcularP50();
 };
+
 the("ccVisualizador").onclick = function() {
 	this.classList.add("d-none");
 	the("ccPercentil").classList.remove("d-none");
 };
+
 the("ccPercentil").onclick = function() {
 	this.classList.add("d-none");
 	the("ccVisualizador").classList.remove("d-none");
 };
+
 the("ca").onkeyup = function() {
 	let _ca = ca.calcular(the("eg").value, +this.value);
 	if(_ca < 0 || _ca > 99) {
@@ -1172,14 +1184,17 @@ the("ca").onkeyup = function() {
 	the("cccaPct").innerHTML = "Pct: " + ccca.percentil(the("eg").value, _ccca);
 	calcularP50();
 };
+
 the("caVisualizador").onclick = function() {
 	this.classList.add("d-none");
 	the("caPercentil").classList.remove("d-none");
 };
+
 the("caPercentil").onclick = function() {
 	this.classList.add("d-none");
 	the("caVisualizador").classList.remove("d-none");
 };
+
 the("lf").onkeyup = function() {
 	let _lf = lf.calcular(the("eg").value, +this.value);
 	if(_lf < 0 || _lf > 99) {
@@ -1204,14 +1219,17 @@ the("lf").onkeyup = function() {
 	the("pfePct").innerHTML = "Pct: " + pfe.calcular(the("eg").value, _pfe);
 	calcularP50();
 };
+
 the("lfVisualizador").onclick = function() {
 	this.classList.add("d-none");
 	the("lfPercentil").classList.remove("d-none");
 };
+
 the("lfPercentil").onclick = function() {
 	this.classList.add("d-none");
 	the("lfVisualizador").classList.remove("d-none");
 };
+
 the("lh").onkeyup = function() {
 	let _lh = lh.calcular(the("eg").value, +this.value);
 	if(_lh < 0 || _lh > 99) {
@@ -1231,14 +1249,17 @@ the("lh").onkeyup = function() {
 	the("lhPct").innerHTML = "Pct: " + _lh;
 	calcularP50();
 };
+
 the("lhVisualizador").onclick = function() {
 	this.classList.add("d-none");
 	the("lhPercentil").classList.remove("d-none");
 };
+
 the("lhPercentil").onclick = function() {
 	this.classList.add("d-none");
 	the("lhVisualizador").classList.remove("d-none");
 };
+
 the("cb").onkeyup = function() {
 	let _cb = cb.calcular(the("eg").value, +this.value);
 	if(_cb < 0 || _cb > 99) {
@@ -1258,18 +1279,22 @@ the("cb").onkeyup = function() {
 	the("cbPct").innerHTML = "Pct: " + _cb;
 	calcularP50();
 };
+
 the("cbVisualizador").onclick = function() {
 	this.classList.add("d-none");
 	the("cbPercentil").classList.remove("d-none");
 };
+
 the("cbPercentil").onclick = function() {
 	this.classList.add("d-none");
 	the("cbVisualizador").classList.remove("d-none");
 };
+
 the("pfeVisualizador").onclick = function() {
 	this.classList.add("d-none");
 	the("pfePercentil").classList.remove("d-none");
 };
+
 the("pfePercentil").onclick = function() {
 	this.classList.add("d-none");
 	the("pfeVisualizador").classList.remove("d-none");
