@@ -17,9 +17,21 @@ document.getElementById("informeCrecimiento").onclick = function(){
 }
 
 function construirInformeCrecimiento(){
-    let fexamen = document.getElementById("fexamen").value
-    fexamen = fexamen.split("-");
-    fexamen = fexamen[2] + "-" +fexamen[1] + "-" +fexamen[0]
+
+        var date = new Date();
+    var dd = date.getDate();
+    var mm = date.getMonth()+1; //January is 0!
+    var yyyy = date.getFullYear();
+  
+    if(dd<10) {
+        dd = '0'+dd
+    } 
+  
+    if(mm<10) {
+        mm = '0'+mm
+    } 
+  
+    fexamen=  dd+ '-' + mm + '-' + yyyy;
 
     document.getElementById("impresionNombrePaciente").innerHTML = document.getElementById("nombreInformeCrecimiento").value
     document.getElementById("impresionFechaExamen").innerHTML =  fexamen
