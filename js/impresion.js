@@ -1,5 +1,3 @@
-import { fechas } from "./functiones";
-
 document.getElementById("informeCrecimiento").onclick = function(){
     construirInformeCrecimiento()
 
@@ -9,7 +7,7 @@ document.getElementById("informeCrecimiento").onclick = function(){
                 "message": "print"
             });
         }
-    } else if (app != undefined){
+    } else if (typeof app != 'undefined'){ 
         app.imprimir()
     }else{
         window.print()
