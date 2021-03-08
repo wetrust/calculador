@@ -17,6 +17,8 @@ the("informeCrecimiento").onclick = function(){
                 "message": "print"
             });
         }
+    } else if (app != undefined){
+        app.imprimir()
     }else{
         window.print()
     }
