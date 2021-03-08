@@ -136,7 +136,6 @@ for(let i = 0;i < losInput.length; i++)
     }
 }
 
-//
 the("goInicio").onclick = function(){
     window.location.href = 'index.html';
 }
@@ -1084,9 +1083,19 @@ the("dbp").onkeyup = function(){
     }
 
     ajustarProgreso(_dbp, "dbpG")
+    the("dbpPct").innerHTML = "Pct: " + _dbp
 
     calcularP50()
+}
 
+the("dbpVisualizador").onclick = function(){
+    this.classList.add("d-none")
+    the("dbpPercentil").classList.remove("d-none")
+}
+
+the("dbpPercentil").onclick = function(){
+    this.classList.add("d-none")
+    the("dbpVisualizador").classList.remove("d-none")
 }
 
 the("cc").onkeyup = function(){
@@ -1107,6 +1116,7 @@ the("cc").onkeyup = function(){
     }
 
     ajustarProgreso(_cc, "ccG")
+    the("ccPct").innerHTML = "Pct: " + _cc
 
     let _pfe = psohdlk(the("cc").value, the("ca").value, the("lf").value) 
     the("pfe").value = _pfe + " gramos"
@@ -1120,6 +1130,16 @@ the("cc").onkeyup = function(){
 
     calcularP50()
 
+}
+
+the("ccVisualizador").onclick = function(){
+    this.classList.add("d-none")
+    the("ccPercentil").classList.remove("d-none")
+}
+
+the("ccPercentil").onclick = function(){
+    this.classList.add("d-none")
+    the("ccVisualizador").classList.remove("d-none")
 }
 
 the("ca").onkeyup = function(){
@@ -1140,6 +1160,7 @@ the("ca").onkeyup = function(){
     }
 
     ajustarProgreso(_ca, "caG")
+    the("caPct").innerHTML = "Pct: " + _ca
 
     let _pfe = psohdlk(the("cc").value, the("ca").value, the("lf").value) 
     the("pfe").value = _pfe + " gramos"
@@ -1152,6 +1173,16 @@ the("ca").onkeyup = function(){
     ajustarProgreso(ccca.percentil(the("eg").value, _ccca), "cccaG")
 
     calcularP50()
+}
+
+the("caVisualizador").onclick = function(){
+    this.classList.add("d-none")
+    the("caPercentil").classList.remove("d-none")
+}
+
+the("caPercentil").onclick = function(){
+    this.classList.add("d-none")
+    the("caVisualizador").classList.remove("d-none")
 }
 
 the("lf").onkeyup = function(){
@@ -1172,6 +1203,7 @@ the("lf").onkeyup = function(){
     }
 
     ajustarProgreso(_lf, "lfG")
+    the("lfPct").innerHTML = "Pct: " + _lf
 
     let _pfe = psohdlk(the("cc").value, the("ca").value, the("lf").value) 
     the("pfe").value = _pfe + " gramos"
@@ -1180,6 +1212,16 @@ the("lf").onkeyup = function(){
 
     calcularP50()
 
+}
+
+the("lfVisualizador").onclick = function(){
+    this.classList.add("d-none")
+    the("lfPercentil").classList.remove("d-none")
+}
+
+the("lfPercentil").onclick = function(){
+    this.classList.add("d-none")
+    the("lfVisualizador").classList.remove("d-none")
 }
 
 the("lh").onkeyup = function(){
@@ -1200,8 +1242,19 @@ the("lh").onkeyup = function(){
     }
 
     ajustarProgreso(_lh, "lhG")
+    the("lhPct").innerHTML = "Pct: " + _lh
     calcularP50()
 
+}
+
+the("lhVisualizador").onclick = function(){
+    this.classList.add("d-none")
+    the("lhPercentil").classList.remove("d-none")
+}
+
+the("lhPercentil").onclick = function(){
+    this.classList.add("d-none")
+    the("lhVisualizador").classList.remove("d-none")
 }
 
 the("cb").onkeyup = function(){
@@ -1222,8 +1275,19 @@ the("cb").onkeyup = function(){
     }
 
     ajustarProgreso(_cb, "cbG")
+    the("cbPct").innerHTML = "Pct: " + _cb
     calcularP50()
 
+}
+
+the("cbVisualizador").onclick = function(){
+    this.classList.add("d-none")
+    the("cbPercentil").classList.remove("d-none")
+}
+
+the("cbPercentil").onclick = function(){
+    this.classList.add("d-none")
+    the("cbVisualizador").classList.remove("d-none")
 }
 
 the("bvm").onkeyup = function(){
@@ -1244,7 +1308,18 @@ the("bvm").onkeyup = function(){
     }
 
     ajustarProgreso(_bvm, "bvmG")
+    the("bvmPct").innerHTML = "Pct: " + _bvm
 
+}
+
+the("bvmVisualizador").onclick = function(){
+    this.classList.add("d-none")
+    the("bvmPercentil").classList.remove("d-none")
+}
+
+the("bvmPercentil").onclick = function(){
+    this.classList.add("d-none")
+    the("bvmVisualizador").classList.remove("d-none")
 }
 
 the("ila").onkeyup = function(){
@@ -1265,7 +1340,18 @@ the("ila").onkeyup = function(){
     }
 
     ajustarProgreso(_ila, "ilaG")
+    the("ilaPct").innerHTML = "Pct: " + _ila
 
+}
+
+the("ilaVisualizador").onclick = function(){
+    this.classList.add("d-none")
+    the("ilaPercentil").classList.remove("d-none")
+}
+
+the("ilaPercentil").onclick = function(){
+    this.classList.add("d-none")
+    the("ilaVisualizador").classList.remove("d-none")
 }
 
 the("edadSegundoNo").onchange = function(){
@@ -1451,6 +1537,7 @@ the("aud").onkeyup = function()
     }
 
     ajustarProgreso(_ut.raw, "audG")
+    the("audPct").innerHTML = "Pct: " + _ut.raw
 
     let aud = the("aud").value
     let aui = the("aui").value
@@ -1469,9 +1556,19 @@ the("aud").onkeyup = function()
 
         utprom = uterinas.calcular(the("eg").value, +utprom)
         ajustarProgreso(utprom.raw, "aupG")
-
+        the("aupPct").innerHTML = "Pct: " + utprom.raw
     }
 
+}
+
+the("audVisualizador").onclick = function(){
+    this.classList.add("d-none")
+    the("audPercentil").classList.remove("d-none")
+}
+
+the("audPercentil").onclick = function(){
+    this.classList.add("d-none")
+    the("audVisualizador").classList.remove("d-none")
 }
 
 the("aui").onkeyup = function()
@@ -1493,6 +1590,7 @@ the("aui").onkeyup = function()
     }
 
     ajustarProgreso(_ut.raw, "auiG")
+    the("auiPct").innerHTML = "Pct: " + _ut.raw
 
     let aud = the("aud").value
     let aui = the("aui").value
@@ -1511,8 +1609,19 @@ the("aui").onkeyup = function()
 
         utprom = uterinas.calcular(the("eg").value, +utprom)
         ajustarProgreso(utprom.raw, "aupG")
+        the("aupPct").innerHTML = "Pct: " + utprom.raw
 
     }
+}
+
+the("auiVisualizador").onclick = function(){
+    this.classList.add("d-none")
+    the("auiPercentil").classList.remove("d-none")
+}
+
+the("auiPercentil").onclick = function(){
+    this.classList.add("d-none")
+    the("auiVisualizador").classList.remove("d-none")
 }
 
 the("au").onkeyup = function()
@@ -1534,13 +1643,25 @@ the("au").onkeyup = function()
     }
 
     ajustarProgreso(_au, "auG")
+    the("auPct").innerHTML = "Pct: " + _au
 
     let _ccp = ccp.calcular(the("acm").value, this.value)
 
     the("ccp").value = _ccp
     
     ajustarProgreso(ccp.percentil(the("eg").value, _ccp), "ccpG")
+    the("ccpPct").innerHTML = "Pct: " + ccp.percentil(the("eg").value, _ccp)
 
+}
+
+the("auVisualizador").onclick = function(){
+    this.classList.add("d-none")
+    the("auPercentil").classList.remove("d-none")
+}
+
+the("auPercentil").onclick = function(){
+    this.classList.add("d-none")
+    the("auVisualizador").classList.remove("d-none")
 }
 
 the("acm").onkeyup = function()
@@ -1562,11 +1683,23 @@ the("acm").onkeyup = function()
     }
 
     ajustarProgreso(_acm, "acmG")
+    the("acmPct").innerHTML = "Pct: " + _acm
 
     let _ccp = ccp.calcular(the("acm").value, the("au").value)
     the("ccp").value = _ccp
     ajustarProgreso(ccp.percentil(the("eg").value, _ccp), "ccpG")
+    the("ccpPct").innerHTML = "Pct: " + ccp.percentil(the("eg").value, _ccp)
 
+}
+
+the("acmVisualizador").onclick = function(){
+    this.classList.add("d-none")
+    the("acmPercentil").classList.remove("d-none")
+}
+
+the("acmPercentil").onclick = function(){
+    this.classList.add("d-none")
+    the("acmVisualizador").classList.remove("d-none")
 }
 
 the("dv").onkeyup = function()
@@ -1588,7 +1721,18 @@ the("dv").onkeyup = function()
     }
 
     ajustarProgreso(_dv, "dvG")
+    the("dvPct").innerHTML = "Pct: " + _dv
 
+}
+
+the("dvVisualizador").onclick = function(){
+    this.classList.add("d-none")
+    the("dvPercentil").classList.remove("d-none")
+}
+
+the("dvPercentil").onclick = function(){
+    this.classList.add("d-none")
+    the("dvVisualizador").classList.remove("d-none")
 }
 
 the("dopplerMaternoFetalG").onclick = function()
