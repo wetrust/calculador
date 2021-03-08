@@ -113,6 +113,15 @@ for(let i = 0; i < losInput.length; i++) {
 	};
 }
 
+//controlador de fcf
+for (var i = 0; i < 181; i++) {
+	let semanas = the("fcf");
+	let opt = document.createElement('option');
+	opt.appendChild( document.createTextNode(i) );
+	opt.value = i;
+	semanas.appendChild(opt);
+}
+
 the("goInicio").onclick = function() {
 	window.location.href = 'index.html';
 };
