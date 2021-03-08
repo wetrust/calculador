@@ -22,4 +22,6 @@ the("informeCrecimiento").onclick = function(){
     }else{
         window.print()
     }
+
+    console.log(app)
 }
