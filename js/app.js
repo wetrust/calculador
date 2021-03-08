@@ -1625,7 +1625,7 @@ the("ccpVisualizador").onclick = function() {
 };
 the("ccpPercentil").onclick = function() {
 	this.classList.add("d-none");
-	the("ccpPercentil").classList.remove("d-none");
+	the("ccpVisualizador").classList.remove("d-none");
 };
 the("dv").onkeyup = function() {
 	let _dv = ductus.calcular(the("eg").value, +this.value);
