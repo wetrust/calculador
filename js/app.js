@@ -1122,11 +1122,13 @@ the("cc").onkeyup = function(){
     the("pfe").value = _pfe + " gramos"
     the("pfe").dataset.value = _pfe
     ajustarProgreso(pfe.calcular(the("eg").value, _pfe), "pfeG")
+    the("pfePct").innerHTML = "Pct: " + pfe.calcular(the("eg").value, _pfe)
 
     let _ccca = ccca.calcular(+this.value, +the("ca").value)
 
     the("ccca").value = _ccca
     ajustarProgreso(ccca.percentil(the("eg").value, _ccca), "cccaG")
+    the("cccaPct").innerHTML = "Pct: " + ccca.percentil(the("eg").value, _ccca)
 
     calcularP50()
 
@@ -1166,11 +1168,13 @@ the("ca").onkeyup = function(){
     the("pfe").value = _pfe + " gramos"
     the("pfe").dataset.value = _pfe
     ajustarProgreso(pfe.calcular(the("eg").value, _pfe), "pfeG")
+    the("pfePct").innerHTML = "Pct: " + pfe.calcular(the("eg").value, _pfe)
 
-    let _ccca = ccca.calcular(+the("cc").value, +this.value)
+    let _ccca = ccca.calcular(+this.value, +the("ca").value)
 
     the("ccca").value = _ccca
     ajustarProgreso(ccca.percentil(the("eg").value, _ccca), "cccaG")
+    the("cccaPct").innerHTML = "Pct: " + ccca.percentil(the("eg").value, _ccca)
 
     calcularP50()
 }
@@ -1209,6 +1213,7 @@ the("lf").onkeyup = function(){
     the("pfe").value = _pfe + " gramos"
     the("pfe").dataset.value = _pfe
     ajustarProgreso(pfe.calcular(the("eg").value, _pfe), "pfeG")
+    the("pfePct").innerHTML = "Pct: " + pfe.calcular(the("eg").value, _pfe)
 
     calcularP50()
 
@@ -1288,6 +1293,26 @@ the("cbVisualizador").onclick = function(){
 the("cbPercentil").onclick = function(){
     this.classList.add("d-none")
     the("cbVisualizador").classList.remove("d-none")
+}
+
+the("pfeVisualizador").onclick = function(){
+    this.classList.add("d-none")
+    the("pfePercentil").classList.remove("d-none")
+}
+
+the("pfePercentil").onclick = function(){
+    this.classList.add("d-none")
+    the("pfeVisualizador").classList.remove("d-none")
+}
+
+the("cccaVisualizador").onclick = function(){
+    this.classList.add("d-none")
+    the("cccaPercentil").classList.remove("d-none")
+}
+
+the("cccaPercentil").onclick = function(){
+    this.classList.add("d-none")
+    the("cccaVisualizador").classList.remove("d-none")
 }
 
 the("bvm").onkeyup = function(){
@@ -1522,14 +1547,14 @@ the("aud").onkeyup = function()
 {
     let _ut = uterinas.calcular(the("eg").value, +this.value)
 
-    if (_ut < 0 || _ut > 99){
+    if (_ut.raw < 0 || _ut.raw > 99){
         this.classList.add("is-invalid")
         this.classList.remove("is-valid")
         the("audG").parentElement.classList.add("d-none")
         let etiqueta = the("audG").parentElement.parentElement.children[0]
         etiqueta.classList.remove("d-none")
-        valorPercentil(_ut, etiqueta)
-    }else{
+        valorPercentil(_ut.raw, etiqueta)
+    } else {
         this.classList.remove("is-invalid")
         this.classList.add("is-valid")
         the("audG").parentElement.classList.remove("d-none")
@@ -1575,14 +1600,14 @@ the("aui").onkeyup = function()
 {
     let _ut = uterinas.calcular(the("eg").value, +this.value)
 
-    if (_ut < 0 || _ut > 99){
+    if (_ut.raw < 0 || _ut.raw > 99){
         this.classList.add("is-invalid")
         this.classList.remove("is-valid")
         the("auiG").parentElement.classList.add("d-none")
         let etiqueta = the("auiG").parentElement.parentElement.children[0]
         etiqueta.classList.remove("d-none")
-        valorPercentil(_ut, etiqueta)
-    }else{
+        valorPercentil(_ut.raw, etiqueta)
+    } else {
         this.classList.remove("is-invalid")
         this.classList.add("is-valid")
         the("auiG").parentElement.classList.remove("d-none")
@@ -1628,14 +1653,14 @@ the("au").onkeyup = function()
 {
     let _au = umbilical.calcular(the("eg").value, +this.value)
 
-    if (_au < 0 || _au > 99){
+    if (_ut.raw < 0 || _ut.raw > 99){
         this.classList.add("is-invalid")
         this.classList.remove("is-valid")
         the("auG").parentElement.classList.add("d-none")
         let etiqueta = the("auG").parentElement.parentElement.children[0]
         etiqueta.classList.remove("d-none")
-        valorPercentil(_au, etiqueta)
-    }else{
+        valorPercentil(_ut.raw, etiqueta)
+    } else {
         this.classList.remove("is-invalid")
         this.classList.add("is-valid")
         the("auG").parentElement.classList.remove("d-none")
@@ -1662,6 +1687,16 @@ the("auVisualizador").onclick = function(){
 the("auPercentil").onclick = function(){
     this.classList.add("d-none")
     the("auVisualizador").classList.remove("d-none")
+}
+
+the("aupVisualizador").onclick = function(){
+    this.classList.add("d-none")
+    the("aupPercentil").classList.remove("d-none")
+}
+
+the("aupPercentil").onclick = function(){
+    this.classList.add("d-none")
+    the("aupVisualizador").classList.remove("d-none")
 }
 
 the("acm").onkeyup = function()
@@ -1700,6 +1735,16 @@ the("acmVisualizador").onclick = function(){
 the("acmPercentil").onclick = function(){
     this.classList.add("d-none")
     the("acmVisualizador").classList.remove("d-none")
+}
+
+the("ccpVisualizador").onclick = function(){
+    this.classList.add("d-none")
+    the("ccpPercentil").classList.remove("d-none")
+}
+
+the("ccpPercentil").onclick = function(){
+    this.classList.add("d-none")
+    the("ccpVisualizador").classList.remove("d-none")
 }
 
 the("dv").onkeyup = function()
