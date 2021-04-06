@@ -5,8 +5,7 @@ import { pfe } from './pfe.js';
 import { p50 } from './p50.js';
 
 var activo = "inicio";
-var paginas = ["inicio", "examenes"];
-var examenes = ["inicio", "examenes", "primero", "examenes", "segundo", "informeSegundo", "examenes", "doppler"];
+var examenes = ["inicio", "examenes", "primero", "informePrimero", "examenes", "segundo", "informeSegundo", "examenes", "doppler"];
 let _fecha = new Date();
 
 the("fexamen").value = inputDate(_fecha);
@@ -102,7 +101,7 @@ the("fpp").onchange = function() {
 let losInput = document.getElementsByTagName("input");
 for(let i = 0; i < losInput.length; i++) {
 	losInput[i].onkeypress = function(e) {
-		var key_enter = ["lcn", "edadPrimeroAjustarNo", "", "dbp", "cc", "ca", "lf", "bvm", "ila", "crecimientoFetalG", "", "lh", "cb", "", "aud", "aui", "au", "acm", "dv"];
+		var key_enter = ["lcn", "edadPrimeroAjustarNo", "", "dbp", "cc", "ca", "lf", "liquido", "bvm", "ila", "crecimientoFetalG", "", "lh", "cb", "", "aud", "aui", "au", "acm", "dv"];
 		if(e.which == 13) {
 			e.preventDefault();
 			if(key_enter.includes(this.id) == true) {
@@ -138,6 +137,12 @@ the("goPrimero").onclick = function() {
 	the("examenes").classList.add("d-none");
 	the("primero").classList.remove("d-none");
 	activo = "primero";
+}
+
+the("goPrimeroInforme").onclick = function() {
+	the("primero").classList.add("d-none");
+	the("informePrimero").classList.remove("d-none");
+	activo = "informePrimero";
 }
 
 the("goSegundo").onclick = function() {

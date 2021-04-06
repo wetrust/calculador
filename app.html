@@ -291,7 +291,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card shadow my-3" id="ajustePrimero">
+            <div class="card shadow my-4" id="ajustePrimero">
                 <div class="card-header">
                     Desea ajustar edad gestacional por LCN
                 </div>
@@ -340,7 +340,34 @@
                     </div>
                 </div>
             </div>
-            <div class="p-3 text-center bg-wetrust text-white"><em>Para construcción de informes remitase a software crecimientofetal.cl</em></div>
+            <div class="row mb-3">
+                <div class="col-3"></div>
+                <div class="col-6">
+                    <div class="card shadow" id="goPrimeroInforme">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" fill="currentColor" viewBox="0 0 16 16"><path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/><path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"/></svg>
+                                </div>
+                                <div class="col-12 text-center mt-2"><small>Informe<br>1º Trimestre</small></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container d-none d-print-none" id="informePrimero">
+            <div class="alert alert-warning alert-dismissible fade show mt-3" role="alert">
+                Ingrese datos adicionales para el informe
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <div class="card my-3">
+                <div class="card-body">
+                    <label for="placenta" class="form-label">Nombre paciente:</label>
+                    <input class="form-control" type="text" id="nombreInformePrimero">
+                    <label>No disponible</label>
+                </div>
+            </div>
         </section>
         <section class="container d-none d-print-none" id="segundo">
             <div class="card shadow mt-3">
@@ -723,7 +750,7 @@
             </div>
             <div class="row mb-3">
                 <div class="col-3"></div>
-                <div class="col-5">
+                <div class="col-6">
                     <div class="card shadow" data-bs-toggle="modal" data-bs-target="#exampleEdad" id="edadGestacionalG">
                         <div class="card-body">
                             <div class="row">
