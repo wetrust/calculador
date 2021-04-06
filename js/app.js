@@ -6,7 +6,7 @@ import { p50 } from './p50.js';
 
 var activo = "inicio";
 var paginas = ["inicio", "examenes"];
-var examenes = ["primero", "segundo", "doppler"];
+var examenes = ["inicio", "examenes", "primero", "examenes", "segundo", "informeSegundo", "examenes", "doppler"];
 let _fecha = new Date();
 
 the("fexamen").value = inputDate(_fecha);
@@ -132,25 +132,31 @@ the("goPrelude").onclick = function() {
 	the("prelude").classList.remove("d-none");
 	the("examenes").classList.remove("d-none");
 	activo = "examenes";
-};
+}
 
 the("goPrimero").onclick = function() {
 	the("examenes").classList.add("d-none");
 	the("primero").classList.remove("d-none");
 	activo = "primero";
-};
+}
 
 the("goSegundo").onclick = function() {
 	the("examenes").classList.add("d-none");
 	the("segundo").classList.remove("d-none");
 	activo = "segundo";
-};
+}
+
+the("goSegundoInforme").onclick = function() {
+	the("segundo").classList.add("d-none");
+	the("informeSegundo").classList.remove("d-none");
+	activo = "informeSegundo";
+}
 
 the("goDoppler").onclick = function() {
 	the("examenes").classList.add("d-none");
 	the("doppler").classList.remove("d-none");
 	activo = "doppler";
-};
+}
 
 the("back").onclick = back;
 //primer trimestre
@@ -1308,14 +1314,17 @@ the("pfePercentil").onclick = function() {
 	this.classList.add("d-none");
 	the("pfeVisualizador").classList.remove("d-none");
 };
+
 the("cccaVisualizador").onclick = function() {
 	this.classList.add("d-none");
 	the("cccaPercentil").classList.remove("d-none");
 };
+
 the("cccaPercentil").onclick = function() {
 	this.classList.add("d-none");
 	the("cccaVisualizador").classList.remove("d-none");
 };
+
 the("bvm").onkeyup = function() {
 	let _bvm = bvm.calcular(the("eg").value, +this.value);
 	if(_bvm < 0 || _bvm > 99) {
@@ -1334,14 +1343,17 @@ the("bvm").onkeyup = function() {
 	ajustarProgreso(_bvm, "bvmG");
 	the("bvmPct").innerHTML = "Pct: " + _bvm;
 };
+
 the("bvmVisualizador").onclick = function() {
 	this.classList.add("d-none");
 	the("bvmPercentil").classList.remove("d-none");
 };
+
 the("bvmPercentil").onclick = function() {
 	this.classList.add("d-none");
 	the("bvmVisualizador").classList.remove("d-none");
 };
+
 the("ila").onkeyup = function() {
 	let _ila = ila.calcular(the("eg").value, +this.value);
 	if(_ila < 0 || _ila > 99) {
@@ -1360,18 +1372,22 @@ the("ila").onkeyup = function() {
 	ajustarProgreso(_ila, "ilaG");
 	the("ilaPct").innerHTML = "Pct: " + _ila;
 };
+
 the("ilaVisualizador").onclick = function() {
 	this.classList.add("d-none");
 	the("ilaPercentil").classList.remove("d-none");
 };
+
 the("ilaPercentil").onclick = function() {
 	this.classList.add("d-none");
 	the("ilaVisualizador").classList.remove("d-none");
 };
+
 the("edadSegundoNo").onchange = function() {
 	the("biometriAdicional").classList.add("d-none");
 	the("edadSegundoAjuste").classList.add("d-none");
 };
+
 the("edadSegundoSi").onchange = function() {
 	let _dbp = the("dbp").value;
 	let _cc = the("cc").value;
@@ -1419,9 +1435,11 @@ the("edadSegundoSi").onchange = function() {
 	}
 	the("biometriAdicional").classList.remove("d-none");
 };
+
 the("edadAjusteNo").onchange = function() {
 	the("ajusteSegundoReady").classList.add("d-none");
 };
+
 the("edadAjusteSi").onchange = function() {
 		let _dbp = the("dbp").value;
 		let _cc = the("cc").value;
@@ -1501,8 +1519,9 @@ the("edadAjusteSi").onchange = function() {
 		the("fppNewSegundo").innerHTML = humanDate(fechas.fpp(_fur));
 		the("fur").onchange();
 		the("ajusteSegundoReady").classList.remove("d-none");
-	};
-	//Doppler
+};
+
+//Doppler
 the("aud").onkeyup = function() {
 	let _ut = uterinas.calcular(the("eg").value, +this.value);
 	if(_ut.raw < 0 || _ut.raw > 99) {
@@ -1536,14 +1555,17 @@ the("aud").onkeyup = function() {
 		the("aupPct").innerHTML = "Pct: " + utprom.raw;
 	}
 };
+
 the("audVisualizador").onclick = function() {
 	this.classList.add("d-none");
 	the("audPercentil").classList.remove("d-none");
 };
+
 the("audPercentil").onclick = function() {
 	this.classList.add("d-none");
 	the("audVisualizador").classList.remove("d-none");
 };
+
 the("aui").onkeyup = function() {
 	let _ut = uterinas.calcular(the("eg").value, +this.value);
 	if(_ut.raw < 0 || _ut.raw > 99) {
@@ -1577,14 +1599,17 @@ the("aui").onkeyup = function() {
 		the("aupPct").innerHTML = "Pct: " + utprom.raw;
 	}
 };
+
 the("auiVisualizador").onclick = function() {
 	this.classList.add("d-none");
 	the("auiPercentil").classList.remove("d-none");
 };
+
 the("auiPercentil").onclick = function() {
 	this.classList.add("d-none");
 	the("auiVisualizador").classList.remove("d-none");
 };
+
 the("au").onkeyup = function() {
 	let _au = umbilical.calcular(the("eg").value, +this.value);
 	if(_au < 0 || _au > 99) {
@@ -1607,22 +1632,27 @@ the("au").onkeyup = function() {
 	ajustarProgreso(ccp.percentil(the("eg").value, _ccp), "ccpG");
 	the("ccpPct").innerHTML = "Pct: " + ccp.percentil(the("eg").value, _ccp);
 };
+
 the("auVisualizador").onclick = function() {
 	this.classList.add("d-none");
 	the("auPercentil").classList.remove("d-none");
 };
+
 the("auPercentil").onclick = function() {
 	this.classList.add("d-none");
 	the("auVisualizador").classList.remove("d-none");
 };
+
 the("aupVisualizador").onclick = function() {
 	this.classList.add("d-none");
 	the("aupPercentil").classList.remove("d-none");
 };
+
 the("aupPercentil").onclick = function() {
 	this.classList.add("d-none");
 	the("aupVisualizador").classList.remove("d-none");
 };
+
 the("acm").onkeyup = function() {
 	let _acm = cerebral.calcular(the("eg").value, +this.value);
 	if(_acm < 0 || _acm > 99) {
@@ -1645,22 +1675,27 @@ the("acm").onkeyup = function() {
 	ajustarProgreso(ccp.percentil(the("eg").value, _ccp), "ccpG");
 	the("ccpPct").innerHTML = "Pct: " + ccp.percentil(the("eg").value, _ccp);
 };
+
 the("acmVisualizador").onclick = function() {
 	this.classList.add("d-none");
 	the("acmPercentil").classList.remove("d-none");
 };
+
 the("acmPercentil").onclick = function() {
 	this.classList.add("d-none");
 	the("acmVisualizador").classList.remove("d-none");
 };
+
 the("ccpVisualizador").onclick = function() {
 	this.classList.add("d-none");
 	the("ccpPercentil").classList.remove("d-none");
 };
+
 the("ccpPercentil").onclick = function() {
 	this.classList.add("d-none");
 	the("ccpVisualizador").classList.remove("d-none");
 };
+
 the("dv").onkeyup = function() {
 	let _dv = ductus.calcular(the("eg").value, +this.value);
 	if(_dv < 0 || _dv > 99) {
@@ -1679,14 +1714,17 @@ the("dv").onkeyup = function() {
 	ajustarProgreso(_dv, "dvG");
 	the("dvPct").innerHTML = "Pct: " + _dv;
 };
+
 the("dvVisualizador").onclick = function() {
 	this.classList.add("d-none");
 	the("dvPercentil").classList.remove("d-none");
 };
+
 the("dvPercentil").onclick = function() {
 	this.classList.add("d-none");
 	the("dvVisualizador").classList.remove("d-none");
 };
+
 the("dopplerMaternoFetalG").onclick = function() {
 	//para impedir errores de visualizacion
 	//es necesario solo mostrar 10 semanas 
@@ -2195,12 +2233,9 @@ function psohdlk(_cc, _ca, _lf) {
 function back() {
 	the(activo).classList.add("d-none");
 	let examen = examenes.indexOf(activo);
-	if(examen != -1) {
-		activo = "examenes";
-	} else {
-		let id = paginas.indexOf(activo);
-		activo = paginas[id - 1];
-	}
+
+	activo = examenes[examen - 1];
+
 	the(activo).classList.remove("d-none");
 	if(activo == "inicio") {
 		the("prelude").classList.add("d-none");
@@ -2210,4 +2245,5 @@ function back() {
 function valorPercentil(valor, elemento) {
 	elemento.children[0].innerHTML = "Fuera de rango";
 }
+
 window.onpopstate = back;
