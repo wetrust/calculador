@@ -120,6 +120,7 @@ for (var i = 0; i < 181; i++) {
 	opt.value = i;
 	semanas.appendChild(opt);
 }
+the("fcf").value = 140
 
 the("goInicio").onclick = function() {
 	window.location.href = 'index.html';

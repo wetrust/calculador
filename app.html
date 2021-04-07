@@ -760,18 +760,18 @@
             </div>
             <div class="card my-3">
                 <div class="card-body">
-                    <label for="placenta" class="form-label">Nombre paciente:</label>
+                    <label for="nombreInformeCrecimiento" class="form-label">Nombre paciente:</label>
                     <input class="form-control" type="text" id="nombreInformeCrecimiento">
-                    <label for="liquido" class="form-label">Evaluación de líquido amniótico</label>
-                    <select class="form-select" id="liquido">
-                        <option value="normal" selected>Normal</option>
-                        <option value="disminuido">Disminuido</option>
-                        <option value="aumentado">Aumentado</option>
-                    </select>
                     <label for="placenta" class="form-label mt-4">Placenta normo inserta:</label>
                     <select class="form-select" id="placenta">
                         <option value="no">No</option>
                         <option value="si" selected>Si</option>
+                    </select>
+                    <label for="liquido" class="form-label mt-4">Evaluación de líquido amniótico</label>
+                    <select class="form-select" id="liquido">
+                        <option value="normal" selected>Normal</option>
+                        <option value="disminuido">Disminuido</option>
+                        <option value="aumentado">Aumentado</option>
                     </select>
                     <label for="feto" class="form-label mt-4">Feto:</label>
                     <div class="row">
@@ -791,6 +791,8 @@
                     <label for="fcf" class="form-label mt-4">Frecuencia Cardiaca Fetal:</label>
                     <select class="form-select" id="fcf">
                     </select>
+                    <label for="profEcografistaDos" class="form-label">Profesional ecografista:</label>
+                    <input class="form-control" type="text" id="profEcografistaDos">
                     <button type="button" class="btn mt-4 mx-auto d-block" id="informeCrecimiento">Ver Informe</button>
                 </div>
             </div>
@@ -1099,6 +1101,7 @@
               </div>
         </section>
         <section class="container d-none d-print-block" id="impresion">
+            <p><small>PROTOCOLO ECOGRÁFICO<br>UNIDAD DE URGENCIA<br>GINECO / OBSTETRICA</small></p>
             <h1 class="text-center border-bottom h5 pb-3" id="impresionTitulo">Evaluación ecográfica del crecimiento fetal</h1>
             <hr>
             <div class="row">
