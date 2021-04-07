@@ -527,16 +527,6 @@
                     <p class="mb-0">Líquido Amniótico<br><small><small>* Magann EF y col. Am J O & G 1982: 1581, 2000</small></small><br><small><small>** Moore y col. Am J. O &amp; G. 1990; 162 : 1168 - 1173</small></small></p>
                 </div>
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-12">
-                            <label for="liquido" class="form-label">Evaluación de líquido amniótico</label>
-                            <select class="form-select" id="liquido">
-                                <option value="normal" selected>Normal</option>
-                                <option value="disminuido">Disminuido</option>
-                                <option value="aumentado">Aumentado</option>
-                              </select>
-                        </div>
-                    </div>
                     <div class="row mt-2">
                         <div class="col-12">
                             <label for="bvm" class="form-label">BVM *</label>
@@ -743,7 +733,6 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -773,10 +762,16 @@
                 <div class="card-body">
                     <label for="placenta" class="form-label">Nombre paciente:</label>
                     <input class="form-control" type="text" id="nombreInformeCrecimiento">
+                    <label for="liquido" class="form-label">Evaluación de líquido amniótico</label>
+                    <select class="form-select" id="liquido">
+                        <option value="normal" selected>Normal</option>
+                        <option value="disminuido">Disminuido</option>
+                        <option value="aumentado">Aumentado</option>
+                    </select>
                     <label for="placenta" class="form-label mt-4">Placenta normo inserta:</label>
                     <select class="form-select" id="placenta">
-                        <option value="no" selected>No</option>
-                        <option value="si">Si</option>
+                        <option value="no">No</option>
+                        <option value="si" selected>Si</option>
                     </select>
                     <label for="feto" class="form-label mt-4">Feto:</label>
                     <div class="row">
