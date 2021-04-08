@@ -1034,12 +1034,90 @@
                     </div>
                 </div>
             </div>
-            <div class="row my-4">
-                <div class="col-12 text-center mb-3">
-                    <button class="btn" data-bs-toggle="modal" data-bs-target="#exampleDoppler" id="dopplerMaternoFetalG">VER GRÁFICA DOPPLER MATERNO FETAL</button>
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-5">
+                    <div class="card shadow" data-bs-toggle="modal" data-bs-target="#exampleDoppler" id="dopplerMaternoFetalG">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5z"/></svg>
+                                </div>
+                                <div class="col-12 text-center mt-2"><small>Gráficas Doppler<br>Materno Fetal</small></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div class="card shadow" id="goDopplerInforme">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" fill="currentColor" viewBox="0 0 16 16"><path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/><path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"/></svg>
+                                </div>
+                                <div class="col-12 text-center mt-2"><small>Informe<br>Doppler</small></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="p-3 text-center bg-wetrust text-white"><em>Para construcción de informes remitase a software crecimientofetal.cl</em></div>
+        </section>
+        <section class="container d-none d-print-none" id="informeDoppler">
+            <div class="alert alert-warning alert-dismissible fade show mt-3" role="alert">
+                Ingrese datos adicionales para el informe
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <div class="card my-3">
+                <div class="card-body">
+                    <label for="nombreInformeDoppler" class="form-label">Nombre paciente:</label>
+                    <input class="form-control" type="text" id="nombreInformeDoppler">
+                    
+                    <label for="liquidoDoppler" class="form-label mt-4">Evaluación de líquido amniótico</label>
+                    <select id="liquidoDoppler" class="form-control">
+                        <option value="normal">Normal</option>
+                        <option value="disminuido">Disminuido</option>
+                        <option value="aumentado">Aumentado</option>
+                    </select>
+
+                    <label for="motivoDoppler" class="form-label mt-4">Motivo del exámen</label>
+                    <select id="motivoDoppler" class="form-control">
+                        <option value="RCIU Emb. Previo">RCIU Emb. Previo</option>
+                        <option value="RCIU No PEG > p10">RCIU No PEG &gt; p10</option>
+                        <option value="RCIU Moderado < p10">RCIU Moderado &lt; p10</option>
+                        <option value="RCIU Severo < p3">RCIU Severo &lt; p3</option>
+                        <option value="Seguimiento Evolución">Seguimiento Evolución</option>
+                        <option value="Síndrome Hipertensivo">Síndrome Hipertensivo</option>
+                        <option value="Preeclampsia">Preeclampsia</option>
+                        <option value="Desnutrición Materna">Desnutrición Materna</option>
+                        <option value="Amenaza Pto. Prematuro">Amenaza Pto. Prematuro</option>
+                        <option value="Tabaquismo">Tabaquismo</option>
+                        <option value="Otra Patología ARO">Otra Patología ARO</option>
+                        <option value="Sin Patología ARO">Sin Patología ARO</option>
+                        <option value="Estudio Doppler" selected="">Estudio Doppler</option>
+                        <option value="Estudio Doppler materno">Estudio Doppler materno</option>
+                    </select>
+
+                    <label for="presentacionDoppler" class="form-label mt-4">Presentacion:</label>
+                    <select id="presentacionDoppler" class="form-control">
+                        <option value="cefalica" selected="">Cefalica</option>
+                        <option value="podalica">Podálica</option>
+                        <option value="transversa">Transversa</option>
+                        <option value="indiferente">Indiferente</option>
+                    </select>
+                    <label for="ubicacionDoppler">Placenta Ubicación</label>
+                    <select id="ubicacionDoppler" class="form-control">
+                        <option value="anterior" selected="">Anterior</option>
+                        <option value="posterior">Posterior</option>
+                        <option value="fúndica">Fúndica</option>
+                        <option value="lat. derecha">Lat. derecha</option>
+                        <option value="lat. izquierda">Lat. izquierda</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                    <label for="profEcografistaDos" class="form-label">Profesional ecografista:</label>
+                    <input class="form-control" type="text" id="profEcografistaDoppler">
+                    <button type="button" class="btn mt-4 mx-auto d-block" id="informeDoppler">Ver Informe</button>
+                </div>
+            </div>
         </section>
         <div class="modal d-print-none" tabindex="-1" id="exampleModal">
             <div class="modal-dialog modal-lg">
