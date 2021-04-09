@@ -69,7 +69,7 @@ the("fexamen").onchange = function() {
 		the("txtEG").innerHTML = "0 semanas";
 		the("dias").value = 0;
 	}
-};
+}
 
 the("fpp").onchange = function() {
 	//convertir a fecha
@@ -95,7 +95,7 @@ the("fpp").onchange = function() {
 		the("txtEG").innerHTML = "0 semanas";
 		the("dias").value = 0;
 	}
-};
+}
 
 //controlador de los keypress
 let losInput = document.getElementsByTagName("input");
@@ -120,6 +120,7 @@ for (var i = 0; i < 181; i++) {
 	opt.value = i;
 	semanas.appendChild(opt);
 }
+
 the("fcf").value = 140
 
 the("goInicio").onclick = function() {

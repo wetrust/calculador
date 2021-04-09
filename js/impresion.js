@@ -113,3 +113,62 @@ function construirInformeCrecimiento(){
     the("impresionEcografista").innerHTML = (the("profEcografistaDos").value == undefined) ? "" : the("profEcografistaDos").value
 
 }
+
+the("informeDoppler").onclick = function(){
+    construirInformeDoppler()
+
+    if (window.webkit != undefined){
+        if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.toggleMessageHandler) {
+            window.webkit.messageHandlers.toggleMessageHandler.postMessage({
+                "message": "print"
+            });
+        }
+    } else if (typeof app != 'undefined'){ 
+        app.imprimir()
+    } else {
+        window.print()
+    }
+}
+
+function construirInformeDoppler(){
+
+    let contenido = '<p><small>PROTOCOLO ECOGRÁFICO<br>UNIDAD DE URGENCIA<br>GINECO / OBSTETRICA</small></p><h1 class="text-center border-bottom h5 pb-3" id="impresionTitulo">Evaluación de flujometria doppler materno fetal</h1><div class="row"><div class="col-6"><p class="mb-0"><small>Nombre: <span id="impresionNombrePaciente"></span></small></p></div><div class="col-6"><p class="mb-0"><small>Fecha exámen: <span id="impresionFechaExamen"></span></small></p></div><div class="col-6"><p><small>FUR: <span id="impresionFUR"></span></small></p></div><div class="col-6"><p><small>Edad Gestacional: <span id="impresionEdadGestacional"></span></small></p></div></div><p class="mb-2">DESCRIPCIÓN</p><div class="row"><div class="col-6"><p class="mb-0"><small>Líquido amniótico: <span id="impresionLiquido"></span></small></p></div><div class="col-6"><p><small>Motivo: <span id="impresionMotivo"></span></small></p></div><div class="col-6"><p><small>Presentación: <span id="impresionPresentacion"></span></small></p></div><div class="col-6"><p><small>Placenta ubicación: <span id="impresionUbicacion"></span></small></p></div></div><p class="mb-2">BIOMETRÍAS</p><div class="row border-bottom pb-3"><div class="col-4"><p class="mb-0"><small>Medida</small></p></div><div class="col-4"><p class="mb-0">Gráfica</p></div><div class="col-4"><p class="mb-0"><small>Percentil</small></p></div><div class="col-4"><p class="mb-0"><small>Uterina Derecha: <span id="impresionUtD"></span></small></p></div><div class="col-4"><p class="mb-0" id=""></p></div><div class="col-4"><p class="mb-0"><small>Pct: <span id="impresionUtDPCT"></span></small></p></div><div class="col-4"><p class="mb-0"><small>Uterina Izquierda: <span id="impresionUtI"></span></small></p></div><div class="col-4"><p class="mb-0" id=""></p></div><div class="col-4"><p class="mb-0"><small>Pct: <span id="impresionUtIPCT"></span></small></p></div><div class="col-4"><p class="mb-0"><small>Uterina Promedio: <span id="impresionUtP"></span></small></p></div><div class="col-4"><p class="mb-0" id=""></p></div><div class="col-4"><p class="mb-0"><small>Pct: <span id="impresionUtPPCT"></span></small></p></div><div class="col-4"><p class="mb-0"><small>Arteria Umbilical: <span id="impresionAU"></span></small></p></div><div class="col-4"><p class="mb-0" id=""></p></div><div class="col-4"><p class="mb-0"><small>Pct: <span id="impresionAUPCT"></span></small></p></div><div class="col-4"><p class="mb-0"><small>Arteria C. Media: <span id="impresionCM"></span></small></p></div><div class="col-4"><p class="mb-0" id=""></p></div><div class="col-4"><p class="mb-0"><small>Pct: <span id="impresionCMPCT"></span></small></p></div><div class="col-4"><p class="mb-0"><small>IP CCP: <span id="impresionCCP"></span></small></p></div><div class="col-4"><p class="mb-0" id=""></p></div><div class="col-4"><p class="mb-0"><small>Pct: <span id="impresionCCPPCT"></span></small></p></div><div class="col-4"><p class="mb-0"><small>Ductus venoso: <span id="impresionDV"></span></small></p></div><div class="col-4"><p class="mb-0" id=""></p></div><div class="col-4"><p class="mb-0"><small>Pct: <span id="impresionDVPCT"></span></small></p></div></div><div class="row mt-2"><div class="col-6"></div><div class="col-6"><p class="mb-0"><small>Profesional ecografista: <span id="impresionEcografista"></span></small></p></div></div>'
+    
+    var date = new Date();
+    var dd = date.getDate();
+    var mm = date.getMonth()+1; //January is 0!
+    var yyyy = date.getFullYear();
+
+    the("impresion").innerHTML = contenido
+
+    if(dd<10) { dd = '0' + dd }
+    if(mm<10) { mm = '0' + mm }
+
+    let fexamen =  dd+ '-' + mm + '-' + yyyy;
+
+    the("impresionNombrePaciente").innerHTML = (the("nombreInformeCrecimiento").value == undefined) ? "" : the("nombreInformeCrecimiento").value
+    the("impresionFechaExamen").innerHTML =  fexamen
+    the("impresionFUR").innerHTML =  (the("txtFUM").value == undefined) ? "" : the("txtFUM").value
+    the("impresionEdadGestacional").innerHTML =  (the("impresionNombrePaciente").value == undefined) ? "" : the("impresionNombrePaciente").value
+    the("impresionLiquido").innerHTML =  (the("liquidoDoppler").value == undefined) ? "" : the("liquidoDoppler").value
+    the("impresionMotivo").innerHTML =  (the("motivoDoppler").value == undefined) ? "" : the("motivoDoppler").value
+    the("impresionPresentacion").innerHTML =  (the("presentacionDoppler").value == undefined) ? "" : the("presentacionDoppler").value
+    the("impresionUbicacion").innerHTML =  (the("ubicacionDoppler").value == undefined) ? "" : the("ubicacionDoppler").value
+    the("impresionUtD").innerHTML =  (the("aud").value == undefined) ? "" : the("aud").value
+    the("impresionUtDPCT").innerHTML =  (the("audPct").innerHTML == undefined) ? "" : the("audPct").innerHTML
+    the("impresionUtI").innerHTML =  (the("aui").value == undefined) ? "" : the("aui").value
+    the("impresionUtIPCT").innerHTML =  (the("auiPct").innerHTML == undefined) ? "" : the("auiPct").innerHTML
+    the("impresionUtP").innerHTML =  (the("aup").value == undefined) ? "" : the("aup").value
+    the("impresionUtPPCT").innerHTML =  (the("aupPct").innerHTML == undefined) ? "" : the("aupPct").innerHTML
+    the("impresionAU").innerHTML =  (the("au").value == undefined) ? "" : the("au").value
+    the("impresionAUPCT").innerHTML =  (the("auPct").innerHTML == undefined) ? "" : the("auPct").innerHTML
+    the("impresionCM").innerHTML =  (the("acm").value == undefined) ? "" : the("acm").value
+    the("impresionCMPCT").innerHTML =  (the("acmPct").innerHTML == undefined) ? "" : the("acmPct").innerHTML
+    the("impresionCCP").innerHTML =  (the("ccp").value == undefined) ? "" : the("ccp").value
+    the("impresionCCPPCT").innerHTML =  (the("ccpPct").innerHTML == undefined) ? "" : the("ccpPct").innerHTML
+    the("impresionDV").innerHTML =  (the("dv").value == undefined) ? "" : the("dv").value
+    the("impresionDVPCT").innerHTML = (the("dvPct").innerHTML == undefined) ? "" : the("dvPct").innerHTML
+    
+    the("impresionEcografista").innerHTML = (the("profEcografistaDos").value == undefined) ? "" : the("profEcografistaDos").value
+
+}
