@@ -37,8 +37,8 @@ function construirInformePrimTrimestre(){
 
     the("impresionNombrePaciente").innerHTML = (the("nombreInformeCrecimiento").value == undefined) ? "" : the("nombreInformeCrecimiento").value
     the("impresionFechaExamen").innerHTML =  fexamen
-    the("impresionFUR").innerHTML =  (the("txtFUM").value == undefined) ? "" : the("txtFUM").value
-    the("impresionEdadGestacional").innerHTML =  (the("impresionNombrePaciente").value == undefined) ? "" : the("impresionNombrePaciente").value
+    the("impresionFUR").innerHTML =  (the("txtFUM").innerHTML == undefined) ? "" : the("txtFUM").innerHTML
+    the("impresionEdadGestacional").innerHTML =  (the("txtEG").innerHTML == undefined) ? "" : the("txtEG").innerHTML
 
     the("impresionCuerpo").innerHTML =  (the("primeroCuerpo").value == undefined) ? "" : the("primeroCuerpo").value
     the("impresionSacog").innerHTML =  (the("primeroSacoG").value == undefined) ? "" : the("primeroSacoG").value
@@ -92,8 +92,8 @@ function construirInformeCrecimiento(){
 
     the("impresionNombrePaciente").innerHTML = (the("nombreInformeCrecimiento").value == undefined) ? "" : the("nombreInformeCrecimiento").value
     the("impresionFechaExamen").innerHTML =  fexamen
-    the("impresionFUR").innerHTML =  (the("txtFUM").value == undefined) ? "" : the("txtFUM").value
-    the("impresionEdadGestacional").innerHTML =  (the("impresionNombrePaciente").value == undefined) ? "" : the("impresionNombrePaciente").value
+    the("impresionFUR").innerHTML =  (the("txtFUM").innerHTML == undefined) ? "" : the("txtFUM").innerHTML
+    the("impresionEdadGestacional").innerHTML =  (the("txtEG").innerHTML == undefined) ? "" : the("txtEG").innerHTML
     the("impresionPlacenta").innerHTML =  (the("placenta").value == undefined) ? "" : the("placenta").value
     the("impresionLiquido").innerHTML =  (the("liquido").value == undefined) ? "" : the("liquido").value
     the("impresionFeto").innerHTML =  (the("fetoGemelar").value == undefined) ? "" : the("fetoGemelar").value + " " + the("fetoEstado").value
@@ -146,10 +146,10 @@ function construirInformeDoppler(){
 
     let fexamen =  dd+ '-' + mm + '-' + yyyy;
 
-    the("impresionNombrePaciente").innerHTML = (the("nombreInformeCrecimiento").value == undefined) ? "" : the("nombreInformeCrecimiento").value
+    the("impresionNombrePaciente").innerHTML = (the("nombreInformeDoppler").value == undefined) ? "" : the("nombreInformeDoppler").value
     the("impresionFechaExamen").innerHTML =  fexamen
-    the("impresionFUR").innerHTML =  (the("txtFUM").value == undefined) ? "" : the("txtFUM").value
-    the("impresionEdadGestacional").innerHTML =  (the("impresionNombrePaciente").value == undefined) ? "" : the("impresionNombrePaciente").value
+    the("impresionFUR").innerHTML =  (the("txtFUM").innerHTML == undefined) ? "" : the("txtFUM").innerHTML
+    the("impresionEdadGestacional").innerHTML =  (the("txtEG").innerHTML == undefined) ? "" : the("txtEG").innerHTML
     the("impresionLiquido").innerHTML =  (the("liquidoDoppler").value == undefined) ? "" : the("liquidoDoppler").value
     the("impresionMotivo").innerHTML =  (the("motivoDoppler").value == undefined) ? "" : the("motivoDoppler").value
     the("impresionPresentacion").innerHTML =  (the("presentacionDoppler").value == undefined) ? "" : the("presentacionDoppler").value
