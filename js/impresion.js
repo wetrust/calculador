@@ -1,4 +1,5 @@
 import { the } from "./wetrust.js";
+import {uterinas, umbilical, cerebral, ccp, ductus} from "./biometrias.js"
 
 the("informePrimTrim").onclick = function(){
     construirInformePrimTrimestre()
@@ -132,7 +133,7 @@ the("informeDopplerVer").onclick = function(){
 
 function construirInformeDoppler(){
 
-    let contenido = '<p><small>PROTOCOLO ECOGRÁFICO<br>UNIDAD DE ATENCION<br>GINECO / OBSTETRICA</small></p><h1 class="text-center border-bottom h5 pb-3" id="impresionTitulo">Evaluación de flujometria doppler materno fetal</h1><div class="row"><div class="col-6"><p class="mb-0"><small>Nombre: <span id="impresionNombrePaciente"></span></small></p></div><div class="col-6"><p class="mb-0"><small>Fecha exámen: <span id="impresionFechaExamen"></span></small></p></div><div class="col-6"><p><small>FUR: <span id="impresionFUR"></span></small></p></div><div class="col-6"><p><small>Edad Gestacional: <span id="impresionEdadGestacional"></span></small></p></div></div><p class="mb-2">DESCRIPCIÓN</p><div class="row"><div class="col-6"><p class="mb-0"><small>Líquido amniótico: <span id="impresionLiquido"></span></small></p></div><div class="col-6"><p><small>Motivo: <span id="impresionMotivo"></span></small></p></div><div class="col-6"><p><small>Presentación: <span id="impresionPresentacion"></span></small></p></div><div class="col-6"><p><small>Placenta ubicación: <span id="impresionUbicacion"></span></small></p></div></div><p class="mb-2">BIOMETRÍAS</p><div class="row border-bottom pb-3"><div class="col-4"><p class="mb-0"><small>Medida</small></p></div><div class="col-4"><p class="mb-0">Gráfica</p></div><div class="col-4"><p class="mb-0"><small>Percentil</small></p></div><div class="col-4"><p class="mb-0"><small>Uterina Derecha: <span id="impresionUtD"></span></small></p></div><div class="col-4"><p class="mb-0" id=""></p></div><div class="col-4"><p class="mb-0"><small><span id="impresionUtDPCT"></span></small></p></div><div class="col-4"><p class="mb-0"><small>Uterina Izquierda: <span id="impresionUtI"></span></small></p></div><div class="col-4"><p class="mb-0" id=""></p></div><div class="col-4"><p class="mb-0"><small><span id="impresionUtIPCT"></span></small></p></div><div class="col-4"><p class="mb-0"><small>Uterina Promedio: <span id="impresionUtP"></span></small></p></div><div class="col-4"><p class="mb-0" id=""></p></div><div class="col-4"><p class="mb-0"><small><span id="impresionUtPPCT"></span></small></p></div><div class="col-4"><p class="mb-0"><small>Arteria Umbilical: <span id="impresionAU"></span></small></p></div><div class="col-4"><p class="mb-0" id=""></p></div><div class="col-4"><p class="mb-0"><small><span id="impresionAUPCT"></span></small></p></div><div class="col-4"><p class="mb-0"><small>Arteria C. Media: <span id="impresionCM"></span></small></p></div><div class="col-4"><p class="mb-0" id=""></p></div><div class="col-4"><p class="mb-0"><small><span id="impresionCMPCT"></span></small></p></div><div class="col-4"><p class="mb-0"><small>IP CCP: <span id="impresionCCP"></span></small></p></div><div class="col-4"><p class="mb-0" id=""></p></div><div class="col-4"><p class="mb-0"><small><span id="impresionCCPPCT"></span></small></p></div><div class="col-4"><p class="mb-0"><small>Ductus venoso: <span id="impresionDV"></span></small></p></div><div class="col-4"><p class="mb-0" id=""></p></div><div class="col-4"><p class="mb-0"><small><span id="impresionDVPCT"></span></small></p></div></div><div class="row mt-2"><div class="col-6"></div><div class="col-6"><p class="mb-0"><small>Profesional ecografista: <span id="impresionEcografista"></span></small></p></div></div>'
+    let contenido = '<p><small>PROTOCOLO ECOGRÁFICO<br>UNIDAD DE ATENCION<br>GINECO / OBSTETRICA</small></p><h1 class="text-center border-bottom h5 pb-3" id="impresionTitulo">Evaluación de flujometria doppler materno fetal</h1><div class="row"><div class="col-6"><p class="mb-0"><small>Nombre: <span id="impresionNombrePaciente"></span></small></p></div><div class="col-6"><p class="mb-0"><small>Fecha exámen: <span id="impresionFechaExamen"></span></small></p></div><div class="col-6"><p><small>FUR: <span id="impresionFUR"></span></small></p></div><div class="col-6"><p><small>Edad Gestacional: <span id="impresionEdadGestacional"></span></small></p></div></div><p class="mb-2">DESCRIPCIÓN</p><div class="row"><div class="col-6"><p><small>Presentación: <span id="impresionPresentacion"></span></small></p></div><div class="col-6"><p><small>Placenta ubicación: <span id="impresionUbicacion"></span></small></p></div><div class="col-6"><p><small>Líquido amniótico: <span id="impresionLiquido"></span></small></p></div><div class="col-6"><p><small>Motivo: <span id="impresionMotivo"></span></small></p></div></div><p class="mb-2">BIOMETRÍAS</p><div class="row border-bottom pb-3"><div class="col-4"><p class="mb-0"><small>Flujometría Doppler</small></p></div><div class="col-4"><p class="mb-0">Percentil de IP</p></div><div class="col-4"><p class="mb-0"><small>Rango percentilar</small></p></div><div class="col-4"><p class="mb-0"><small>Uterina Derecha:</small></p></div><div class="col-4"><p class="mb-0"><small><span id="impresionUtD"></span></small></p></div><div class="col-4"><p class="mb-0"><small><span id="impresionUtDPCT"></span></small></p></div><div class="col-4"><p class="mb-0"><small>Uterina Izquierda:</small></p></div><div class="col-4"><p class="mb-0"><small><span id="impresionUtI"></span></small></p></div><div class="col-4"><p class="mb-0"><small><span id="impresionUtIPCT"></span></small></p></div><div class="col-4"><p class="mb-0"><small>Uterina Promedio:</small></p></div><div class="col-4"><p class="mb-0"><small><span id="impresionUtP"></span></small></p></div><div class="col-4"><p class="mb-0"><small><span id="impresionUtPPCT"></span></small></p></div><div class="col-4"><p class="mb-0"><small>Arteria Umbilical:</small></p></div><div class="col-4"><p class="mb-0"><small><span id="impresionAU"></span></small></p></div><div class="col-4"><p class="mb-0"><small><span id="impresionAUPCT"></span></small></p></div><div class="col-4"><p class="mb-0"><small>Arteria C. Media:</small></p></div><div class="col-4"><p class="mb-0"><small><span id="impresionCM"></span></small></p></div><div class="col-4"><p class="mb-0"><small><span id="impresionCMPCT"></span></small></p></div><div class="col-4"><p class="mb-0"><small>IP cuociente CP:</small></p></div><div class="col-4"><p class="mb-0"><small><span id="impresionCCP"></span></small></p></div><div class="col-4"><p class="mb-0"><small><span id="impresionCCPPCT"></span></small></p></div><div class="col-4"><p class="mb-0"><small>Ductus venoso:</small></p></div><div class="col-4"><p class="mb-0"><small><span id="impresionDV"></span></small></p></div><div class="col-4"><p class="mb-0"><small><span id="impresionDVPCT"></span></small></p></div></div><div class="row mt-2"><div class="col-6"></div><div class="col-6"><p class="mb-0"><small>Profesional ecografista: <span id="impresionEcografista"></span></small></p></div></div>'
 
     var date = new Date();
     var dd = date.getDate();
@@ -141,8 +142,8 @@ function construirInformeDoppler(){
 
     the("impresion").innerHTML = contenido
 
-    if(dd<10) { dd = '0' + dd }
-    if(mm<10) { mm = '0' + mm }
+    if( dd < 10 ) { dd = '0' + dd }
+    if( mm < 10 ) { mm = '0' + mm }
 
     let fexamen =  dd+ '-' + mm + '-' + yyyy;
 
@@ -154,21 +155,52 @@ function construirInformeDoppler(){
     the("impresionMotivo").innerHTML =  (the("motivoDoppler").value == undefined) ? "" : the("motivoDoppler").value
     the("impresionPresentacion").innerHTML =  (the("presentacionDoppler").value == undefined) ? "" : the("presentacionDoppler").value
     the("impresionUbicacion").innerHTML =  (the("ubicacionDoppler").value == undefined) ? "" : the("ubicacionDoppler").value
+
     the("impresionUtD").innerHTML =  (the("aud").value == undefined) ? "" : the("aud").value
-    the("impresionUtDPCT").innerHTML =  (the("audPct").innerHTML == undefined) ? "" : the("audPct").innerHTML
+    the("impresionUtDPCT").innerHTML =  (the("aud").value == undefined) ? "" : oldProgress(uterinas.calcular(the("eg").value, +the("aud").value).raw)
     the("impresionUtI").innerHTML =  (the("aui").value == undefined) ? "" : the("aui").value
-    the("impresionUtIPCT").innerHTML =  (the("auiPct").innerHTML == undefined) ? "" : the("auiPct").innerHTML
+    the("impresionUtIPCT").innerHTML =  (the("aui").value == undefined) ? "" : oldProgress(uterinas.calcular(the("eg").value, +the("aui").value).raw)
     the("impresionUtP").innerHTML =  (the("aup").value == undefined) ? "" : the("aup").value
-    the("impresionUtPPCT").innerHTML =  (the("aupPct").innerHTML == undefined) ? "" : the("aupPct").innerHTML
+    the("impresionUtPPCT").innerHTML =  (the("aup").value == undefined) ? "" : oldProgress(uterinas.calcular(the("eg").value, +the("aup").value).raw)
     the("impresionAU").innerHTML =  (the("au").value == undefined) ? "" : the("au").value
-    the("impresionAUPCT").innerHTML =  (the("auPct").innerHTML == undefined) ? "" : the("auPct").innerHTML
+    the("impresionAUPCT").innerHTML =  (the("au").value == undefined) ? "" : oldProgress(umbilical.calcular(the("eg").value, +the("au").value))
     the("impresionCM").innerHTML =  (the("acm").value == undefined) ? "" : the("acm").value
-    the("impresionCMPCT").innerHTML =  (the("acmPct").innerHTML == undefined) ? "" : the("acmPct").innerHTML
+    the("impresionCMPCT").innerHTML =  (the("acm").value == undefined) ? "" : oldProgress(cerebral.calcular(the("eg").value, +the("acm").value))
     the("impresionCCP").innerHTML =  (the("ccp").value == undefined) ? "" : the("ccp").value
-    the("impresionCCPPCT").innerHTML =  (the("ccpPct").innerHTML == undefined) ? "" : the("ccpPct").innerHTML
+    the("impresionCCPPCT").innerHTML =  (the("ccp").value == undefined) ? "" : oldProgress(ccp.calcular(the("acm").value, the("au").value))
     the("impresionDV").innerHTML =  (the("dv").value == undefined) ? "" : the("dv").value
-    the("impresionDVPCT").innerHTML = (the("dvPct").innerHTML == undefined) ? "" : the("dvPct").innerHTML
+    the("impresionDVPCT").innerHTML = (the("dv").value == undefined) ? "" : oldProgress(ductus.calcular(the("eg").value, +the("dv").value))
 
-    the("impresionEcografista").innerHTML = (the("profEcografistaDos").value == undefined) ? "" : the("profEcografistaDos").value
+    the("impresionEcografista").innerHTML = (the("profEcografistaDoppler").value == undefined) ? "" : the("profEcografistaDoppler").value
 
+}
+
+function oldProgress(value){
+    let step = [0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100]
+
+    let result = "[";
+    let footer = "]"
+
+    step.forEach(element => {
+        if (element < 50 || (element > 50 && element < 100)){
+            if (value > element && value < (element +5) || (value == (element + 5) && value != 50 && value != 100)){
+                result += "x";
+
+            }else{
+                result += "-";
+            }
+
+        }else if (element == 50){
+            if (value >= element && value <= (element +5)){
+                result += "x";
+            }else{
+                result += "|";
+            }
+
+        }else if (element == 100){
+            result += footer;
+        }
+    })
+
+    return result;
 }
