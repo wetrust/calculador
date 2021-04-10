@@ -171,8 +171,8 @@ function construirInformeDoppler(){
     the("impresionDV").innerHTML =  (the("dv").value == undefined) ? "" : the("dv").value
     the("impresionDVPCT").innerHTML = (the("dv").value == undefined) ? "" : oldProgress(ductus.calcular(the("eg").value, +the("dv").value))
 
-    the("impresionObservaciones").innerHTML = (the("observacionesDoppler").value == undefined) ? "" : the("observacionesDoppler").value
-    the("impresionEcografista").innerHTML = (the("profEcografistaDoppler").value == undefined) ? "" : (the("profEcografistaDoppler").value).replace(/\r?\n/g, "<br>")
+    the("impresionObservaciones").innerHTML = (the("observacionesDoppler").value == undefined) ? "" : (the("observacionesDoppler").value).replace(/\r?\n/g, "<br>")
+    the("impresionEcografista").innerHTML = (the("profEcografistaDoppler").value == undefined) ? "" : the("profEcografistaDoppler").value
 
 }
 
