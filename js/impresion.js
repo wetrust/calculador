@@ -13,7 +13,7 @@ the("informePrimTrim").onclick = function(){
         }
     } else if (typeof app != 'undefined'){
         //android
-        app.imprimir()
+        app.iUno()
     }else{
         //estándar
         window.print()
@@ -63,7 +63,7 @@ the("informeCrecimiento").onclick = function(){
             });
         }
     } else if (typeof app != 'undefined'){ 
-        app.imprimir()
+        app.iCre()
     }else{
         window.print()
     }
@@ -125,7 +125,7 @@ the("informeDopplerVer").onclick = function(){
             });
         }
     } else if (typeof app != 'undefined'){ 
-        app.imprimir()
+        app.iDoppler()
     } else {
         window.print()
     }
@@ -133,7 +133,9 @@ the("informeDopplerVer").onclick = function(){
 
 function construirInformeDoppler(){
 
-    let contenido = '<p> <small> PROTOCOLO ECOGRÁFICO<br/> UNIDAD DE ATENCION<br/> GINECO / OBSTETRICA </small></p><h1 class="text-center border-bottom h5 pb-3" id="impresionTitulo">Evaluación de flujometria doppler materno fetal</h1><div class="row"> <div class="col-6"> <p class="mb-0"> <small>NOMBRE: <span id="impresionNombrePaciente"></span></small> </p></div><div class="col-6"> <p class="mb-0"> <small>Fecha exámen: <span id="impresionFechaExamen"></span></small> </p></div><div class="col-6"> <p> <small>FUR: <span id="impresionFUR"></span></small> </p></div><div class="col-6"> <p> <small>Edad Gestacional: <span id="impresionEdadGestacional"></span></small> </p></div></div><p class="mb-2">DESCRIPCIÓN</p><div class="row"> <div class="col-6"> <p> <small>Presentación: <span id="impresionPresentacion"></span></small> </p></div><div class="col-6"> <p> <small>Placenta ubicación: <span id="impresionUbicacion"></span></small> </p></div><div class="col-6"> <p> <small>Líquido amniótico: <span id="impresionLiquido"></span></small> </p></div><div class="col-6"> <p> <small>Motivo: <span id="impresionMotivo"></span></small> </p></div></div><p class="mb-2">BIOMETRÍAS</p><div class="row border-bottom pb-3"> <div class="col-4"> <p class="mb-0"> <small><strong>Flujometría Doppler</strong></small> </p></div><div class="col-4"> <p class="mb-0"><strong>IP observado</strong></p></div><div class="col-4"> <p class="mb-0"> <small><strong>Rango percentilar</strong></small> </p></div><div class="col-4"> <p class="mb-0"><small>Uterina Derecha:</small></p></div><div class="col-4"> <p class="mb-0"> <small><span id="impresionUtD"></span></small> </p></div><div class="col-4"> <p class="mb-0"> <small><span id="impresionUtDPCT"></span></small> </p></div><div class="col-4"> <p class="mb-0"><small>Uterina Izquierda:</small></p></div><div class="col-4"> <p class="mb-0"> <small><span id="impresionUtI"></span></small> </p></div><div class="col-4"> <p class="mb-0"> <small><span id="impresionUtIPCT"></span></small> </p></div><div class="col-4"> <p class="mb-0"><small>Uterina Promedio:</small></p></div><div class="col-4"> <p class="mb-0"> <small><span id="impresionUtP"></span></small> </p></div><div class="col-4"> <p class="mb-0"> <small><span id="impresionUtPPCT"></span></small> </p></div><div class="col-4"> <p class="mb-0"><small>Arteria Umbilical:</small></p></div><div class="col-4"> <p class="mb-0"> <small><span id="impresionAU"></span></small> </p></div><div class="col-4"> <p class="mb-0"> <small><span id="impresionAUPCT"></span></small> </p></div><div class="col-4"> <p class="mb-0"><small>Arteria C. Media:</small></p></div><div class="col-4"> <p class="mb-0"> <small><span id="impresionCM"></span></small> </p></div><div class="col-4"> <p class="mb-0"> <small><span id="impresionCMPCT"></span></small> </p></div><div class="col-4"> <p class="mb-0"><small>IP cuociente CP:</small></p></div><div class="col-4"> <p class="mb-0"> <small><span id="impresionCCP"></span></small> </p></div><div class="col-4"> <p class="mb-0"> <small><span id="impresionCCPPCT"></span></small> </p></div><div class="col-4"> <p class="mb-0"><small>Ductus venoso:</small></p></div><div class="col-4"> <p class="mb-0"> <small><span id="impresionDV"></span></small> </p></div><div class="col-4"> <p class="mb-0"> <small><span id="impresionDVPCT"></span></small> </p></div></div><div class="row mt-2"> <div class="col-12"> <p class="mb-0"><small>Observaciones:</small></p></div><div class="col-12"><p class="mb-0" id="impresionObservaciones"></p></div></div><hr/><div class="row mt-2"> <div class="col-6"></div><div class="col-6"> <p class="mb-0"> <small>Profesional ecografista: <span id="impresionEcografista"></span></small> </p></div></div><hr class="mt-0"/><p> <small> <small> * Referencia para Doppler promedio de arterias uterinas: Gómes O., Figueras F., Fernandez S., Bennasar M, Martínez JM., Puerto B., Gratacos E., UOG 2008; 32: 128-32<br/> ** Referencia para Doppler de arteria umbilical, C Media y CCP; Baschat et al Ultrasound Obstet. Gynecol 2003; 21 124 - 127<br/> *** Referencia para Liq. Amniotico BVM, Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000<br/> <strong> La aplicación tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento. </strong> </small> </small></p>'
+    let contenido = '<p> <small> PROTOCOLO ECOGRÁFICO<br/> UNIDAD DE ATENCION<br/> GINECO / OBSTETRICA </small></p><h1 class="text-center border-bottom h5 pb-3" id="impresionTitulo">Evaluación de flujometria doppler materno fetal</h1><div class="row"> <div class="col-6"> <p class="mb-0"> <small>NOMBRE: <span id="impresionNombrePaciente"></span></small> </p></div><div class="col-6"> <p class="mb-0"> <small>Fecha exámen: <span id="impresionFechaExamen"></span></small> </p></div><div class="col-6"> <p> <small>FUR: <span id="impresionFUR"></span></small> </p></div><div class="col-6"> <p> <small>Edad Gestacional: <span id="impresionEdadGestacional"></span></small> </p></div></div><p class="mb-2">DESCRIPCIÓN</p><div class="row"> <div class="col-6"> <p> <small>Presentación: <span id="impresionPresentacion"></span></small> </p></div><div class="col-6"> <p> <small>Placenta ubicación: <span id="impresionUbicacion"></span></small> </p></div><div class="col-6"> <p> <small>Líquido amniótico: <span id="impresionLiquido"></span></small> </p></div><div class="col-6"> <p> <small>Motivo: <span id="impresionMotivo"></span></small> </p></div></div><p class="mb-2">BIOMETRÍAS</p><div class="row border-bottom pb-3"> <div class="col-4"> <p class="mb-0"> <small><strong>Flujometría Doppler</strong></small> </p></div><div class="col-4"> <p class="mb-0"><strong>IP observado</strong></p></div><div class="col-4"> <p class="mb-0"> <small><strong>Rango percentilar</strong></small> </p></div><div class="col-4"> <p class="mb-0"><small>Uterina Derecha:</small></p></div><div class="col-4"> <p class="mb-0"> <small><span id="impresionUtD" class="text-center"></span></small> </p></div><div class="col-4"> <p class="mb-0"> <small><span id="impresionUtDPCT"></span></small> </p></div><div class="col-4"> <p class="mb-0"><small>Uterina Izquierda:</small></p></div><div class="col-4"> <p class="mb-0"> <small><span id="impresionUtI" class="text-center"></span></small> </p></div><div class="col-4"> <p class="mb-0"> <small><span id="impresionUtIPCT"></span></small> </p></div><div class="col-4"> <p class="mb-0"><small>Uterina Promedio:</small></p></div><div class="col-4"> <p class="mb-0"> <small><span id="impresionUtP" class="text-center"></span></small> </p></div><div class="col-4"> <p class="mb-0"> <small><span id="impresionUtPPCT"></span></small> </p></div><div class="col-4"> <p class="mb-0"><small>Arteria Umbilical:</small></p></div><div class="col-4"> <p class="mb-0"> <small><span id="impresionAU" class="text-center"></span></small> </p></div><div class="col-4"> <p class="mb-0"> <small><span id="impresionAUPCT"></span></small> </p></div><div class="col-4"> <p class="mb-0"><small>Arteria C. Media:</small></p></div><div class="col-4"> <p class="mb-0"> <small><span id="impresionCM" class="text-center"></span></small> </p></div><div class="col-4"> <p class="mb-0"> <small><span id="impresionCMPCT"></span></small> </p></div><div class="col-4"> <p class="mb-0"><small>IP cuociente CP:</small></p></div><div class="col-4"> <p class="mb-0"> <small><span id="impresionCCP" class="text-center"></span></small> </p></div><div class="col-4"> <p class="mb-0"> <small><span id="impresionCCPPCT"></span></small> </p></div><div class="col-4"> <p class="mb-0"><small>Ductus venoso:</small></p></div><div class="col-4"> <p class="mb-0"> <small><span id="impresionDV" class="text-center"></span></small> </p></div><div class="col-4"> <p class="mb-0"> <small><span id="impresionDVPCT"></span></small> </p></div></div><div class="row mt-2"> <div class="col-12"> <p class="mb-0"><small>Observaciones:</small></p></div><div class="col-12"><p class="mb-0" id="impresionObservaciones"></p></div></div><hr/><div class="row"> <div class="col-6"></div><div class="col-6"> <p class="mb-0"> <small>Profesional ecografista: <span id="impresionEcografista"></span></small> </p></div></div><hr class="mt-0"/><p> <small> <small> * Referencia para Doppler promedio de arterias uterinas: Gómes O., Figueras F., Fernandez S., Bennasar M, Martínez JM., Puerto B., Gratacos E., UOG 2008; 32: 128-32<br/> ** Referencia para Doppler de arteria umbilical, C Media y CCP; Baschat et al Ultrasound Obstet. Gynecol 2003; 21 124 - 127<br/> *** Referencia para Liq. Amniotico BVM, Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000<br/> <strong> La aplicación tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento. </strong> </small> </small></p>'
+
+    let elementos = ["impNombrePaciente", "impFechaExamen", "impFUR", "impEdadGestacional", "impLiquido", "impMotivo", "impPresentacion", "impUbicacion", "impUtD", "impUtDPCT", "impUtI", "impUtIPCT", "impUtP", "impUtPPCT", "impAU", "impAUPCT", "impCM", "impCMPCT", "impCCP", "impCCPPCT", "impDV", "impDVPCT", "impObs", "impEco"]
 
     var date = new Date();
     var dd = date.getDate();
@@ -147,32 +149,32 @@ function construirInformeDoppler(){
 
     let fexamen = dd + '-' + mm + '-' + yyyy;
 
-    the("impresionNombrePaciente").innerHTML = (the("nombreInformeDoppler").value == undefined) ? "" : the("nombreInformeDoppler").value
-    the("impresionFechaExamen").innerHTML =  fexamen
-    the("impresionFUR").innerHTML =  (the("txtFUM").innerHTML == undefined) ? "" : the("txtFUM").innerHTML
-    the("impresionEdadGestacional").innerHTML =  (the("txtEG").innerHTML == undefined) ? "" : the("txtEG").innerHTML
-    the("impresionLiquido").innerHTML =  (the("liquidoDoppler").value == undefined) ? "" : the("liquidoDoppler").value
-    the("impresionMotivo").innerHTML =  (the("motivoDoppler").value == undefined) ? "" : the("motivoDoppler").value
-    the("impresionPresentacion").innerHTML =  (the("presentacionDoppler").value == undefined) ? "" : the("presentacionDoppler").value
-    the("impresionUbicacion").innerHTML =  (the("ubicacionDoppler").value == undefined) ? "" : the("ubicacionDoppler").value
+    the("impNombrePaciente").innerHTML = (the("nombreInformeDoppler").value == undefined) ? "" : the("nombreInformeDoppler").value
+    the("impFechaExamen").innerHTML =  fexamen
+    the("impFUR").innerHTML =  (the("txtFUM").innerHTML == undefined) ? "" : the("txtFUM").innerHTML
+    the("impEdadGestacional").innerHTML =  (the("txtEG").innerHTML == undefined) ? "" : the("txtEG").innerHTML
+    the("impLiquido").innerHTML =  (the("liquidoDoppler").value == undefined) ? "" : the("liquidoDoppler").value
+    the("impMotivo").innerHTML =  (the("motivoDoppler").value == undefined) ? "" : the("motivoDoppler").value
+    the("impPresentacion").innerHTML =  (the("presentacionDoppler").value == undefined) ? "" : the("presentacionDoppler").value
+    the("impUbicacion").innerHTML =  (the("ubicacionDoppler").value == undefined) ? "" : the("ubicacionDoppler").value
 
-    the("impresionUtD").innerHTML =  (the("aud").value == undefined) ? "" : the("aud").value
-    the("impresionUtDPCT").innerHTML =  (the("aud").value == undefined) ? "" : oldProgress(uterinas.calcular(the("eg").value, +the("aud").value).raw)
-    the("impresionUtI").innerHTML =  (the("aui").value == undefined) ? "" : the("aui").value
-    the("impresionUtIPCT").innerHTML =  (the("aui").value == undefined) ? "" : oldProgress(uterinas.calcular(the("eg").value, +the("aui").value).raw)
-    the("impresionUtP").innerHTML =  (the("aup").value == undefined) ? "" : the("aup").value
-    the("impresionUtPPCT").innerHTML =  (the("aup").value == undefined) ? "" : oldProgress(uterinas.calcular(the("eg").value, +the("aup").value).raw)
-    the("impresionAU").innerHTML =  (the("au").value == undefined) ? "" : the("au").value
-    the("impresionAUPCT").innerHTML =  (the("au").value == undefined) ? "" : oldProgress(umbilical.calcular(the("eg").value, +the("au").value))
-    the("impresionCM").innerHTML =  (the("acm").value == undefined) ? "" : the("acm").value
-    the("impresionCMPCT").innerHTML =  (the("acm").value == undefined) ? "" : oldProgress(cerebral.calcular(the("eg").value, +the("acm").value))
-    the("impresionCCP").innerHTML =  (the("ccp").value == undefined) ? "" : the("ccp").value
-    the("impresionCCPPCT").innerHTML =  (the("ccp").value == undefined) ? "" : oldProgress(ccp.calcular(the("acm").value, the("au").value))
-    the("impresionDV").innerHTML =  (the("dv").value == undefined) ? "" : the("dv").value
-    the("impresionDVPCT").innerHTML = (the("dv").value == undefined) ? "" : oldProgress(ductus.calcular(the("eg").value, +the("dv").value))
+    the("impUtD").innerHTML =  (the("aud").value == undefined) ? "" : the("aud").value
+    the("impUtDPCT").innerHTML =  (the("aud").value == undefined) ? "" : oldProgress(uterinas.calcular(the("eg").value, +the("aud").value).raw)
+    the("impUtI").innerHTML =  (the("aui").value == undefined) ? "" : the("aui").value
+    the("impUtIPCT").innerHTML =  (the("aui").value == undefined) ? "" : oldProgress(uterinas.calcular(the("eg").value, +the("aui").value).raw)
+    the("impUtP").innerHTML =  (the("aup").value == undefined) ? "" : the("aup").value
+    the("impUtPPCT").innerHTML =  (the("aup").value == undefined) ? "" : oldProgress(uterinas.calcular(the("eg").value, +the("aup").value).raw)
+    the("impAU").innerHTML =  (the("au").value == undefined) ? "" : the("au").value
+    the("impAUPCT").innerHTML =  (the("au").value == undefined) ? "" : oldProgress(umbilical.calcular(the("eg").value, +the("au").value))
+    the("impCM").innerHTML =  (the("acm").value == undefined) ? "" : the("acm").value
+    the("impCMPCT").innerHTML =  (the("acm").value == undefined) ? "" : oldProgress(cerebral.calcular(the("eg").value, +the("acm").value))
+    the("impCCP").innerHTML =  (the("ccp").value == undefined) ? "" : the("ccp").value
+    the("impCCPPCT").innerHTML =  (the("ccp").value == undefined) ? "" : oldProgress(ccp.calcular(the("acm").value, the("au").value))
+    the("impDV").innerHTML =  (the("dv").value == undefined) ? "" : the("dv").value
+    the("impDVPCT").innerHTML = (the("dv").value == undefined) ? "" : oldProgress(ductus.calcular(the("eg").value, +the("dv").value))
 
-    the("impresionObservaciones").innerHTML = (the("observacionesDoppler").value == undefined) ? "" : (the("observacionesDoppler").value).replace(/\r?\n/g, "<br>")
-    the("impresionEcografista").innerHTML = (the("profEcografistaDoppler").value == undefined) ? "" : the("profEcografistaDoppler").value
+    the("impObs").innerHTML = (the("obsDoppler").value == undefined) ? "" : (the("obsDoppler").value).replace(/\r?\n/g, "<br>")
+    the("impEco").innerHTML = (the("profEcoDoppler").value == undefined) ? "" : the("profEcoDoppler").value
 
 }
 
