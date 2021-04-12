@@ -172,7 +172,15 @@ function construirInformeDoppler(){
     the("impDV").innerHTML =  (the("dv").value == undefined) ? "" : the("dv").value
     the("impDVPCT").innerHTML = (the("dv").value == undefined) ? "" : oldProgress(ductus.calcular(the("eg").value, +the("dv").value))
 
-    the("impObs").innerHTML = (the("obsDoppler").value == undefined) ? "" : (the("obsDoppler").value).replace(/\r?\n/g, "<br>")
+    if (the("obsDoppler").value == ""){
+        the("impObs").innerHTML == ""
+    }else{
+        let tmp = the("obsDoppler").value
+        tmp = tmp.replace(/\r?\n/g, "<br>")
+
+        the("impObs").innerHTML = tmp
+    }
+
     the("impEco").innerHTML = (the("profEcoDoppler").value == undefined) ? "" : the("profEcoDoppler").value
 
 }
