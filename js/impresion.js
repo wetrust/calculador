@@ -158,14 +158,17 @@ function construirInformeDoppler(){
     the("impUbicacion").innerHTML =  (the("ubicacionDoppler").value == undefined) ? "" : the("ubicacionDoppler").value
 
     the("impUtD").innerHTML =  (the("aud").value == undefined) ? "" : the("aud").value
+    
     let tmp = uterinas.calcular(the("eg").value, +the("aud").value)
-    the("impUtDPCT").innerHTML =  (tmp.raw == undefined) ? "" : oldProgress(tmp.raw)
+    the("impUtDPCT").innerHTML =  (tmp.raw === undefined) ? "" : oldProgress(tmp.raw)
     the("impUtI").innerHTML =  (the("aui").value == undefined) ? "" : the("aui").value
+    
     tmp = uterinas.calcular(the("eg").value, +the("aui").value)
-    the("impUtIPCT").innerHTML =  (tmp.raw == undefined) ? "" : oldProgress(tmp.raw)
+    the("impUtIPCT").innerHTML =  (tmp.raw === undefined) ? "" : oldProgress(tmp.raw)
     the("impUtP").innerHTML =  (the("aup").value == undefined) ? "" : the("aup").value
+
     tmp = uterinas.calcular(the("eg").value, +the("aup").value)
-    the("impUtPPCT").innerHTML =  (tmp.raw == undefined) ? "" : oldProgress(tmp.raw)
+    the("impUtPPCT").innerHTML =  (tmp.raw === undefined) ? "" : oldProgress(tmp.raw)
     the("impAU").innerHTML =  (the("au").value == undefined) ? "" : the("au").value
     the("impAUPCT").innerHTML =  (the("au").value == undefined) ? "" : oldProgress(umbilical.calcular(the("eg").value, +the("au").value))
     the("impCM").innerHTML =  (the("acm").value == undefined) ? "" : the("acm").value
