@@ -13,7 +13,7 @@ the("informePrimTrim").onclick = function(){
         }
     } else if (typeof app != 'undefined'){
         //android
-        app.imprimir()
+        app.iUno()
     }else{
         //estándar
         window.print()
@@ -63,7 +63,7 @@ the("informeCrecimiento").onclick = function(){
             });
         }
     } else if (typeof app != 'undefined'){ 
-        app.imprimir()
+        app.iCre()
     }else{
         window.print()
     }
@@ -125,7 +125,7 @@ the("informeDopplerVer").onclick = function(){
             });
         }
     } else if (typeof app != 'undefined'){ 
-        app.imprimir()
+        app.iDoppler()
     } else {
         window.print()
     }
