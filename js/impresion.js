@@ -22,8 +22,8 @@ the("informePrimTrim").onclick = function(){
 
 function construirInformePrimTrimestre(){
 
-    let contenido = '<p><small>PROTOCOLO ECOGRÁFICO<br>UNIDAD DE ATENCION<br>GINECO / OBSTETRICA</small></p><h1 class="text-center border-bottom h5 pb-3" id="impresionTitulo">Evaluación ecográfica obstétrica precoz (edades menores a 11 semanas)</h1><div class="row"><div class="col-6"><p class="mb-0"><small>Nombre: <span id="impresionNombrePaciente"></span></small></p></div><div class="col-6"><p class="mb-0"><small>Fecha exámen: <span id="impresionFechaExamen"></span></small></p></div><div class="col-6"><p><small>FUR: <span id="impresionFUR"></span></small></p></div><div class="col-6"><p><small>Edad Gestacional: <span id="impresionEdadGestacional"></span></small></p></div></div><p class="mb-2"><small>Descripción</small></p><div class="row"><div class="col-6"><p class="mb-0"><small>Cuerpo Uterino: <span id="impresionCuerpo"></span></small></p></div><div class="col-6"><p class="mb-0"><small>Saco Gestacional: <span id="impresionSacog"></span></small></p></div><div class="col-6"><p class="mb-0"><small>Saco Vitelino: <span id="impresionSacov"></span></small></p></div><div class="col-6"><p class="mb-0"><small>Embrión: <span id="impresionEmbrión"></span></small></p></div><div class="col-6"><p class="mb-0"><small>Exploración anexial derecha: <span id="impresionAnexialDer"></span></small></p></div><div class="col-6"><p class="mb-0"><small>Exploración anexial izquierda: <span id="impresionAnexialIzq"></span></small></p></div><div class="col-6"><p class="mb-0"><small>Exploración de Douglas: <span id="impresionDouglas"></span></small></p></div></div><p class="mb-2"><small>Biometrías</small></p><div class="row border-bottom pb-3"><div class="col-12"><p class="mb-0"><small>Medida</small></p></div><div class="col-12"><p class="mb-0"><small>LCN: <span id="impresionLCN"></span></small></p></div></div><div class="row mt-2 border-bottom pb-3"><div class="col-6"></div><div class="col-6"><p class="mb-0"><small>Profesional ecografista: <span id="impresionEcografista"></span></small></p></div></div><p><small><small>Referencia saco gestacional Hellman LM, Kobayashi M., Fillisti L. Am J Onstet Gynecol 1968; 103(6):789-800 <br/> Referencia Edad menstrual por LCN Hadlock FP, Shan YP, Kanon JD y cols.: Radiology 182:501, 1992. <br/> Referencia Diámetro biparital según gráfica de Hadlock y col. 1984 <br/> <strong> El software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong></small></small></p>'
-
+    let contenido = '<p> <small> PROTOCOLO ECOGRÁFICO<br/> UNIDAD DE ATENCION<br/> GINECO / OBSTETRICA </small></p><h1 class="text-center border-bottom h5 pb-3" id="impresionTitulo">Evaluación ecográfica obstétrica precoz (edades menores a 11 semanas)</h1><div class="row"> <div class="col-6"> <p class="mb-0"> <small>Nombre: <span id="impresionNombrePaciente"></span></small> </p></div><div class="col-6"> <p class="mb-0"> <small>Fecha exámen: <span id="impresionFechaExamen"></span></small> </p></div><div class="col-6"> <p> <small>FUR: <span id="impresionFUR"></span></small> </p></div><div class="col-6"> <p> <small>Edad Gestacional: <span id="impresionEdadGestacional"></span></small> </p></div></div><p class="mb-2"><small>Descripción</small></p><div class="row"> <div class="col-6"> <p class="mb-0"> <small>Cuerpo Uterino: <span id="impresionCuerpo"></span></small> </p></div><div class="col-6"> <p class="mb-0"> <small>Saco Gestacional: <span id="impresionSacog"></span></small> </p></div><div class="col-6"> <p class="mb-0"> <small>Saco Vitelino: <span id="impresionSacov"></span></small> </p></div><div class="col-6"> <p class="mb-0"> <small>Embrión: <span id="impresionEmbrión"></span></small> </p></div><div class="col-6"> <p class="mb-0"> <small>Exploración anexial derecha: <span id="impresionAnexialDer"></span></small> </p></div><div class="col-6"> <p class="mb-0"> <small>Exploración anexial izquierda: <span id="impresionAnexialIzq"></span></small> </p></div><div class="col-6"> <p class="mb-0"> <small>Exploración de Douglas: <span id="impresionDouglas"></span></small> </p></div></div><p class="mb-2"><small>Biometrías</small></p><div class="row border-bottom pb-3"> <div class="col-12"> <p class="mb-0"><small>Medida</small></p></div><div class="col-12"> <p class="mb-0"> <small>LCN: <span id="impresionLCN"></span></small> </p></div></div><div class="row mt-2"> <div class="col-12"> <p class="mb-0"><small>Observaciones:</small></p></div><div class="col-12"><p class="mb-0" id="impObs"></p></div></div><hr/><div class="row"> <div class="col-6"></div><div class="col-6"> <p class="mb-0"> <small>Profesional ecografista: <span id="impEco"></span></small> </p></div></div><p> <small> <small> Referencia saco gestacional Hellman LM, Kobayashi M., Fillisti L. Am J Onstet Gynecol 1968; 103(6):789-800 <br/> Referencia Edad menstrual por LCN Hadlock FP, Shan YP, Kanon JD y cols.: Radiology 182:501, 1992. <br/> Referencia Diámetro biparital según gráfica de Hadlock y col. 1984 <br/> <strong> El software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento. </strong> </small> </small></p>'
+    
     var date = new Date()
     var dd = date.getDate()
     var mm = date.getMonth() + 1
@@ -31,10 +31,10 @@ function construirInformePrimTrimestre(){
 
     the("impresion").innerHTML = contenido
 
-    if( dd < 10 ) { dd = '0'+dd } 
-    if( mm < 10 ) { mm = '0'+mm } 
-  
-    let fexamen =  dd+ '-' + mm + '-' + yyyy;
+    if( dd < 10 ) { dd = '0' + dd }
+    if( mm < 10 ) { mm = '0' + mm }
+
+    let fexamen = dd + '-' + mm + '-' + yyyy;
 
     the("impresionNombrePaciente").innerHTML = (the("nombreInformeCrecimiento").value == undefined) ? "" : the("nombreInformeCrecimiento").value
     the("impresionFechaExamen").innerHTML =  fexamen
@@ -50,7 +50,16 @@ function construirInformePrimTrimestre(){
     the("impresionDouglas").innerHTML =  (the("primeroDouglas").value == undefined) ? "" : the("primeroDouglas").value
 
     the("impresionLCN").innerHTML =  (the("lcn").value == undefined) ? "" : the("lcn").value
-    the("impresionEcografista").innerHTML = (the("profEcografistaDos").value == undefined) ? "" : the("profEcografistaDos").value
+    the("impEco").innerHTML = (the("profEcografistaDos").value == undefined) ? "" : the("profEcografistaDos").value
+
+    if (the("obsPrimero").value == ""){
+        the("impObs").innerHTML == ""
+    }else{
+        let tmp = the("obsPrimero").value
+        tmp = tmp.replace(/\r?\n/g, "<br>")
+
+        the("impObs").innerHTML = tmp
+    }
 }
 
 the("informeCrecimiento").onclick = function(){
@@ -71,7 +80,7 @@ the("informeCrecimiento").onclick = function(){
 
 function construirInformeCrecimiento(){
 
-    let contenido = '<p><small>PROTOCOLO ECOGRÁFICO<br>UNIDAD DE ATENCION<br>GINECO / OBSTETRICA</small></p><h1 class="text-center border-bottom h5 pb-3" id="impresionTitulo">Evaluación ecográfica del crecimiento fetal</h1><div class="row"><div class="col-6"><p class="mb-0"><small>Nombre: <span id="impresionNombrePaciente"></span></small></p></div><div class="col-6"><p class="mb-0"><small>Fecha exámen: <span id="impresionFechaExamen"></span></small></p></div><div class="col-6"><p><small>FUR: <span id="impresionFUR"></span></small></p></div><div class="col-6"><p><small>Edad Gestacional: <span id="impresionEdadGestacional"></span></small></p></div></div><p class="mb-2">DESCRIPCIÓN</p><div class="row"><div class="col-6"><p class="mb-0"><small>Placenta normo insertada: <span id="impresionPlacenta"></span></small></p></div><div class="col-6"><p class="mb-0"><small>Líquido amniótico: <span id="impresionLiquido"></span></small></p></div><div class="col-6"><p><small>Feto: <span id="impresionFeto"></span></small></p></div><div class="col-6"><p><small>FCF: <span id="impresionFCF"></span> x min.</small></p></div></div><p class="mb-2">BIOMETRÍAS</p><div class="row border-bottom pb-3"><div class="col-4"><p class="mb-0"><small>Medida</small></p></div><div class="col-4"><p class="mb-0">Gráfica</p></div><div class="col-4"><p class="mb-0"><small>Percentil</small></p></div><div class="col-4"><p class="mb-0"><small>DBP: <span id="impresionDBP"></span></small></p></div><div class="col-4"><p class="mb-0" id=""></p></div><div class="col-4"><p class="mb-0"><small>Pct: <span id="impresionDBPPCT"></span></small></p></div><div class="col-4"><p class="mb-0"><small>CC: <span id="impresionCC"></span></small></p></div><div class="col-4"><p class="mb-0" id=""></p></div><div class="col-4"><p class="mb-0"><small>Pct: <span id="impresionCCPCT"></span></small></p></div><div class="col-4"><p class="mb-0"><small>CA: <span id="impresionCA"></span></small></p></div><div class="col-4"><p class="mb-0" id=""></p></div><div class="col-4"><p class="mb-0"><small>Pct: <span id="impresionCAPCT"></span></small></p></div><div class="col-4"><p class="mb-0"><small>LF: <span id="impresionLF"></span></small></p></div><div class="col-4"><p class="mb-0" id=""></p></div><div class="col-4"><p class="mb-0"><small>Pct: <span id="impresionLFPCT"></span></small></p></div><div class="col-4"><p class="mb-0"><small>Peso Fetal Estimado: <span id="impresionPFE"></span></small></p></div><div class="col-4"><p class="mb-0" id=""></p></div><div class="col-4"><p class="mb-0"><small>Pct: <span id="impresionPFEPCT"></span></small></p></div><div class="col-4"><p class="mb-0"><small>Relación CC-CA: <span id="impresionCCCA"></span></small></p></div><div class="col-4"><p class="mb-0" id=""></p></div><div class="col-4"><p class="mb-0"><small>Pct: <span id="impresionCCCAPCT"></span></small></p></div></div><div class="row mt-2"><div class="col-6"></div><div class="col-6"><p class="mb-0"><small>Profesional ecografista: <span id="impresionEcografista"></span></small></p></div></div>'
+    let contenido = '<p> <small> PROTOCOLO ECOGRÁFICO<br/> UNIDAD DE ATENCION<br/> GINECO / OBSTETRICA </small></p><h1 class="text-center border-bottom h5 pb-3" id="impresionTitulo">Evaluación ecográfica del crecimiento fetal</h1><div class="row"> <div class="col-6"> <p class="mb-0"> <small>Nombre: <span id="impresionNombrePaciente"></span></small> </p></div><div class="col-6"> <p class="mb-0"> <small>Fecha exámen: <span id="impresionFechaExamen"></span></small> </p></div><div class="col-6"> <p> <small>FUR: <span id="impresionFUR"></span></small> </p></div><div class="col-6"> <p> <small>Edad Gestacional: <span id="impresionEdadGestacional"></span></small> </p></div></div><p class="mb-2">DESCRIPCIÓN</p><div class="row"> <div class="col-6"> <p class="mb-0"> <small>Placenta normo insertada: <span id="impresionPlacenta"></span></small> </p></div><div class="col-6"> <p class="mb-0"> <small>Líquido amniótico: <span id="impresionLiquido"></span></small> </p></div><div class="col-6"> <p> <small>Feto: <span id="impresionFeto"></span></small> </p></div><div class="col-6"> <p> <small>FCF: <span id="impresionFCF"></span> x min.</small> </p></div></div><p class="mb-2">BIOMETRÍAS</p><div class="row border-bottom pb-3"> <div class="col-4"> <p class="mb-0"><small>Medida</small></p></div><div class="col-4"><p class="mb-0">Gráfica</p></div><div class="col-4"> <p class="mb-0"><small>Percentil</small></p></div><div class="col-4"> <p class="mb-0"> <small>DBP: <span id="impresionDBP"></span></small> </p></div><div class="col-4"><p class="mb-0" id=""></p></div><div class="col-4"> <p class="mb-0"> <small>Pct: <span id="impresionDBPPCT"></span></small> </p></div><div class="col-4"> <p class="mb-0"> <small>CC: <span id="impresionCC"></span></small> </p></div><div class="col-4"><p class="mb-0" id=""></p></div><div class="col-4"> <p class="mb-0"> <small>Pct: <span id="impresionCCPCT"></span></small> </p></div><div class="col-4"> <p class="mb-0"> <small>CA: <span id="impresionCA"></span></small> </p></div><div class="col-4"><p class="mb-0" id=""></p></div><div class="col-4"> <p class="mb-0"> <small>Pct: <span id="impresionCAPCT"></span></small> </p></div><div class="col-4"> <p class="mb-0"> <small>LF: <span id="impresionLF"></span></small> </p></div><div class="col-4"><p class="mb-0" id=""></p></div><div class="col-4"> <p class="mb-0"> <small>Pct: <span id="impresionLFPCT"></span></small> </p></div><div class="col-4"> <p class="mb-0"> <small>Peso Fetal Estimado: <span id="impresionPFE"></span></small> </p></div><div class="col-4"><p class="mb-0" id=""></p></div><div class="col-4"> <p class="mb-0"> <small>Pct: <span id="impresionPFEPCT"></span></small> </p></div><div class="col-4"> <p class="mb-0"> <small>Relación CC-CA: <span id="impresionCCCA"></span></small> </p></div><div class="col-4"><p class="mb-0" id=""></p></div><div class="col-4"> <p class="mb-0"> <small>Pct: <span id="impresionCCCAPCT"></span></small> </p></div></div><div class="row mt-2"> <div class="col-12"> <p class="mb-0"><small>Observaciones:</small></p></div><div class="col-12"><p class="mb-0" id="impObs"></p></div></div><hr/><div class="row"> <div class="col-6"></div><div class="col-6"> <p class="mb-0"> <small>Profesional ecografista: <span id="impEco"></span></small> </p></div></div>'
 
     var date = new Date();
     var dd = date.getDate();
@@ -81,15 +90,10 @@ function construirInformeCrecimiento(){
     the("impresion").innerHTML = contenido
     //
 
-    if(dd<10) {
-        dd = '0'+dd
-    } 
-  
-    if(mm<10) {
-        mm = '0'+mm
-    } 
-  
-    let fexamen =  dd+ '-' + mm + '-' + yyyy;
+    if( dd < 10 ) { dd = '0' + dd }
+    if( mm < 10 ) { mm = '0' + mm }
+
+    let fexamen = dd + '-' + mm + '-' + yyyy;
 
     the("impresionNombrePaciente").innerHTML = (the("nombreInformeCrecimiento").value == undefined) ? "" : the("nombreInformeCrecimiento").value
     the("impresionFechaExamen").innerHTML =  fexamen
@@ -111,7 +115,17 @@ function construirInformeCrecimiento(){
     the("impresionPFEPCT").innerHTML =  (the("pfePct").value == undefined) ? "" : the("pfePct").value
     the("impresionCCCA").innerHTML =  (the("ccca").value == undefined) ? "" : the("ccca").value
     the("impresionCCCAPCT").innerHTML = (the("cccaPct").value == undefined) ? "" : the("cccaPct").value
-    the("impresionEcografista").innerHTML = (the("profEcografistaDos").value == undefined) ? "" : the("profEcografistaDos").value
+    the("impEco").innerHTML = (the("profEcografistaDos").value == undefined) ? "" : the("profEcografistaDos").value
+
+    if (the("obsSegundo").value == ""){
+        the("impObs").innerHTML == ""
+
+    }else{
+        let tmp = the("obsSegundo").value
+        tmp = tmp.replace(/\r?\n/g, "<br>")
+
+        the("impObs").innerHTML = tmp
+    }
 
 }
 
