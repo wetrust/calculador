@@ -50,7 +50,7 @@ function construirInformePrimTrimestre(){
     the("impresionDouglas").innerHTML =  (the("primeroDouglas").value == undefined) ? "" : the("primeroDouglas").value
 
     the("impresionLCN").innerHTML =  (the("lcn").value == undefined) ? "" : the("lcn").value
-    the("impEco").innerHTML = (the("profEcografistaDos").value == undefined) ? "" : the("profEcografistaDos").value
+    the("impEco").innerHTML = (the("profEcoPrimero").value == undefined) ? "" : the("profEcoPrimero").value
 
     if (the("obsPrimero").value == ""){
         the("impObs").innerHTML == ""
