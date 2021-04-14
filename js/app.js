@@ -1338,6 +1338,17 @@ the("cccaPercentil").onclick = function() {
 	the("cccaVisualizador").classList.remove("d-none");
 };
 
+the("lc").onkeyup = function() {
+	let cV = +this.value;
+	if (cV == NaN){
+		the("lcTxt").innerHTML = "";
+	}else if (cV < 25){
+		the("lcTxt").innerHTML ='Cérvix corto';
+	}else if(cV > 24){
+		the("lcTxt").innerHTML ='Cérvix normal';
+	}
+};
+
 the("bvm").onkeyup = function() {
 	let _bvm = bvm.calcular(the("eg").value, +this.value);
 	if(_bvm < 0 || _bvm > 99) {
