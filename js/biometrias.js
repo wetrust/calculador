@@ -579,3 +579,17 @@ export class uterinas{
         }
     }
 }
+
+export class psohdlk {
+
+    static calcular(_cc, _ca, _lf){
+        if(isNaN(_cc) || isNaN(_ca) || isNaN(_lf)) {
+            return 0;
+        }
+        _cc = _cc / 10;
+        _ca = _ca / 10;
+        _lf = _lf / 10;
+        let psoP = Math.pow(10, (1.326 + 0.0107 * _cc + 0.0438 * _ca + 0.158 * _lf - 0.00326 * _ca * _lf));
+        return(isNaN(psoP) == true) ? 0 : Math.trunc(psoP);
+    }
+}

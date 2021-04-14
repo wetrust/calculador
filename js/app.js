@@ -1,6 +1,6 @@
 import { make, the, inputDate, humanDate } from './wetrust.js';
 import { fechas } from './functiones.js';
-import { lcn, saco, dbp, cc, ca, lf, lh, cb, bvm, ila, ccca, uterinas, umbilical, cerebral, ccp, ductus } from './biometrias.js';
+import { lcn, saco, dbp, cc, ca, lf, lh, cb, bvm, ila, ccca, uterinas, umbilical, cerebral, ccp, ductus, psohdlk } from './biometrias.js';
 import { pfe } from './pfe.js';
 import { p50 } from './p50.js';
 
@@ -1162,7 +1162,7 @@ the("cc").onkeyup = function() {
 	}
 	ajustarProgreso(_cc, "ccG");
 	the("ccPct").innerHTML = "Pct: " + _cc;
-	let _pfe = psohdlk(the("cc").value, the("ca").value, the("lf").value);
+	let _pfe = psohdlk.calcular(the("cc").value, the("ca").value, the("lf").value);
 	the("pfe").value = _pfe + " gramos";
 	the("pfe").dataset.value = _pfe;
 	ajustarProgreso(pfe.calcular(the("eg").value, _pfe), "pfeG");
@@ -1201,7 +1201,7 @@ the("ca").onkeyup = function() {
 	}
 	ajustarProgreso(_ca, "caG");
 	the("caPct").innerHTML = "Pct: " + _ca;
-	let _pfe = psohdlk(the("cc").value, the("ca").value, the("lf").value);
+	let _pfe = psohdlk.calcular(the("cc").value, the("ca").value, the("lf").value);
 	the("pfe").value = _pfe + " gramos";
 	the("pfe").dataset.value = _pfe;
 	ajustarProgreso(pfe.calcular(the("eg").value, _pfe), "pfeG");
@@ -1240,7 +1240,7 @@ the("lf").onkeyup = function() {
 	}
 	ajustarProgreso(_lf, "lfG");
 	the("lfPct").innerHTML = "Pct: " + _lf;
-	let _pfe = psohdlk(the("cc").value, the("ca").value, the("lf").value);
+	let _pfe = psohdlk.calcular(the("cc").value, the("ca").value, the("lf").value);
 	the("pfe").value = _pfe + " gramos";
 	the("pfe").dataset.value = _pfe;
 	ajustarProgreso(pfe.calcular(the("eg").value, _pfe), "pfeG");
@@ -2230,17 +2230,6 @@ function ajustarProgreso(valor, objeto) {
 	valor = (isNaN(valor) == true) ? 0 : valor;
 	valor = valor + "%";
 	the(objeto).children[0].style.width = valor;
-}
-
-function psohdlk(_cc, _ca, _lf) {
-	if(isNaN(_cc) || isNaN(_ca) || isNaN(_lf)) {
-		return 0;
-	}
-	_cc = _cc / 10;
-	_ca = _ca / 10;
-	_lf = _lf / 10;
-	let psoP = Math.pow(10, (1.326 + 0.0107 * _cc + 0.0438 * _ca + 0.158 * _lf - 0.00326 * _ca * _lf));
-	return(isNaN(psoP) == true) ? 0 : Math.trunc(psoP);
 }
 
 function back() {
