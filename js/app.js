@@ -177,17 +177,16 @@ the("lcn").onkeyup = function() {
 	let _lcn = lcn.calcular(this.value);
 	the("lcneg").value = _lcn + " semanas";
 	if(_lcn > 0) {
-		//calcular Fur según LCN
-		let _fecha = new Date();
-		_fecha.setTime(Date.parse(the("fexamen").value));
-		//calcular la fut con la parte entera del lcn, despues agregar los días
+		//verificar precisión
+		let _fexamen = fechas.toDate(the("fexamen").value);
 		let _ilcn = Math.trunc(_lcn);
-		let _fur = fechas.fur(+_lcn, _fecha);
+		let _fur = fechas.fur(_ilcn, _fexamen);
 		_fur.setDate(_fur.getDate() - (_ilcn - _lcn));
-		the("furlcn").innerText = humanDate(_fur);
-		the("eglcn").innerText = _lcn + " sem";
+
+		the("furlcn").innerHTML = humanDate(_fur);
+		the("eglcn").innerHTML = _lcn + " sem";
+
 		the("determinacionLCNEg").innerHTML = "Edad gestacional : " + _lcn + " sem";
-		//diferencia en días
 		let _dias = the("eg").value - _lcn;
 		_dias = (isNaN(_dias) == false) ? Math.trunc(_dias * 7) : 0;
 		the("lcnDiferenciaDias").innerHTML = _dias;
@@ -1099,6 +1098,7 @@ the("edadPrimeroAjustarSi").onchange = function() {
 	the("furOld").innerHTML = humanDate(_furOld);
 	the("egOld").innerHTML = the("eg").value + ", " + the("dias").value;
 	the("fppOld").innerHTML = humanDate(_fppOld);
+
 	//calcular Fur según LCN
 	let _lcn = lcn.calcular(the("lcn").value);
 	let _fexamen = fechas.toDate(the("fexamen").value);
