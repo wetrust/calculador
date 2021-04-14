@@ -39,8 +39,9 @@ function construirInformePrimTrimestre(){
     the("impresionNombrePaciente").innerHTML = (the("nombreInformeDoppler").value == undefined) ? "" : the("nombreInformeDoppler").value
 
     the("impresionFechaExamen").innerHTML =  fexamen
-    the("impresionFUR").innerHTML =  (the("txtFUM").innerHTML == undefined) ? "" : the("txtFUM").innerHTML
-    the("impresionEdadGestacional").innerHTML =  (the("txtEG").innerHTML == undefined) ? "" : the("txtEG").innerHTML
+
+    the("impresionFUR").innerHTML =  (the("furOld").innerHTML == undefined) ? the("txtFUM").innerHTML : the("furOld").innerHTML
+    the("impresionEdadGestacional").innerHTML =  (the("egOld").innerHTML == undefined) ? the("txtEG").innerHTML : the("egOld").innerHTML
 
     the("impresionCuerpo").innerHTML =  (the("primeroCuerpo").value == undefined) ? "" : the("primeroCuerpo").value
     the("impresionSacog").innerHTML =  (the("primeroSacoG").value == undefined) ? "" : the("primeroSacoG").value
