@@ -36,7 +36,8 @@ function construirInformePrimTrimestre(){
 
     let fexamen = dd + '-' + mm + '-' + yyyy;
 
-    the("impresionNombrePaciente").innerHTML = (the("nombreInformeCrecimiento").value == undefined) ? "" : the("nombreInformeCrecimiento").value
+    the("impresionNombrePaciente").innerHTML = (the("nombreInformeDoppler").value == undefined) ? "" : the("nombreInformeDoppler").value
+
     the("impresionFechaExamen").innerHTML =  fexamen
     the("impresionFUR").innerHTML =  (the("txtFUM").innerHTML == undefined) ? "" : the("txtFUM").innerHTML
     the("impresionEdadGestacional").innerHTML =  (the("txtEG").innerHTML == undefined) ? "" : the("txtEG").innerHTML
