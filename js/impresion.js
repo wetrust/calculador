@@ -60,7 +60,7 @@ function construirInformePrimTrimestre(){
 
     if (the("obsPrimero").value == ""){
         the("impObs").innerHTML == ""
-    }else{
+    } else {
         let tmp = the("obsPrimero").value
         tmp = tmp.replace(/\r?\n/g, "<br>")
 
