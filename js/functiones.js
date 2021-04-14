@@ -2,7 +2,9 @@ export class fechas{
     static fur(eg, fexamen){
         fexamen = (typeof fexamen === typeof undefined) ? new Date() : fexamen
 
-        fexamen.setDate(fexamen.getDate() - (eg*7));
+        eg = (Number.isInteger(eg)) ? eg * 7 : ((Math.trunc(eg) * 7) + ((eg - Math.trunc(eg)) * 10))
+
+        fexamen.setDate(fexamen.getDate() - eg);
 
         return fexamen;
     }

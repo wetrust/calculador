@@ -179,7 +179,7 @@ the("lcn").onkeyup = function() {
 	if(_lcn > 0) {
 		//verificar precisión
 		let _fexamen = fechas.toDate(the("fexamen").value);
-		let _ilcn = Math.trunc(_lcn);
+		let _ilcn = _lcn;
 		let _fur = fechas.fur(_ilcn, _fexamen);
 		_fur.setDate(_fur.getDate() - (_ilcn - _lcn));
 
@@ -1103,7 +1103,7 @@ the("edadPrimeroAjustarSi").onchange = function() {
 	let _lcn = lcn.calcular(the("lcn").value);
 	let _fexamen = fechas.toDate(the("fexamen").value);
 	//calcular la fur con la parte entera del lcn, despues agregar los días
-	let _ilcn = Math.trunc(_lcn);
+	let _ilcn = _lcn;
 	let _fur = fechas.fur(_ilcn, _fexamen);
 	_fur.setDate(_fur.getDate() - (_ilcn - _lcn));
 	the("fur").value = inputDate(_fur);
