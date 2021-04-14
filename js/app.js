@@ -1340,11 +1340,12 @@ the("cccaPercentil").onclick = function() {
 
 the("lc").onkeyup = function() {
 
-	if (this.value == "" || Number.isInteger(this.value) == false){
+	let cV = +this.value;
+	if (cV == NaN){
 		the("lcTxt").innerHTML = "";
-	}else if (+this.value < 25){
+	}else if (cV < 25){
 		the("lcTxt").innerHTML ='Cérvix corto';
-	}else if(+this.value > 24){
+	}else if(cV > 24){
 		the("lcTxt").innerHTML ='Cérvix normal';
 	}
 };
