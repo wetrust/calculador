@@ -36,7 +36,7 @@ function construirInformePrimTrimestre(){
 
     let fexamen = dd + '-' + mm + '-' + yyyy;
 
-    the("impresionNombrePaciente").innerHTML = (the("nombreInformeDoppler").value == undefined) ? "" : the("nombreInformeDoppler").value
+    the("impresionNombrePaciente").innerHTML = (the("nombreInformePrimero").value == undefined) ? "" : the("nombreInformePrimero").value
 
     the("impresionFechaExamen").innerHTML =  fexamen
 
