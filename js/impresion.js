@@ -31,8 +31,8 @@ function construirInformePrimTrimestre(){
 
     the("impresionFechaExamen").innerHTML =  humanDate()
 
-    the("impresionFUR").innerHTML =  (the("furOld").innerHTML == undefined) ? the("txtFUM").innerHTML : the("furOld").innerHTML
-    the("impresionEdadGestacional").innerHTML =  (the("egOld").innerHTML == undefined) ? the("txtEG").innerHTML  + " sem" : the("egOld").innerHTML
+    the("impresionFUR").innerHTML =  (the("edadPrimeroAjustarNo").checked == true) ? the("txtFUM").innerHTML : the("furOld").innerHTML
+    the("impresionEdadGestacional").innerHTML =  (the("edadPrimeroAjustarNo").checked == true) ? the("txtEG").innerHTML  + " sem" : the("egOld").innerHTML
 
     the("impresionCuerpo").innerHTML =  (the("primeroCuerpo").value == undefined) ? "" : the("primeroCuerpo").value
     the("impresionSacog").innerHTML =  (the("primeroSacoG").value == undefined) ? "" : the("primeroSacoG").value
