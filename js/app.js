@@ -119,6 +119,14 @@ for (var i = 0; i < 181; i++) {
 	opt.appendChild( document.createTextNode(i) );
 	opt.value = i;
 	semanas.appendChild(opt);
+
+	semanas = the("fcfEG");
+	opt = document.createElement('option');
+	opt.appendChild( document.createTextNode(i) );
+	opt.value = i;
+	semanas.appendChild(opt);
+
+	
 }
 
 the("fcf").value = 140
