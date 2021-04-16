@@ -183,7 +183,7 @@ function construirInformeEG(){
     var mm = date.getMonth()+1; //January is 0!
     var yyyy = date.getFullYear();
 
-    contenido += '</div><div class="row mt-2"> <div class="col-12"> <p class="mb-0"><small><strong>Observaciones:</strong></small></p></div><div class="col-12"><p class="mb-0" id="impObs"></p></div></div><hr/><div class="row"> <div class="col-6"></div><div class="col-6"> <p class="mb-0"> <small>Profesional ecografista: <span id="impEco"></span></small> </p></div></div><hr class="mt-0"/>'
+    contenido += '</div><div class="row mt-2"> <div class="col-12"> <p class="mb-0"><small><strong>Observaciones:</strong></small></p></div><div class="col-12"><p class="mb-0" id="impObs"></p></div></div><hr/><div class="row"> <div class="col-6"></div><div class="col-6"> <p class="mb-0"> <small>Profesional ecografista: <span id="impEco"></span></small> </p></div></div><hr class="mt-0"/><p><small><strong>* Para la evaluación morfológica fetal, ceñirse a recomendaciones oficiales vigentes, para Chile: Guías Perinatales MINSAL 2015</strong> <br>Ver dirección web: http://web.minsal.cl/sites/default/files/files/GUIA%20PERINATAL_2015_%20PARA%20PUBLICAR.pdf <br>** Referencia para medición de líquido amniótico (BVM), Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000</small></p><p><small><strong>El software tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong></small> </p>'
 
     the("impresion").innerHTML = contenido
 
