@@ -5,7 +5,7 @@ import { pfe } from './pfe.js';
 import { p50 } from './p50.js';
 
 var activo = "inicio";
-var examenes = ["inicio", "examenes", "primero", "informePrimero", "examenes", "segundo", "informeSegundo", "examenes", "doppler", "informeDoppler"];
+var examenes = ["inicio", "examenes", "primero", "informePrimero", "examenes", "segundo", "informeSegundo", "examenes", "segundo", "informeSegundoCrecimiento", "examenes", "doppler", "informeDoppler"];
 let _fecha = new Date();
 
 the("fexamen").value = inputDate(_fecha);
@@ -157,6 +157,12 @@ the("goSegundoInforme").onclick = function() {
 	the("segundo").classList.add("d-none");
 	the("informeSegundo").classList.remove("d-none");
 	activo = "informeSegundo";
+}
+
+the("goSegundoEgInforme").onclick = function() {
+	the("segundo").classList.add("d-none");
+	the("informeSegundoCrecimiento").classList.remove("d-none");
+	activo = "informeSegundoCrecimiento";
 }
 
 the("goDoppler").onclick = function() {

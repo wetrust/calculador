@@ -166,7 +166,7 @@
         <section class="container d-none d-print-none" id="primero">
             <div class="card shadow mt-3">
                 <div class="card-header">
-                    Embrión (LCN)
+                    Largo Embrinario (LCN)
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -801,8 +801,8 @@
                 </div>
             </div>
             <div class="row mb-3">
-                <div class="col-3"></div>
-                <div class="col-6">
+                <div class="col-1"></div>
+                <div class="col-5">
                     <div class="card shadow" data-bs-toggle="modal" data-bs-target="#exampleEdad" id="edadGestacionalG">
                         <div class="card-body">
                             <div class="row">
@@ -810,6 +810,18 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5z"/></svg>
                                 </div>
                                 <div class="col-12 text-center mt-2"><small>Gráficas de<br>Edad Gestacional</small></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div class="card shadow" id="goSegundoEgInforme">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="3em" height="3em" fill="currentColor" viewBox="0 0 16 16"><path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/><path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"/></svg>
+                                </div>
+                                <div class="col-12 text-center mt-2"><small>Informe<br>E. Gestacional</small></div>
                             </div>
                         </div>
                     </div>
@@ -864,6 +876,56 @@
                 </div>
             </div>
         </section>
+
+        <section class="container d-none d-print-none" id="informeSegundoCrecimiento">
+            <div class="alert alert-warning alert-dismissible fade show mt-3" role="alert">
+                Ingrese datos adicionales para el informe
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <div class="card my-3">
+                <div class="card-body">
+                    <label for="nombreInformeEG" class="form-label">Nombre paciente:</label>
+                    <input class="form-control" type="text" id="nombreInformeEG">
+                    <label for="placenta" class="form-label mt-4">Placenta normo inserta:</label>
+                    <select class="form-select" id="placentaEG">
+                        <option value="no">No</option>
+                        <option value="si" selected>Si</option>
+                    </select>
+                    <label for="liquido" class="form-label mt-4">Evaluación de líquido amniótico</label>
+                    <select class="form-select" id="liquidoEG">
+                        <option value="normal" selected>Normal</option>
+                        <option value="disminuido">Disminuido</option>
+                        <option value="aumentado">Aumentado</option>
+                    </select>
+                    <label for="feto" class="form-label mt-4">Feto:</label>
+                    <div class="row">
+                        <div class="col">
+                            <select class="form-select" id="fetoGemelarEG">
+                                <option value="único" selected>Único</option>
+                                <option value="gemelar">Gemelar</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <select class="form-select" id="fetoEstadoEG">
+                                <option value="activo" selected>Activo</option>
+                                <option value="inactivo">Inactivo</option>
+                            </select>
+                        </div>
+                    </div>
+                    <label for="fcf" class="form-label mt-4">Frecuencia Cardiaca Fetal:</label>
+                    <select class="form-select" id="fcfEG">
+                    </select>
+                    <label for="profEcografistaDos" class="form-label">Profesional ecografista:</label>
+                    <input class="form-control" type="text" id="profEcografistaEG">
+
+                    <label for="obsSegundo" class="form-label mt-2">Observaciones:</label>
+                    <textarea class="form-control" id="obsSegundoEG">-&#13;&#10;-&#13;&#10;-&#13;&#10;</textarea>
+
+                    <button type="button" class="btn mt-4 mx-auto d-block" id="informeEG">Ver Informe</button>
+                </div>
+            </div>
+        </section>
+
         <section class="container d-none d-print-none" id="doppler">
             <div class="card shadow mt-3">
                 <div class="card-header">

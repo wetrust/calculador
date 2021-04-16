@@ -1,5 +1,5 @@
 import { the } from "./wetrust.js";
-import {uterinas, umbilical, cerebral, ccp, ductus, dbp, cc, ca, lf, ccca, psohdlk} from "./biometrias.js"
+import {uterinas, umbilical, cerebral, ccp, ductus, dbp, cc, ca, lf, ccca, psohdlk, lh, cb} from "./biometrias.js"
 import { pfe } from "./pfe.js"
 
 the("informePrimTrim").onclick = function(){
@@ -113,6 +113,7 @@ function construirInformeCrecimiento(){
     the("impresionFechaExamen").innerHTML =  fexamen
     the("impresionFUR").innerHTML =  (the("txtFUM").innerHTML == undefined) ? "" : the("txtFUM").innerHTML
     the("impresionEdadGestacional").innerHTML =  (the("txtEG").innerHTML == undefined) ? "" : the("txtEG").innerHTML
+
     the("impresionPlacenta").innerHTML =  (the("placenta").value == undefined) ? "" : the("placenta").value
     the("impresionLiquido").innerHTML =  (the("liquido").value == undefined) ? "" : the("liquido").value
     the("impresionFeto").innerHTML =  (the("fetoGemelar").value == undefined) ? "" : the("fetoGemelar").value + " " + the("fetoEstado").value
@@ -155,6 +156,83 @@ function construirInformeCrecimiento(){
         the("impLCTXT").innerHTML = the("lcTxt").innerHTML
     }
 
+}
+
+the("informeEG").onclick = function(){
+    construirInformeEG()
+
+    if (window.webkit != undefined){
+        if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.toggleMessageHandler) {
+            window.webkit.messageHandlers.toggleMessageHandler.postMessage({
+                "message": "print"
+            });
+        }
+    } else if (typeof app != 'undefined'){ 
+        app.iEG()
+    }else{
+        window.print()
+    }
+}
+
+function construirInformeEG(){
+
+    let contenido = '<p> <small> PROTOCOLO ECOGRÁFICO<br/> UNIDAD DE ATENCION<br/> GINECO / OBSTETRICA </small></p><h1 class="text-center border-bottom h5 pb-3" id="impresionTitulo">Determinación ecográfica de edad gestacional sobre las 14 semana</h1><div class="row"> <div class="col-6"> <p class="mb-0"> <small>Nombre: <span id="impresionNombrePaciente"></span></small> </p></div><div class="col-6"> <p class="mb-0"> <small>Fecha exámen: <span id="impresionFechaExamen"></span></small> </p></div><div class="col-6"> <p> <small>FUR: <span id="impresionFUR"></span></small> </p></div><div class="col-6"> <p> <small>Edad Gestacional: <span id="impresionEdadGestacional"></span></small> </p></div></div><p class="mb-2">DESCRIPCIÓN</p><div class="row"> <div class="col-6"> <p class="mb-0"> <small>Placenta normo insertada: <span id="impresionPlacenta"></span></small> </p></div><div class="col-6"> <p class="mb-0"> <small>Líquido amniótico: <span id="impresionLiquido"></span></small> </p></div><div class="col-6"> <p> <small>Feto: <span id="impresionFeto"></span></small> </p></div><div class="col-6"> <p> <small>FCF: <span id="impresionFCF"></span> x min.</small> </p></div></div><p class="mb-2">BIOMETRÍAS</p><div class="row border-bottom pb-3"> <div class="col-4"> <p class="mb-0"><small>Medida</small></p></div><div class="col-4"><p class="mb-0 text-center">Valor</p></div><div class="col-4"> <p class="mb-0"><small>Rango Percentilar</small></p></div><div class="col-4"> <p class="mb-0"><small>DBP:</small></p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impDBP"></span> mm</small> </p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impDBPG"></span></small> </p></div><div class="col-4"> <p class="mb-0"><small>C. Cráneo:</small></p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impCC"></span> mm</small> </p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impCCG"></span></small> </p></div><div class="col-4"> <p class="mb-0"><small>C. Abdomen:</small></p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impCA"></span> mm</small> </p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impCAG"></span></small> </p></div><div class="col-4"> <p class="mb-0"><small>L. Fémur:</small></p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impLF"></span> mm</small> </p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impLFG"></span></small> </p></div><div class="col-4"> <p class="mb-0"><small>LH:</small></p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impLH"></span></small> </p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impLHG"></span></small> </p></div><div class="col-4"> <p class="mb-0"><small>Cerebelo:</small></p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impC"></span></small> </p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impCG"></span></small> </p></div><div class="col-4"> <p class="mb-0"><small>EG Promedio:</small></p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impEGProm"></span></small> </p></div><div class="col-4"></div><div class="col-12"> <p class="mb-0"><small>* En el cálculo de edad gestacional tardia, la aplicacion excluye el perímetro abdominal, considerando solo CC y LF.</small></p></div></div>'
+
+    var date = new Date();
+    var dd = date.getDate();
+    var mm = date.getMonth()+1; //January is 0!
+    var yyyy = date.getFullYear();
+
+    contenido += '</div><div class="row mt-2"> <div class="col-12"> <p class="mb-0"><small><strong>Observaciones:</strong></small></p></div><div class="col-12"><p class="mb-0" id="impObs"></p></div></div><hr/><div class="row"> <div class="col-6"></div><div class="col-6"> <p class="mb-0"> <small>Profesional ecografista: <span id="impEco"></span></small> </p></div></div><hr class="mt-0"/>'
+
+    the("impresion").innerHTML = contenido
+
+    if( dd < 10 ) { dd = '0' + dd }
+    if( mm < 10 ) { mm = '0' + mm }
+
+    let fexamen = dd + '-' + mm + '-' + yyyy;
+
+    the("impresionNombrePaciente").innerHTML = (the("nombreInformeEG").value == undefined) ? "" : the("nombreInformeEG").value
+    the("impresionFechaExamen").innerHTML =  fexamen
+    the("impresionFUR").innerHTML =  (the("txtFUM").innerHTML == undefined) ? "" : the("txtFUM").innerHTML
+    the("impresionEdadGestacional").innerHTML =  (the("txtEG").innerHTML == undefined) ? "" : the("txtEG").innerHTML
+
+    the("impresionPlacenta").innerHTML =  (the("placentaEG").value == undefined) ? "" : the("placentaEG").value
+    the("impresionLiquido").innerHTML =  (the("liquidoEG").value == undefined) ? "" : the("liquidoEG").value
+    the("impresionFeto").innerHTML =  (the("fetoGemelarEG").value == undefined) ? "" : the("fetoGemelarEG").value + " " + the("fetoEstadoEG").value
+
+    the("impresionFCF").innerHTML =  (the("fcfEG").value == undefined) ? "" : the("fcfEG").value
+
+    the("impDBP").innerHTML =  (the("dbp").value == undefined) ? "" : the("dbp").value
+    the("impDBPG").innerHTML =  (the("dbp").value == undefined) ? "" : oldProgress(dbp.calcular(the("eg").value, the("dbp").value))
+
+    the("impCC").innerHTML =  (the("cc").value == undefined) ? "" : the("cc").value
+    the("impCCG").innerHTML =  (the("cc").value == undefined) ? "" : oldProgress(cc.calcular(the("eg").value, the("cc").value))
+
+    the("impCA").innerHTML =  (the("ca").value == undefined) ? "" : the("ca").value
+    the("impCAG").innerHTML =  (the("ca").value == undefined) ? "" : oldProgress(ca.calcular(the("eg").value, the("ca").value))
+
+    the("impLF").innerHTML =  (the("lf").value == undefined) ? "" : the("lf").value
+    the("impLFG").innerHTML =  (the("lf").value == undefined) ? "" : oldProgress(lf.calcular(the("eg").value, the("lf").value))
+
+    the("impLH").innerHTML =  (the("lh").value == undefined) ? "" : the("lh").value
+    the("impLHG").innerHTML =  (the("lh").value == undefined) ? "" : oldProgress(lh.calcular(the("eg").value, the("lh").value))
+
+    the("impC").innerHTML =  (the("cb").value == undefined) ? "" : the("cb").value
+    the("impCG").innerHTML =  (the("cb").value == undefined) ? "" : oldProgress(cb.calcular(the("eg").value, the("cb").value))
+
+    the("impEGProm").innerHTML =  (the("egNewSegundo").innerHTML == undefined) ? "" : the("egNewSegundo").innerHTML
+
+    the("impEco").innerHTML = (the("profEcografistaEG").value == undefined) ? "" : the("profEcografistaEG").value
+
+    if (the("obsSegundoEG").value == ""){
+        the("impObs").innerHTML == ""
+    }else{
+        let tmp = the("obsSegundoEG").value
+        tmp = tmp.replace(/\r?\n/g, "<br>")
+
+        the("impObs").innerHTML = tmp
+    }
 }
 
 the("informeDopplerVer").onclick = function(){
