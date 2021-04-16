@@ -1417,6 +1417,12 @@ the("ilaPercentil").onclick = function() {
 the("edadSegundoNo").onchange = function() {
 	the("biometriAdicional").classList.add("d-none");
 	the("edadSegundoAjuste").classList.add("d-none");
+
+	the("edadGestacionalG").parentElement.classList.add("d-none");
+	the("goSegundoEgInforme").parentElement.classList.add("d-none");
+
+	the("edadAjusteNo").checked = true
+	the("edadAjusteNo").onchange()
 };
 
 the("edadSegundoSi").onchange = function() {
@@ -1465,10 +1471,15 @@ the("edadSegundoSi").onchange = function() {
 		return;
 	}
 	the("biometriAdicional").classList.remove("d-none");
+
+	calcularP50()
 };
 
 the("edadAjusteNo").onchange = function() {
 	the("ajusteSegundoReady").classList.add("d-none");
+
+	the("edadGestacionalG").parentElement.classList.add("d-none");
+	the("goSegundoEgInforme").parentElement.classList.add("d-none");
 };
 
 the("edadAjusteSi").onchange = function() {
@@ -1550,6 +1561,9 @@ the("edadAjusteSi").onchange = function() {
 		the("fppNewSegundo").innerHTML = humanDate(fechas.fpp(_fur));
 		the("fur").onchange();
 		the("ajusteSegundoReady").classList.remove("d-none");
+
+		the("edadGestacionalG").parentElement.classList.remove("d-none");
+		the("goSegundoEgInforme").parentElement.classList.remove("d-none");
 };
 
 //Doppler
@@ -2236,10 +2250,15 @@ function calcularP50() {
 	let resultado = p50.calcular(the("dbp").value, the("cc").value, the("lf").value, the("cb").value, the("lh").value);
 	the("egp50").innerHTML = resultado + " semanas";
 	resultado = resultado.split(".");
-	if(isNaN(resultado[0]) == false) {
+	if(isNaN(resultado[0]) == false && the("edadSegundoNo").checked == false) {
 		the("edadSegundoAjuste").classList.remove("d-none");
+
 	} else {
 		the("edadSegundoAjuste").classList.add("d-none");
+
+		the("edadSegundoNo").checked == true
+		the("edadGestacionalG").parentElement.classList.add("d-none");
+		the("goSegundoEgInforme").parentElement.classList.add("d-none");
 	}
 }
 
