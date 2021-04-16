@@ -32,7 +32,7 @@ function construirInformePrimTrimestre(){
     the("impresionFechaExamen").innerHTML =  humanDate()
 
     the("impresionFUR").innerHTML =  (the("edadPrimeroAjustarNo").checked == true) ? the("txtFUM").innerHTML : the("furOld").innerHTML
-    the("impresionEdadGestacional").innerHTML =  (the("edadPrimeroAjustarNo").checked == true) ? the("txtEG").innerHTML  + " sem" : the("egOld").innerHTML
+    the("impresionEdadGestacional").innerHTML =  (the("edadPrimeroAjustarNo").checked == true) ? the("txtEG").innerHTML : the("egOld").innerHTML + " sem"
 
     the("impresionCuerpo").innerHTML =  (the("primeroCuerpo").value == undefined) ? "" : the("primeroCuerpo").value
     the("impresionSacog").innerHTML =  (the("primeroSacoG").value == undefined) ? "" : the("primeroSacoG").value
@@ -42,9 +42,9 @@ function construirInformePrimTrimestre(){
     the("impresionAnexialIzq").innerHTML =  (the("primeroAnexIzq").value == undefined) ? "" : the("primeroAnexIzq").value
     the("impresionDouglas").innerHTML =  (the("primeroDouglas").value == undefined) ? "" : the("primeroDouglas").value
 
-    the("impresionFUREst").innerHTML =  the("furlcn").innerHTML
-    the("impresionEGEst").innerHTML =  the("eglcn").innerHTML
-    the("impresionFPPEst").innerHTML =  the("fpplcn").innerHTML
+    the("impresionFUREst").innerHTML =  (the("edadPrimeroAjustarNo").checked == true) ? the("txtFUM").innerHTML : the("furlcn").innerHTML
+    the("impresionEGEst").innerHTML =  (the("edadPrimeroAjustarNo").checked == true) ? the("txtEG").innerHTML : the("eglcn").innerHTML
+    the("impresionFPPEst").innerHTML =  (the("edadPrimeroAjustarNo").checked == true) ? the("txtFPP").innerHTML : the("fpplcn").innerHTML
 
     the("impresionLCN").innerHTML =  (the("lcn").value == undefined) ? "" : the("lcn").value
     the("impEco").innerHTML = (the("profEcoPrimero").value == undefined) ? "" : the("profEcoPrimero").value
