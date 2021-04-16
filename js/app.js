@@ -1159,14 +1159,14 @@ the("edadAjusteSi").onchange = function() {
 			return;
 		}
 		if(_lh == "" || +_lh == 0) {
-			the(modal.contenido).innerHTML = '<p class="text-center">Ingrese LH</p>';
+			the(modal.contenido).innerHTML = '<p class="text-center">Ingrese L. Humeral</p>';
 			myModal.show();
 			this.checked = false;
 			the("edadAjusteNo").checked = true;
 			return;
 		}
 		if(_cb == "" || +_cb == 0) {
-			the(modal.contenido).innerHTML = '<p class="text-center">Ingrese CB</p>';
+			the(modal.contenido).innerHTML = '<p class="text-center">Ingrese Cerebelo</p>';
 			myModal.show();
 			this.checked = false;
 			the("edadAjusteNo").checked = true;

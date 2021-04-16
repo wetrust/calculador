@@ -32,7 +32,7 @@ function construirInformePrimTrimestre(){
     the("impresionFechaExamen").innerHTML =  humanDate()
 
     the("impresionFUR").innerHTML =  (the("edadPrimeroAjustarNo").checked == true) ? the("txtFUM").innerHTML : the("furOld").innerHTML
-    the("impresionEdadGestacional").innerHTML =  (the("edadPrimeroAjustarNo").checked == true) ? the("txtEG").innerHTML : the("egOld").innerHTML + " sem"
+    the("impresionEdadGestacional").innerHTML =  (the("edadPrimeroAjustarNo").checked == true) ? the("txtEG").innerHTML : the("egOld").innerHTML + " semanas"
 
     the("impresionCuerpo").innerHTML =  (the("primeroCuerpo").value == undefined) ? "" : the("primeroCuerpo").value
     the("impresionSacog").innerHTML =  (the("primeroSacoG").value == undefined) ? "" : the("primeroSacoG").value
