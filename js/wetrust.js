@@ -159,6 +159,11 @@ export function loadSelect(id, data){
     });
 }
 
+export function isNumber(value) 
+{
+   return typeof value === 'number' && isFinite(value);
+}
+
 
 export const b64toBlob = (b64Data, contentType='', sliceSize=512) => {
   const byteCharacters = atob(b64Data);
