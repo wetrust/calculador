@@ -156,8 +156,16 @@ the("informeEG").onclick = function(){
 
 function construirInformeEG(){
 
-    let contenido = '<p class="lh-1"> <small> PROTOCOLO ECOGRÁFICO<br/> UNIDAD DE ATENCION<br/> GINECO / OBSTETRICA </small></p><h1 class="text-center border-bottom h5 pb-3" id="impresionTitulo">Determinación ecográfica de edad gestacional sobre las 14 semanas</h1><div class="row"> <div class="col-6"> <p class="mb-0"> <small>Nombre: <span id="impresionNombrePaciente"></span></small> </p></div><div class="col-6"> <p class="mb-0"> <small>Fecha exámen: <span id="impresionFechaExamen"></span></small> </p></div><div class="col-6"> <p> <small>FUR: <span id="impresionFUR"></span></small> </p></div><div class="col-6"> <p> <small>Edad Gestacional: <span id="impresionEdadGestacional"></span></small> </p></div></div><p class="mb-2">DESCRIPCIÓN</p><div class="row"> <div class="col-6"> <p class="mb-0"> <small>Placenta normo insertada: <span id="impresionPlacenta"></span></small> </p></div><div class="col-6"> <p class="mb-0"> <small>Líquido amniótico: <span id="impresionLiquido"></span></small> </p></div><div class="col-6"> <p> <small>Feto: <span id="impresionFeto"></span></small> </p></div><div class="col-6"> <p> <small>FCF: <span id="impresionFCF"></span> x min.</small> </p></div></div><p class="mb-2">BIOMETRÍAS</p><div class="row"> <div class="col-4"> <p class="mb-0"><small>Medida</small></p></div><div class="col-4"><p class="mb-0 text-center">Valor</p></div><div class="col-4"> <p class="mb-0"><small>Rango Percentilar</small></p></div><div class="col-4"> <p class="mb-0"><small>DBP:</small></p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impDBP"></span> mm</small> </p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impDBPG"></span></small> </p></div><div class="col-4"> <p class="mb-0"><small>C. Cráneo:</small></p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impCC"></span> mm</small> </p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impCCG"></span></small> </p></div><div class="col-4"> <p class="mb-0"><small>C. Abdomen:</small></p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impCA"></span> mm</small> </p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impCAG"></span></small> </p></div><div class="col-4"> <p class="mb-0"><small>L. Fémur:</small></p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impLF"></span> mm</small> </p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impLFG"></span></small> </p></div><div class="col-4"> <p class="mb-0"><small>L. Húmero:</small></p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impLH"></span></small> </p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impLHG"></span></small> </p></div><div class="col-4"> <p class="mb-0"><small>D. Cerebelo Transverso:</small></p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impC"></span></small> </p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impCG"></span></small> </p></div><div class="col-4 border-top border-bottom"> <p class="mb-0"><small>EG promedio de biometrías*</small></p></div><div class="col-4 border-top border-bottom"> <p class="mb-0 text-center"> <small><span id="impEGProm"></span></small> </p></div><div class="col-4  border-top border-bottom"></div><div class="col-12"> <p class="mb-0"><small><small>* La app excluye la C. Abdominal, inicialmente considera solo Cráneo y Fémur. Adicionalmente Humero y Cerebelo.</small></small></p></div></div>'
-    contenido += '</div><div class="row mt-2"> <div class="col-12"> <p class="mb-0"><small><strong>Observaciones:</strong></small></p></div><div class="col-12"><p class="mb-0" id="impObs"></p></div></div><hr/><div class="row"> <div class="col-6"></div><div class="col-6"> <p class="mb-0"> <small>Profesional ecografista: <span id="impEco"></span></small> </p></div></div><hr class="mt-0"/><p><small><small>* Determinación de edad gestacional según criterios Hadlock FP. Deter RL., Harris RB Radiology 152:497-501, 1<br>** Medición de líquido amniótico (BVM), según Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000</small></small></p><p><small><strong>La aplicación tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong></small> </p>'
+    let contenido = '<p class="lh-1"> <small> PROTOCOLO ECOGRÁFICO<br/> UNIDAD DE ATENCION<br/> GINECO / OBSTETRICA </small></p><h1 class="text-center border-bottom h5 pb-3" id="impresionTitulo">Determinación ecográfica de edad gestacional sobre las 14 semanas</h1><div class="row"> <div class="col-6"> <p class="mb-0"> <small>Nombre: <span id="impresionNombrePaciente"></span></small> </p></div><div class="col-6"> <p class="mb-0"> <small>Fecha exámen: <span id="impresionFechaExamen"></span></small> </p></div><div class="col-6"> <p> <small>FUR: <span id="impresionFUR"></span></small> </p></div><div class="col-6"> <p> <small>Edad Gestacional: <span id="impresionEdadGestacional"></span></small> </p></div></div><p class="mb-2">DESCRIPCIÓN</p><div class="row"> <div class="col-6"> <p class="mb-0"> <small>Placenta normo insertada: <span id="impresionPlacenta"></span></small> </p></div><div class="col-6"> <p class="mb-0"> <small>Líquido amniótico: <span id="impresionLiquido"></span></small> </p></div><div class="col-6"> <p> <small>Feto: <span id="impresionFeto"></span></small> </p></div><div class="col-6"> <p> <small>FCF: <span id="impresionFCF"></span> x min.</small> </p></div></div><p class="mb-2">BIOMETRÍAS</p><div class="row"> <div class="col-4"> <p class="mb-0"><small>Medida</small></p></div><div class="col-4"><p class="mb-0 text-center">Valor</p></div><div class="col-4"> <p class="mb-0"><small>Rango Percentilar</small></p></div><div class="col-4"> <p class="mb-0"><small>DBP:</small></p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impDBP"></span> mm</small> </p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impDBPG"></span></small> </p></div><div class="col-4"> <p class="mb-0"><small>C. Cráneo:</small></p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impCC"></span> mm</small> </p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impCCG"></span></small> </p></div><div class="col-4"> <p class="mb-0"><small>C. Abdomen:</small></p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impCA"></span> mm</small> </p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impCAG"></span></small> </p></div><div class="col-4"> <p class="mb-0"><small>L. Fémur:</small></p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impLF"></span> mm</small> </p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impLFG"></span></small> </p></div><div class="col-4"> <p class="mb-0"><small>L. Húmero:</small></p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impLH"></span></small> </p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impLHG"></span></small> </p></div><div class="col-4"> <p class="mb-0"><small>D. Cerebelo Transverso:</small></p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impC"></span></small> </p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impCG"></span></small> </p></div>'
+
+
+    let cV = +the("lc").value;
+
+    if (cV != NaN){
+        contenido += '<div class="col-4"> <p class="mb-0"><small>Largo Cervical:</small></p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impLC"></span></small> </p></div><div class="col-4"> <p class="mb-0 text-center"> <small><span id="impLCTXT"></span></small> </p></div>'
+    }
+
+    contenido += '<div class="col-4 border-top border-bottom"> <p class="mb-0"><small>EG promedio de biometrías*</small></p></div><div class="col-4 border-top border-bottom"> <p class="mb-0 text-center"> <small><span id="impEGProm"></span></small> </p></div><div class="col-4  border-top border-bottom"></div><div class="col-12"> <p class="mb-0"><small><small>* La app excluye la C. Abdominal, inicialmente considera solo Cráneo y Fémur. Adicionalmente Humero y Cerebelo.</small></small></p></div></div></div><div class="row mt-2"> <div class="col-12"> <p class="mb-0"><small><strong>Observaciones:</strong></small></p></div><div class="col-12"><p class="mb-0" id="impObs"></p></div></div><hr/><div class="row"> <div class="col-6"></div><div class="col-6"> <p class="mb-0"> <small>Profesional ecografista: <span id="impEco"></span></small> </p></div></div><hr class="mt-0"/><p><small><small>* Determinación de edad gestacional según criterios Hadlock FP. Deter RL., Harris RB Radiology 152:497-501, 1<br>** Medición de líquido amniótico (BVM), según Magann EF. Sanderson M. Martin JN y col. Am J Obstet Gynecol 1982: 1581, 2000</small></small></p><p><small><strong>La aplicación tiene por objetivo favorecer el análisis preliminar de los datos obtenidos en el exámen ecográfico, la interpretación clínica de los mismos, es responsabilidad exclusiva de quien realiza y certifica este documento.</strong></small> </p>'
 
     the("impresion").innerHTML = contenido
 
@@ -194,6 +202,12 @@ function construirInformeEG(){
 
     the("impEco").innerHTML = (the("profEcografistaEG").value == undefined) ? "" : the("profEcografistaEG").value
     the("impObs").innerHTML = (the("obsSegundoEG").value == "") ? "" : the("obsSegundoEG").value.replace(/\r?\n/g, "<br>")
+
+    if (cV != NaN){
+        the("impLC").innerHTML  = the("lc").value + " mm"
+        the("impLCTXT").innerHTML = the("lcTxt").innerHTML
+    }
+
 }
 
 the("informeDopplerVer").onclick = function(){
@@ -248,12 +262,10 @@ function construirInformeDoppler(){
     }else{
         let tmp = the("obsDoppler").value
         tmp = tmp.replace(/\r?\n/g, "<br>")
-
         the("impObs").innerHTML = tmp
     }
 
     the("impEco").innerHTML = (the("profEcoDoppler").value == undefined) ? "" : the("profEcoDoppler").value
-
 }
 
 function oldProgress(value){
@@ -286,8 +298,4 @@ function oldProgress(value){
     })
 
     return result;
-}
-
-function construirInforme(estructura,datos){
-
 }
