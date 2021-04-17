@@ -101,7 +101,7 @@ the("fpp").onchange = function() {
 let losInput = document.getElementsByTagName("input");
 for(let i = 0; i < losInput.length; i++) {
 	losInput[i].onkeypress = function(e) {
-		var key_enter = ["lcn", "edadPrimeroAjustarNo", "", "dbp", "cc", "ca", "lf", "lc", "bvm", "ila", "crecimientoFetalG", "", "lh", "cb", "", "aud", "aui", "au", "acm", "dv"];
+		var key_enter = ["lcn", "edadPrimeroAjustarNo", "", "dbp", "cc", "ca", "lf", "lc", "bvm", "ila", "crecimientoFetalG", "", "lh", "cb", "", "aud", "aui", "au", "acm", "dv","lcD"];
 		if(e.which == 13) {
 			e.preventDefault();
 			if(key_enter.includes(this.id) == true) {
