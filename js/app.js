@@ -101,7 +101,7 @@ the("fpp").onchange = function() {
 let losInput = document.getElementsByTagName("input");
 for(let i = 0; i < losInput.length; i++) {
 	losInput[i].onkeypress = function(e) {
-		var key_enter = ["lcn", "edadPrimeroAjustarNo", "", "dbp", "cc", "ca", "lf", "bvm", "ila", "crecimientoFetalG", "", "lh", "cb", "", "aud", "aui", "au", "acm", "dv"];
+		var key_enter = ["lcn", "edadPrimeroAjustarNo", "", "dbp", "cc", "ca", "lf", "lc", "bvm", "ila", "crecimientoFetalG", "", "lh", "cb", "", "aud", "aui", "au", "acm", "dv"];
 		if(e.which == 13) {
 			e.preventDefault();
 			if(key_enter.includes(this.id) == true) {
@@ -984,6 +984,18 @@ the("lc").onkeyup = function() {
 		the("lcTxt").innerHTML ='Cérvix corto';
 	}else if(cV > 24){
 		the("lcTxt").innerHTML ='Cérvix normal';
+	}
+};
+
+the("lcD").onkeyup = function() {
+
+	let cV = +this.value;
+	if (cV == NaN){
+		the("lcTxtD").innerHTML = "";
+	}else if (cV < 25){
+		the("lcTxtD").innerHTML ='Cérvix corto';
+	}else if(cV > 24){
+		the("lcTxtD").innerHTML ='Cérvix normal';
 	}
 };
 
