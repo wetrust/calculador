@@ -23,6 +23,10 @@ the("saltar").onclick = function(){
     window.location.href = 'app.html';
 }
 
+the("salirExit").onclick = function(){
+    app.cerrarApp();
+}
+
 function storageAvailable(type) {
     var storage;
     try {
