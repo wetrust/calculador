@@ -1735,7 +1735,7 @@ the("dopplerMaternoFetalG").onclick = function() {
 				fontWeight: 'normal'
 			}
 		},
-		colors: ['#313131', '#313131', '#313131'],
+		colors: ['#ff0000', '#313131', '#ff0000'],
 		xAxis: {
 			categories: _cppC
 		},
@@ -1830,7 +1830,7 @@ the("dopplerMaternoFetalG").onclick = function() {
 				fontWeight: 'normal'
 			}
 		},
-		colors: ['#313131', '#313131', '#313131'],
+		colors: ['#ff0000', '#313131', '#ff0000'],
 		xAxis: {
 			categories: _dvC
 		},
