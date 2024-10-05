@@ -1735,7 +1735,7 @@ the("dopplerMaternoFetalG").onclick = function() {
 				fontWeight: 'normal'
 			}
 		},
-		colors: ['#ff0000', '#313131', '#ff0000'],
+		colors: ['#ff0000', '#ff0000', '#313131'],
 		xAxis: {
 			categories: _cppC
 		},
@@ -1745,7 +1745,6 @@ the("dopplerMaternoFetalG").onclick = function() {
 		series: [{
 			type: "line",
 			name: 'Pct. 5',
-			dashStyle: "Dot",
 			marker: {
 				enabled: false
 			},
@@ -1753,7 +1752,6 @@ the("dopplerMaternoFetalG").onclick = function() {
 		}, {
 			type: "line",
 			name: 'Pct. 95',
-			dashStyle: "Dot",
 			marker: {
 				enabled: false
 			},
@@ -1830,7 +1828,7 @@ the("dopplerMaternoFetalG").onclick = function() {
 				fontWeight: 'normal'
 			}
 		},
-		colors: ['#ff0000', '#313131', '#ff0000'],
+		colors: ['#ff0000', '#ff0000', '#313131'],
 		xAxis: {
 			categories: _dvC
 		},
@@ -1840,7 +1838,6 @@ the("dopplerMaternoFetalG").onclick = function() {
 		series: [{
 			type: "line",
 			name: 'Pct. 5',
-			dashStyle: "Dot",
 			marker: {
 				enabled: false
 			},
@@ -1848,7 +1845,6 @@ the("dopplerMaternoFetalG").onclick = function() {
 		}, {
 			type: "line",
 			name: 'Pct. 95',
-			dashStyle: "Dot",
 			marker: {
 				enabled: false
 			},
