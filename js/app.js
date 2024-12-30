@@ -1922,7 +1922,7 @@ function back() {
 
 }
 
-app.volverAtras(){
+android.volverAtras(){
 	return back();
 }
 
