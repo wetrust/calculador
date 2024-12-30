@@ -1922,12 +1922,12 @@ function back() {
 
 }
 
-android.volverAtras(){
-	return back();
-}
-
 function valorPercentil(valor, elemento) {
 	elemento.children[0].innerHTML = "Fuera de rango";
 }
 
 window.onpopstate = back;
+
+android.volverAtras = function() {
+	return back();
+}
