@@ -1910,7 +1910,7 @@ function back() {
 	let examen = examenes.indexOf(activo);
 
 	if(activo == "inicio") {
-		return true;
+		return false;
 	}
 
 	activo = examenes[examen - 1];
