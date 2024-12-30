@@ -1905,12 +1905,11 @@ function ajustarProgreso(valor, objeto) {
 }
 
 function back() {
-
 	the(activo).classList.add("d-none");
 	let examen = examenes.indexOf(activo);
 
 	if(activo == "inicio") {
-		return false;
+return false;
 	}
 
 	activo = examenes[examen - 1];
@@ -1921,8 +1920,7 @@ function back() {
 		the("prelude").classList.add("d-none");
 	}
 
-	return false;
-
+return false;
 }
 
 function valorPercentil(valor, elemento) {
