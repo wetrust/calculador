@@ -7,6 +7,7 @@ import { p50 } from './p50.js';
 var activo = "inicio";
 var examenes = ["inicio", "examenes", "primero", "informePrimero", "examenes", "segundo", "informeSegundo", "examenes", "segundo", "informeSegundoCrecimiento", "examenes", "doppler", "informeDoppler"];
 let _fecha = new Date();
+var myModal = []
 
 the("fexamen").value = inputDate(_fecha);
 let _fur = fechas.fur(10, _fecha);
@@ -1080,7 +1081,7 @@ the("edadSegundoSi").onchange = function() {
 	//$("#"+modal.id + " button").html("Aceptar");
 	the(modal.id).childNodes[0].classList.remove("modal-lg");
 	the(modal.id).childNodes[0].childNodes[0].childNodes[2].childNodes[0].innerHTML = "Aceptar";
-	var myModal = new bootstrap.Modal(the(modal.id), {
+	myModal = new bootstrap.Modal(the(modal.id), {
 		backdrop: 'static',
 		keyboard: false
 	});
@@ -1138,7 +1139,7 @@ the("edadAjusteSi").onchange = function() {
 		//$("#"+modal.id + " button").html("Aceptar");
 		the(modal.id).childNodes[0].classList.remove("modal-lg");
 		the(modal.id).childNodes[0].childNodes[0].childNodes[2].childNodes[0].innerHTML = "Aceptar";
-		var myModal = new bootstrap.Modal(the(modal.id), {
+		myModal = new bootstrap.Modal(the(modal.id), {
 			backdrop: 'static',
 			keyboard: false
 		});
@@ -1911,7 +1912,9 @@ function back() {
 
 	for (let i = 0; i < _modal.length; i++) {
 		if (_modal[i].classList.contains('show')){
-			$('#'+_modal[i].id).modal("hide")
+			_modal[i].classList.removeClass('show')
+			
+			document.getElementsByClassName("modal-backdrop")[0].remove()
 			md =  true;
 		}
 	}
