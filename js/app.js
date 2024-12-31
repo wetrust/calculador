@@ -1939,4 +1939,6 @@ function valorPercentil(valor, elemento) {
 
 window.onpopstate = back;
 
-
+android.volverAtras = function() {
+	return back();
+}
