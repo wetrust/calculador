@@ -1912,7 +1912,7 @@ function back() {
 
 	for (let i = 0; i < _modal.length; i++) {
 		if (_modal[i].classList.contains('show')){
-			_modal[i].classList.removeClass('show')
+			_modal[i].classList.remove('show')
 			
 			document.getElementsByClassName("modal-backdrop")[0].remove()
 			md =  true;
