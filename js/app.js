@@ -1905,6 +1905,16 @@ function ajustarProgreso(valor, objeto) {
 }
 
 function back() {
+
+	let _modal = document.getElementsByClassName("modal")
+
+	for (let i = 0; i < _modal.length; i++) {
+		if (_modal[i].classList.contains('show')){
+			$('#'+_modal[i].id).modal("hide")
+			return false;
+		}
+	}
+	
 	the(activo).classList.add("d-none");
 	let examen = examenes.indexOf(activo);
 
