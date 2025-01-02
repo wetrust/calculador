@@ -1914,7 +1914,7 @@ function back() {
 		if (_modal[i].classList.contains('show')){
 			_modal[i].classList.remove('show')
 			_modal[i].classList.style.display = '';
-			_modal[i].classList.style.padding-left = '';
+			_modal[i].classList.style.padding.left = '';
 			document.getElementsByClassName("modal-backdrop")[0].remove()
 
 			
